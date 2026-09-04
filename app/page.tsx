@@ -39,13 +39,13 @@ export default function HomePage() {
   const socialLinks = [
     {
       name: "Calendly",
-      href: "https://calendly.com",
+      href: "https://calendly.com/bdiyorxasanov",
       label: "Schedule a Call",
       icon: Calendar,
     },
     {
       name: "GitHub",
-      href: "https://github.com",
+      href: "https://github.com/Diyor-Khasanov-dev",
       label: "Code & Open Source",
       icon: ({ className }: { className?: string }) => (
         <svg
@@ -64,7 +64,7 @@ export default function HomePage() {
     },
     {
       name: "LinkedIn",
-      href: "https://linkedin.com",
+      href: "https://linkedin.com/in/diyor-khasanov",
       label: "Professional Profile",
       icon: ({ className }: { className?: string }) => (
         <svg
@@ -79,7 +79,7 @@ export default function HomePage() {
     },
     {
       name: "Telegram",
-      href: "https://t.me",
+      href: "https://t.me/Diyor_Khasanov_dev",
       label: "Direct Chat",
       icon: Send,
     },
@@ -88,7 +88,7 @@ export default function HomePage() {
   return (
     <main className="max-w-4xl w-full mx-auto px-4 sm:px-6 pt-6 sm:pt-10 pb-16 space-y-8">
       {/* Status / Availability Badge */}
-      <div className="flex justify-start">
+      <div className="flex justify-start mt-15">
         <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-zinc-800 bg-zinc-900/90 text-xs font-mono text-zinc-300 backdrop-blur-md shadow-sm">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -149,7 +149,7 @@ export default function HomePage() {
         </a>
 
         <a
-          href="https://example.com/blog"
+          href="https://t.me/bdiyorxasanov"
           target="_blank"
           rel="noreferrer"
           className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-zinc-800 bg-zinc-900/80 hover:bg-zinc-800/80 text-zinc-200 font-medium text-sm transition-all font-mono group"
