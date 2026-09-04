@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import ScrollProgress from "@/components/ScrollProgress";
 
 export const metadata: Metadata = {
-  title: "Software Engineer & Architect | Developer Portfolio",
+  title: "Diyor Khasanov | Software Engineer. Co-Founder @ A.L.I.A",
   description:
-    "Minimalist developer portfolio designed with high-craft aesthetic inspired by Vercel, Resend, and Linear.",
+    "Portfolio of Diyor Khasanov - Software Engineer & Co-Founder @ A.L.I.A. Fullstack, mobile, and senior frontend engineering.",
 };
 
 export default function RootLayout({
@@ -16,8 +17,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark h-full antialiased scroll-smooth">
       <body className="min-h-full flex flex-col bg-black text-zinc-100 font-sans selection:bg-zinc-800 selection:text-zinc-100">
+        <ScrollProgress />
         <div className="fixed inset-0 bg-grid-pattern pointer-events-none opacity-40 z-0" />
-        <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[400px] bg-radial-gradient pointer-events-none z-0" />
+        <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[400px] bg-radial-gradient pointer-events-none z-0 animate-pulse-glow" />
         <div className="relative z-10 flex flex-col min-h-screen">
           <Navbar />
           <div className="flex-1">{children}</div>
