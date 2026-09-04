@@ -46,7 +46,7 @@ export default function AchievementsPage() {
       badgeText: "🥇 1st Place Winner",
       description:
         "Architected and deployed a resilient bank payment platform handling secure transactional routing with high reliability. Built end-to-end payment workflows under strict time constraints.",
-      techStack: ["React", "TypeScript", "Next.js", "Payment Gateway API", "Tailwind CSS"],
+      techStack: ["React Native", "Expo", "TypeScript", "Next.js", "Payment Gateway API", "Tailwind CSS"],
       highlight: "Deployed & powering live production workloads",
     },
     {
