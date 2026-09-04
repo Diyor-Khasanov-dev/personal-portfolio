@@ -4,6 +4,9 @@ import CommandMenu from "./CommandMenu";
 export default function Navbar() {
   const navItems = [
     { label: "Overview", href: "/" },
+    { label: "Achievements", href: "/achievments" },
+    { label: "Projects", href: "/projects" },
+    { label: "Experience", href: "/experience" },
   ];
 
   return (
