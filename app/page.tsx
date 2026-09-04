@@ -1,398 +1,191 @@
-import Link from "next/link";
 import {
+  Trophy,
+  Award,
+  Briefcase,
+  Smartphone,
+  FileText,
+  BookOpen,
   ArrowUpRight,
-  ChevronRight,
   Sparkles,
-  CheckCircle2,
-  ExternalLink,
-  Code2,
-  FolderGit2,
-  Globe,
+  Calendar,
+  Send,
 } from "lucide-react";
-import CopyButton from "@/components/ui/CopyButton";
+import AnimatedJobTitles from "@/components/AnimatedJobTitles";
 
 export default function HomePage() {
-  const projects = [
+  const highlights = [
     {
-      title: "Resend - Minimalist Email Platform",
-      description:
-        "Engineered ultra-fast transactional email API infrastructure with high deliverability, developer-first React Email preview engine, and edge runtime routing.",
-      tags: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS", "Edge Runtime"],
-      metrics: "100k+ emails/sec",
-      github: "https://github.com",
-      demo: "https://resend.com",
-      featured: true,
+      title: "4x Hackathon Winner",
+      description: "Proven track record of rapid innovation, high-pressure execution & winning pitch builds.",
+      icon: Trophy,
     },
     {
-      title: "Linear - Issue Tracker & Project Management",
-      description:
-        "High-performance client-side synchronized issue tracking software built with real-time WebSockets, command palette shortcuts, and zero-latency UI updates.",
-      tags: ["React 19", "TypeScript", "GraphQL", "WebSockets", "IndexedDB"],
-      metrics: "< 50ms interaction",
-      github: "https://github.com",
-      demo: "https://linear.app",
-      featured: true,
+      title: "Big Tech Certified",
+      description: "World-class industry certifications in cloud infrastructure & modern software engineering.",
+      icon: Award,
     },
     {
-      title: "Vercel AI SDK & Edge UI Runtime",
-      description:
-        "Standardized streaming UI framework for LLM interactions, structured server component data streaming, and reactive message state rendering.",
-      tags: ["TypeScript", "Server Components", "Turbopack", "Tailwind v4"],
-      metrics: "5.2M weekly downloads",
-      github: "https://github.com",
-      demo: "https://vercel.com",
-      featured: false,
+      title: "4+ Years Experience",
+      description: "Delivering production-grade, highly reliable systems with sub-50ms performance targets.",
+      icon: Briefcase,
     },
     {
-      title: "Monorepo DevTools & Micro-Frontend Compiler",
-      description:
-        "Sub-millisecond incremental compilation pipeline for distributed React components, automated tree-shaking, and isolated sandbox runtime.",
-      tags: ["Rust", "SWC", "Turborepo", "TypeScript"],
-      metrics: "10x build speedup",
-      github: "https://github.com",
-      demo: "https://turbo.build",
-      featured: false,
+      title: "Fullstack + Mobile",
+      description: "Architecting end-to-end web platforms, REST/GraphQL APIs, and native-grade mobile apps.",
+      icon: Smartphone,
     },
   ];
 
-  const experience = [
+  const socialLinks = [
     {
-      period: "2023 — PRESENT",
-      role: "Staff Frontend Architect",
-      company: "Vercel / Resend Ecosystem",
-      description:
-        "Architecting Next.js App Router core UI paradigms, server components design primitives, and high-craft minimalist component design systems.",
-      highlights: [
-        "Reduced initial bundle sizes by 42% using Server Components and streaming edge layouts.",
-        "Created universal command palette and keyboard-first design language.",
-      ],
+      name: "Calendly",
+      href: "https://calendly.com",
+      label: "Schedule a Call",
+      icon: Calendar,
     },
     {
-      period: "2021 — 2023",
-      role: "Senior UI Engineer",
-      company: "Linear Systems",
-      description:
-        "Led client-side sync engine UI team. Optimized virtualized keyboard navigation, offline state sync, and dark mode design foundations.",
-      highlights: [
-        "Delivered 60 FPS silky smooth UI rendering under high-throughput state updates.",
-        "Built extensible keyboard shortcuts engine adopted across all web apps.",
-      ],
+      name: "GitHub",
+      href: "https://github.com",
+      label: "Code & Open Source",
+      icon: ({ className }: { className?: string }) => (
+        <svg
+          className={className}
+          fill="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            fillRule="evenodd"
+            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+            clipRule="evenodd"
+          />
+        </svg>
+      ),
     },
     {
-      period: "2019 — 2021",
-      role: "Frontend Software Engineer",
-      company: "Supabase / Open Source",
-      description:
-        "Built developer dashboard, database query inspector, and real-time event logs visualizer.",
-      highlights: [
-        "Spearheaded dark mode theme system with CSS variables and custom design tokens.",
-      ],
-    },
-  ];
-
-  const techCategories = [
-    {
-      name: "Core Technologies",
-      items: ["TypeScript", "JavaScript (ESNext)", "React 19", "Next.js 16 (App Router)", "Node.js", "HTML5/CSS3"],
+      name: "LinkedIn",
+      href: "https://linkedin.com",
+      label: "Professional Profile",
+      icon: ({ className }: { className?: string }) => (
+        <svg
+          className={className}
+          fill="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.64a1.62 1.62 0 1 0 0 3.24 1.62 1.62 0 0 0 0-3.24z" />
+        </svg>
+      ),
     },
     {
-      name: "Styling & UI Craft",
-      items: ["Tailwind CSS v4", "Radix UI", "CSS Modules", "Framer Motion", "Shadcn UI", "Design Tokens"],
-    },
-    {
-      name: "State & Architecture",
-      items: ["React Server Components", "TanStack Query", "Zustand", "GraphQL", "REST APIs", "Zod"],
-    },
-    {
-      name: "Tooling & Infrastructure",
-      items: ["Turbopack", "Vite", "Git / GitHub Actions", "Vercel Edge", "Docker", "Jest / Vitest"],
+      name: "Telegram",
+      href: "https://t.me",
+      label: "Direct Chat",
+      icon: Send,
     },
   ];
 
   return (
-    <main className="max-w-6xl mx-auto px-4 sm:px-6 pt-12 pb-24 space-y-24">
-      {/* HERO SECTION */}
-      <section className="space-y-8 pt-4">
-        {/* Status Announcement Badge */}
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-zinc-800 bg-zinc-900/80 text-xs font-mono text-zinc-300 backdrop-blur-sm">
-          <Sparkles className="w-3.5 h-3.5 text-zinc-400" />
-          <span>Resend & Vercel Design System</span>
+    <main className="max-w-4xl w-full mx-auto px-4 sm:px-6 pt-6 sm:pt-10 pb-16 space-y-8">
+      {/* Status / Availability Badge */}
+      <div className="flex justify-start">
+        <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-zinc-800 bg-zinc-900/90 text-xs font-mono text-zinc-300 backdrop-blur-md shadow-sm">
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
+          <span>Available for Fullstack & Mobile Engineering Roles</span>
           <span className="text-zinc-600">•</span>
-          <span className="text-zinc-400">Minimalist Dark Edition</span>
+          <Sparkles className="w-3.5 h-3.5 text-zinc-400" />
         </div>
+      </div>
 
-        {/* Title & Headline */}
-        <div className="space-y-4 max-w-3xl">
-          <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-white font-sans leading-[1.1]">
-            Engineering high-craft web interfaces & modern UI systems.
-          </h1>
-          <p className="text-base sm:text-lg text-zinc-400 font-normal leading-relaxed max-w-2xl">
-            Senior Frontend Engineer specializing in Next.js Server Components, React 19 architecture, and developer tooling. Obsessed with speed, minimalism, and precise typography.
-          </p>
-        </div>
+      {/* Hero Title & Animated Roles */}
+      <div className="space-y-4">
+        <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
+          Engineering high-impact solutions <br className="hidden sm:block" />
+          as a <AnimatedJobTitles />
+        </h1>
+        <p className="text-sm sm:text-base text-zinc-400 font-normal leading-relaxed max-w-2xl">
+          I build performant web applications, resilient backend architectures, and seamless mobile experiences.
+          Combining technical excellence with product design craft.
+        </p>
+      </div>
 
-        {/* Quick Action & Terminal Bar */}
-        <div className="flex flex-wrap items-center gap-4 pt-2">
-          <Link
-            href="/projects"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-zinc-100 text-zinc-950 font-medium text-xs sm:text-sm hover:bg-white transition-all shadow-sm group"
-          >
-            <span>Explore Projects</span>
-            <ChevronRight className="w-4 h-4 text-zinc-600 group-hover:translate-x-0.5 transition-transform" />
-          </Link>
-
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-zinc-800 bg-zinc-900/60 hover:bg-zinc-800/80 text-zinc-200 text-xs sm:text-sm font-medium transition-all"
-          >
-            <span>Get in Touch</span>
-            <ArrowUpRight className="w-4 h-4 text-zinc-400" />
-          </Link>
-
-          {/* Terminal Command Button */}
-          <div className="hidden sm:flex items-center gap-2 pl-2 border-l border-zinc-800">
-            <span className="text-xs font-mono text-zinc-500">$</span>
-            <CopyButton text="npx alex-dev-cli@latest" label="npx alex-dev-cli" />
-          </div>
-        </div>
-
-        {/* Quick stats counter ribbon */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 border-t border-zinc-900/80">
-          <div>
-            <p className="text-2xl font-bold text-white font-mono">6+ YRS</p>
-            <p className="text-xs text-zinc-500 font-mono mt-0.5">Frontend Mastery</p>
-          </div>
-          <div>
-            <p className="text-2xl font-bold text-white font-mono">100/100</p>
-            <p className="text-xs text-zinc-500 font-mono mt-0.5">Lighthouse Score</p>
-          </div>
-          <div>
-            <p className="text-2xl font-bold text-white font-mono">99.9%</p>
-            <p className="text-xs text-zinc-500 font-mono mt-0.5">Uptime & Reliability</p>
-          </div>
-          <div>
-            <p className="text-2xl font-bold text-white font-mono">Sub-50ms</p>
-            <p className="text-xs text-zinc-500 font-mono mt-0.5">Latency Target</p>
-          </div>
-        </div>
-      </section>
-
-      {/* FEATURED PROJECTS SECTION */}
-      <section className="space-y-8">
-        <div className="flex items-center justify-between border-b border-zinc-900 pb-4">
-          <div className="flex items-center gap-2 font-mono text-xs text-zinc-500 uppercase tracking-widest">
-            <span className="text-zinc-300">01</span>
-            <span>{"//"}</span>
-            <span>Featured Projects</span>
-          </div>
-          <Link
-            href="/projects"
-            className="text-xs font-mono text-zinc-400 hover:text-white flex items-center gap-1 transition-colors"
-          >
-            <span>View All</span>
-            <ArrowUpRight className="w-3.5 h-3.5" />
-          </Link>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {projects.map((project, idx) => (
+      {/* Credentials / Key Highlights Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 pt-1">
+        {highlights.map((item, idx) => {
+          const IconComponent = item.icon;
+          return (
             <div
               key={idx}
-              className="group relative flex flex-col justify-between p-6 rounded-xl border border-zinc-800/80 bg-zinc-950/60 hover:bg-zinc-900/40 hover:border-zinc-700/80 transition-all duration-200"
+              className="p-4 rounded-xl border border-zinc-800/80 bg-zinc-950/60 hover:bg-zinc-900/40 hover:border-zinc-700/80 transition-all duration-200 space-y-2 group"
             >
-              <div className="space-y-4">
-                <div className="flex items-start justify-between">
-                  <div className="space-y-1">
-                    <span className="inline-block text-[10px] font-mono text-emerald-400 bg-emerald-950/50 border border-emerald-900/50 px-2 py-0.5 rounded">
-                      {project.metrics}
-                    </span>
-                    <h3 className="text-base font-semibold text-zinc-100 group-hover:text-white transition-colors">
-                      {project.title}
-                    </h3>
-                  </div>
-                  <div className="flex items-center gap-2 opacity-80 group-hover:opacity-100 transition-opacity">
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="p-1.5 rounded-md hover:bg-zinc-800 text-zinc-400 hover:text-white transition-colors"
-                      title="GitHub Repository"
-                    >
-                      <FolderGit2 className="w-4 h-4" />
-                    </a>
-                    <a
-                      href={project.demo}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="p-1.5 rounded-md hover:bg-zinc-800 text-zinc-400 hover:text-white transition-colors"
-                      title="Live Demo"
-                    >
-                      <ExternalLink className="w-4 h-4" />
-                    </a>
-                  </div>
-                </div>
-
-                <p className="text-xs text-zinc-400 leading-relaxed font-sans">
-                  {project.description}
+              <div className="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-300 group-hover:text-white group-hover:border-zinc-700 transition-colors">
+                <IconComponent className="w-4 h-4" />
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold text-zinc-100">{item.title}</h3>
+                <p className="text-xs text-zinc-400 leading-relaxed mt-1 font-sans">
+                  {item.description}
                 </p>
               </div>
-
-              <div className="mt-6 pt-4 border-t border-zinc-900 flex flex-wrap gap-1.5">
-                {project.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="text-[11px] font-mono text-zinc-400 bg-zinc-900/80 border border-zinc-800 px-2 py-0.5 rounded"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
             </div>
-          ))}
-        </div>
-      </section>
+          );
+        })}
+      </div>
 
-      {/* WORK EXPERIENCE SECTION */}
-      <section className="space-y-8">
-        <div className="flex items-center justify-between border-b border-zinc-900 pb-4">
-          <div className="flex items-center gap-2 font-mono text-xs text-zinc-500 uppercase tracking-widest">
-            <span className="text-zinc-300">02</span>
-            <span>{"//"}</span>
-            <span>Career & Experience</span>
-          </div>
-          <Link
-            href="/experience"
-            className="text-xs font-mono text-zinc-400 hover:text-white flex items-center gap-1 transition-colors"
-          >
-            <span>Full History</span>
-            <ArrowUpRight className="w-3.5 h-3.5" />
-          </Link>
-        </div>
+      {/* Primary Action CTA Buttons */}
+      <div className="flex flex-wrap items-center gap-3 pt-1">
+        <a
+          href="https://example.com/resume.pdf"
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-zinc-100 hover:bg-white text-zinc-950 font-medium text-sm transition-all shadow-sm group font-mono"
+        >
+          <FileText className="w-4 h-4 text-zinc-800 group-hover:scale-105 transition-transform" />
+          <span>View My Resume</span>
+          <ArrowUpRight className="w-4 h-4 text-zinc-500 group-hover:translate-x-0.5 transition-transform" />
+        </a>
 
-        <div className="space-y-6">
-          {experience.map((exp, idx) => (
-            <div
-              key={idx}
-              className="p-6 rounded-xl border border-zinc-800/80 bg-zinc-950/40 hover:bg-zinc-900/30 transition-all duration-200"
-            >
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
-                <div>
-                  <h3 className="text-sm font-semibold text-white">{exp.role}</h3>
-                  <p className="text-xs font-mono text-zinc-400">{exp.company}</p>
+        <a
+          href="https://example.com/blog"
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-zinc-800 bg-zinc-900/80 hover:bg-zinc-800/80 text-zinc-200 font-medium text-sm transition-all font-mono group"
+        >
+          <BookOpen className="w-4 h-4 text-zinc-400 group-hover:text-white transition-colors" />
+          <span>Read My Blog</span>
+          <ArrowUpRight className="w-4 h-4 text-zinc-500 group-hover:translate-x-0.5 transition-transform" />
+        </a>
+      </div>
+
+      {/* Social Buttons Ribbon */}
+      <div className="pt-5 border-t border-zinc-900/90 space-y-3">
+        <p className="text-xs font-mono uppercase tracking-widest text-zinc-500">
+          Connect & Socials
+        </p>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          {socialLinks.map((social) => {
+            const SocialIcon = social.icon;
+            return (
+              <a
+                key={social.name}
+                href={social.href}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center justify-between p-3 rounded-lg border border-zinc-800/80 bg-zinc-950/40 hover:bg-zinc-900/60 hover:border-zinc-700/80 text-zinc-300 hover:text-white transition-all group"
+              >
+                <div className="flex items-center gap-2.5">
+                  <SocialIcon className="w-4 h-4 text-zinc-400 group-hover:text-white transition-colors" />
+                  <span className="text-xs font-mono font-medium">{social.name}</span>
                 </div>
-                <span className="text-xs font-mono text-zinc-500 bg-zinc-900/60 border border-zinc-800 px-2.5 py-1 rounded w-fit">
-                  {exp.period}
-                </span>
-              </div>
-
-              <p className="text-xs text-zinc-400 leading-relaxed mb-4">{exp.description}</p>
-
-              <ul className="space-y-2">
-                {exp.highlights.map((highlight, hIdx) => (
-                  <li key={hIdx} className="flex items-start gap-2 text-xs text-zinc-300">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-zinc-500 shrink-0 mt-0.5" />
-                    <span>{highlight}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+                <ArrowUpRight className="w-3.5 h-3.5 text-zinc-600 group-hover:text-zinc-300 group-hover:translate-x-0.5 transition-all" />
+              </a>
+            );
+          })}
         </div>
-      </section>
-
-      {/* TECH STACK & SKILLS MATRIX */}
-      <section className="space-y-8">
-        <div className="flex items-center justify-between border-b border-zinc-900 pb-4">
-          <div className="flex items-center gap-2 font-mono text-xs text-zinc-500 uppercase tracking-widest">
-            <span className="text-zinc-300">03</span>
-            <span>{"//"}</span>
-            <span>Tech Stack & Tooling</span>
-          </div>
-          <Link
-            href="/tech-stack"
-            className="text-xs font-mono text-zinc-400 hover:text-white flex items-center gap-1 transition-colors"
-          >
-            <span>Detailed Stack</span>
-            <ArrowUpRight className="w-3.5 h-3.5" />
-          </Link>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {techCategories.map((cat, idx) => (
-            <div
-              key={idx}
-              className="p-5 rounded-xl border border-zinc-800/80 bg-zinc-950/60 space-y-3"
-            >
-              <h3 className="text-xs font-mono uppercase tracking-wider text-zinc-300 flex items-center gap-2">
-                <Code2 className="w-3.5 h-3.5 text-zinc-500" />
-                <span>{cat.name}</span>
-              </h3>
-              <div className="flex flex-wrap gap-2 pt-1">
-                {cat.items.map((item) => (
-                  <span
-                    key={item}
-                    className="text-xs font-mono text-zinc-300 bg-zinc-900 border border-zinc-800/80 px-2.5 py-1 rounded-md hover:border-zinc-700 transition-colors"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* FOOTER & CTA */}
-      <footer className="pt-12 border-t border-zinc-900 space-y-12">
-        <div className="p-8 rounded-2xl border border-zinc-800/80 bg-zinc-950/80 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-          <div className="space-y-2 max-w-lg">
-            <h2 className="text-xl font-bold text-white tracking-tight">
-              Ready to start a new project?
-            </h2>
-            <p className="text-xs text-zinc-400 leading-relaxed">
-              Available for full-time engineering roles, high-impact consulting, and open-source collaborations.
-            </p>
-          </div>
-
-          <div className="flex flex-wrap items-center gap-3">
-            <CopyButton text="alexander@engineer.dev" label="alexander@engineer.dev" />
-            <Link
-              href="/contact"
-              className="px-4 py-2 rounded-lg bg-zinc-100 hover:bg-white text-zinc-950 text-xs font-mono font-medium transition-colors"
-            >
-              Contact Me
-            </Link>
-          </div>
-        </div>
-
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-zinc-500">
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-            <span>Built with Next.js 16, React 19 & Tailwind CSS v4</span>
-          </div>
-
-          <div className="flex items-center gap-4">
-            <a
-              href="https://github.com"
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-zinc-300 transition-colors flex items-center gap-1"
-            >
-              <FolderGit2 className="w-3.5 h-3.5" />
-              <span>GitHub</span>
-            </a>
-            <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-zinc-300 transition-colors flex items-center gap-1"
-            >
-              <Globe className="w-3.5 h-3.5" />
-              <span>Twitter</span>
-            </a>
-          </div>
-        </div>
-      </footer>
+      </div>
     </main>
   );
 }
