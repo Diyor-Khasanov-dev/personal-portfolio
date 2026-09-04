@@ -3,12 +3,7 @@ import CommandMenu from "./CommandMenu";
 
 export default function Navbar() {
   const navItems = [
-    { label: "Projects", href: "/projects" },
-    { label: "Experience", href: "/experience" },
-    { label: "Tech Stack", href: "/tech-stack" },
-    { label: "Achievements", href: "/achievments" },
-    { label: "Education", href: "/education" },
-    { label: "Contact", href: "/contact" },
+    { label: "Overview", href: "/" },
   ];
 
   return (
