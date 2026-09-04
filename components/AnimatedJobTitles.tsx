@@ -3,35 +3,36 @@
 import { useEffect, useState } from "react";
 
 const titles = [
-  "Fullstack Developer",
-  "Mobile Engineer",
+  "Software Engineer",
+  "Co-Founder @ A.L.I.A",
   "Senior Frontend Engineer",
-  "Software Architect",
+  "Fullstack & Mobile Specialist",
+  "UI Architect",
 ];
 
 export default function AnimatedJobTitles() {
   const [index, setIndex] = useState(0);
-  const [fade, setFade] = useState(true);
+  const [fadeState, setFadeState] = useState<"in" | "out">("in");
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setFade(false);
+      setFadeState("out");
       setTimeout(() => {
         setIndex((prevIndex) => (prevIndex + 1) % titles.length);
-        setFade(true);
-      }, 300);
-    }, 3000);
+        setFadeState("in");
+      }, 350);
+    }, 2800);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <span className="inline-block relative min-w-[280px] sm:min-w-[360px] text-zinc-100">
+    <span className="inline-block relative min-w-[260px] sm:min-w-[340px] text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-sky-300 to-indigo-400 font-semibold">
       <span
-        className={`inline-block transition-all duration-300 transform ${
-          fade
-            ? "opacity-100 translate-y-0 filter blur-0"
-            : "opacity-0 -translate-y-2 filter blur-sm"
+        className={`inline-block transition-all duration-350 transform ${
+          fadeState === "in"
+            ? "opacity-100 translate-y-0 filter blur-0 scale-100"
+            : "opacity-0 -translate-y-3 filter blur-sm scale-95"
         }`}
       >
         {titles[index]}
