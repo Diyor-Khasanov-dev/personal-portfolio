@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import ScrollProgress from "@/components/ScrollProgress";
 import AOSInit from "@/components/AOSInit";
 
@@ -25,6 +26,7 @@ export default function RootLayout({
         <div className="relative z-10 flex flex-col min-h-screen">
           <Navbar />
           <div className="flex-1">{children}</div>
+          <Footer />
         </div>
       </body>
     </html>
