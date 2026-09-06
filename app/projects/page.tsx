@@ -12,12 +12,18 @@ import {
   Smartphone,
   Search,
   Link2,
+  GitPullRequest,
+  Star,
+  GitFork,
+  Code2,
+  CheckCircle2,
+  PackageCheck,
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Projects | Diyor Khasanov - Software Engineer",
+  title: "Projects & Open Source | Diyor Khasanov - Software Engineer",
   description:
-    "Explore Linkly - a modern link-in-bio platform built with Vue.js, TypeScript, NestJS, MongoDB, and TailwindCSS by Diyor Khasanov.",
+    "Explore Linkly and open source contributions built with Vue.js, React, TypeScript, NestJS, and TailwindCSS by Diyor Khasanov.",
 };
 
 const GithubIcon = ({ className }: { className?: string }) => (
@@ -50,6 +56,18 @@ interface Project {
   githubLink: string;
 }
 
+interface OpenSourceContribution {
+  name: string;
+  role: string;
+  category: string;
+  description: string;
+  highlights: string[];
+  techStack: string[];
+  githubLink: string;
+  stars?: number;
+  forks?: number;
+}
+
 const projects: Project[] = [
   {
     name: "Linkly",
@@ -72,20 +90,69 @@ const projects: Project[] = [
   },
 ];
 
+const openSourceContributions: OpenSourceContribution[] = [
+  {
+    name: "Linkly Frontend & Ecosystem",
+    role: "Creator & Lead Maintainer",
+    category: "Web Platform & Developer Utilities",
+    description:
+      "Open source link-in-bio web application and frontend kit. Built with Vue 3, TypeScript, and TailwindCSS providing modular UI components, analytics integration, and theme customization.",
+    highlights: [
+      "Modular, reusable Vue 3 component architecture for customizable profile layouts",
+      "Full TypeScript integration with strict type checking and API schemas",
+      "Responsive UI optimized for sub-second load times and accessible interaction design",
+    ],
+    techStack: ["Vue.js", "TypeScript", "TailwindCSS", "Vite", "Pinia"],
+    githubLink: "https://github.com/Diyor-Khasanov-dev/linkly-frontend",
+    stars: 12,
+    forks: 4,
+  },
+  {
+    name: "Open Source Developer Portfolio Template",
+    role: "Creator & Author",
+    category: "Frontend UI & Component Systems",
+    description:
+      "A high-performance, dark-themed personal portfolio template for modern developers featuring Next.js 16 App Router, Tailwind CSS v4, Lucide icons, and AOS scroll animations.",
+    highlights: [
+      "Next.js 16 App Router with static generation and server-side optimization",
+      "Tailwind CSS v4 utility styling with custom dark theme design tokens",
+      "Pre-configured accessibility standard, SEO meta tags, and interactive components",
+    ],
+    techStack: ["Next.js", "React 19", "TypeScript", "TailwindCSS", "AOS"],
+    githubLink: "https://github.com/Diyor-Khasanov-dev",
+    stars: 18,
+    forks: 6,
+  },
+  {
+    name: "Community Tooling & Tech Ecosystem Utilities",
+    role: "Core Contributor",
+    category: "Community & Open Utilities",
+    description:
+      "Active open source contributions across Uzbek developer community initiatives (GDG, UzGeeks, MDC) including helper modules, contest platform interfaces, and payment API client snippets.",
+    highlights: [
+      "Contributed core interface modules for competitive coding and grading tools",
+      "Shared open source starter kits and utility scripts for local developer meetups",
+      "Maintained documentation and code review standards for beginner contributors",
+    ],
+    techStack: ["JavaScript", "TypeScript", "React Native", "Node.js", "REST APIs"],
+    githubLink: "https://github.com/Diyor-Khasanov-dev",
+  },
+];
+
 export default function ProjectsPage() {
   return (
-    <main className="max-w-4xl w-full mx-auto px-4 sm:px-6 pt-6 sm:pt-10 pb-20 space-y-12 overflow-hidden">
+    <main className="max-w-4xl w-full mx-auto px-4 sm:px-6 pt-6 sm:pt-10 pb-20 space-y-16 overflow-hidden">
       {/* Page Header */}
       <div data-aos="fade-down" data-aos-delay="100" className="space-y-4">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/20 bg-emerald-500/10 text-emerald-300 text-xs font-mono">
           <FolderGit2 className="w-3.5 h-3.5 text-emerald-400" />
-          <span>Featured Projects & Applications</span>
+          <span>Featured Projects & Open Source</span>
         </div>
         <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-white">
-          Projects
+          Projects & Contributions
         </h1>
         <p className="text-sm sm:text-base text-zinc-400 font-normal leading-relaxed max-w-2xl">
-          A showcase of full-stack web applications, platforms, and open-source software engineered for exceptional user experience and high performance.
+          A showcase of full-stack web applications, open-source repositories, and developer tooling engineered for exceptional performance, developer experience, and community impact.
         </p>
       </div>
 
@@ -222,6 +289,124 @@ export default function ProjectsPage() {
                     <span>GitHub Repository</span>
                   </a>
                 </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* Open Source Contributions Section */}
+      <section className="space-y-8">
+        <div
+          data-aos="fade-right"
+          data-aos-delay="150"
+          className="flex items-center justify-between border-b border-zinc-800/80 pb-3"
+        >
+          <div className="flex items-center gap-2.5">
+            <GitPullRequest className="w-5 h-5 text-emerald-400" />
+            <h2 className="text-xl font-bold tracking-tight text-zinc-100">
+              Open Source Contributions
+            </h2>
+          </div>
+          <span className="text-xs font-mono text-zinc-500">
+            {openSourceContributions.length} Contributions
+          </span>
+        </div>
+
+        <div className="grid grid-cols-1 gap-6">
+          {openSourceContributions.map((item, idx) => (
+            <article
+              key={item.name}
+              data-aos="fade-up"
+              data-aos-delay={200 + idx * 100}
+              className="rounded-xl border border-zinc-800/80 bg-zinc-950/60 hover:border-zinc-700/90 transition-all duration-300 p-6 space-y-5 relative overflow-hidden group shadow-sm hover:shadow-[0_8px_25px_rgba(0,0,0,0.5)]"
+            >
+              {/* Accent top bar */}
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-emerald-500/80 via-teal-400/50 to-transparent" />
+
+              {/* Card Header */}
+              <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3">
+                <div className="space-y-1.5">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <span className="px-2.5 py-0.5 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-xs font-mono font-medium flex items-center gap-1.5">
+                      <Code2 className="w-3.5 h-3.5 text-emerald-400" />
+                      {item.role}
+                    </span>
+                    <span className="text-xs font-mono text-zinc-500">•</span>
+                    <span className="text-xs font-mono text-zinc-400">
+                      {item.category}
+                    </span>
+                  </div>
+
+                  <h3 className="text-xl font-bold text-white group-hover:text-emerald-300 transition-colors">
+                    {item.name}
+                  </h3>
+                </div>
+
+                {/* Metrics / Stars / Forks if available */}
+                <div className="flex items-center gap-3 shrink-0">
+                  {item.stars !== undefined && (
+                    <div className="flex items-center gap-1 text-xs font-mono text-amber-400/90 bg-zinc-900/90 px-2.5 py-1 rounded-md border border-zinc-800">
+                      <Star className="w-3.5 h-3.5 text-amber-400 fill-amber-400/30" />
+                      <span>{item.stars}</span>
+                    </div>
+                  )}
+                  {item.forks !== undefined && (
+                    <div className="flex items-center gap-1 text-xs font-mono text-zinc-400 bg-zinc-900/90 px-2.5 py-1 rounded-md border border-zinc-800">
+                      <GitFork className="w-3.5 h-3.5 text-zinc-400" />
+                      <span>{item.forks}</span>
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              {/* Description */}
+              <p className="text-sm text-zinc-300 leading-relaxed font-sans">
+                {item.description}
+              </p>
+
+              {/* Highlights */}
+              <div className="space-y-2 pt-1 border-t border-zinc-900">
+                <p className="text-[11px] font-mono uppercase tracking-wider text-zinc-500 font-semibold flex items-center gap-1.5">
+                  <PackageCheck className="w-3.5 h-3.5 text-emerald-400" />
+                  Key Highlights & Contributions
+                </p>
+                <div className="space-y-1.5">
+                  {item.highlights.map((hl, hIdx) => (
+                    <div
+                      key={hIdx}
+                      className="flex items-start gap-2 text-xs sm:text-sm text-zinc-300 leading-normal"
+                    >
+                      <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                      <span>{hl}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Footer: Tech Stack & Link */}
+              <div className="pt-3 border-t border-zinc-900 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div className="flex flex-wrap gap-1.5">
+                  {item.techStack.map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-xs font-mono text-zinc-400 font-medium"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                <a
+                  href={item.githubLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-zinc-800 bg-zinc-900/90 hover:bg-zinc-800 text-zinc-200 font-medium font-mono text-xs transition-all duration-200 hover:border-zinc-700 hover:-translate-y-0.5 shrink-0 self-start sm:self-auto"
+                >
+                  <GithubIcon className="w-3.5 h-3.5 text-zinc-300" />
+                  <span>View Repository</span>
+                  <ExternalLink className="w-3 h-3 text-zinc-500" />
+                </a>
               </div>
             </article>
           ))}
