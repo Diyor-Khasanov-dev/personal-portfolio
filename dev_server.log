@@ -1,0 +1,22 @@
+
+> personal-portfolio@0.1.0 dev
+> next dev
+
+▲ Next.js 16.3.4 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.0.2:3000
+✓ Ready in 550ms
+✓ Running next.config.ts took 44ms
+
+○ Compiling / ...
+ HEAD / 200 in 3.7s (next.js: 3.3s, application-code: 351ms)
+ GET / 200 in 115ms (next.js: 10ms, application-code: 105ms)
+ GET /achievments 200 in 964ms (next.js: 722ms, application-code: 242ms)
+ GET /projects 200 in 513ms (next.js: 356ms, application-code: 157ms)
+ GET /experience 200 in 458ms (next.js: 343ms, application-code: 115ms)
+ GET /tech-stack 200 in 452ms (next.js: 320ms, application-code: 132ms)
+ GET /certificates 200 in 458ms (next.js: 329ms, application-code: 129ms)
+ GET /education 200 in 469ms (next.js: 352ms, application-code: 117ms)
+ GET /languages 200 in 438ms (next.js: 359ms, application-code: 79ms)
+ GET /contact 200 in 495ms (next.js: 406ms, application-code: 89ms)
+ GET / 200 in 80ms (next.js: 4ms, application-code: 77ms)
