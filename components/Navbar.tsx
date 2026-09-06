@@ -22,7 +22,7 @@ export default function Navbar() {
               Δ
             </div>
             <span className="font-mono text-xs tracking-wider text-zinc-200">
-              dev<span className="text-zinc-500">.portfolio</span>
+              D<span className="text-zinc-500">.Khasanov</span>
             </span>
           </Link>
 
