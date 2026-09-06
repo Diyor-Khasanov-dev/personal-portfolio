@@ -43,7 +43,7 @@ export default function AchievementsPage() {
       project: "Tez",
       title: "Bank Payment Platform",
       details: "Live in production",
-      badgeText: "🥇 1st Place Winner",
+      badgeText: "1st Place Winner",
       description:
         "Architected and deployed a resilient bank payment platform handling secure transactional routing with high reliability. Built end-to-end payment workflows under strict time constraints.",
       techStack: ["React Native", "Expo", "TypeScript", "Next.js", "Payment Gateway API", "Tailwind CSS"],
@@ -54,7 +54,7 @@ export default function AchievementsPage() {
       project: "Lumora",
       title: "RoboContest Platform",
       details: "Live in production",
-      badgeText: "🥇 1st Place Winner",
+      badgeText: "1st Place Winner",
       description:
         "Engineered a competitive coding and automated grading platform for algorithmic robotics contests. Designed real-time leaderboard sync and intuitive UI for contestants.",
       techStack: ["Next.js", "TypeScript", "WebSockets", "Tailwind CSS", "Node.js"],
@@ -65,7 +65,7 @@ export default function AchievementsPage() {
       project: "Alif Tech",
       title: "Payment Platform",
       details: "24-hour sprint",
-      badgeText: "🥇 1st Place Winner",
+      badgeText: "1st Place Winner",
       description:
         "Designed and shipped a prototype payment portal during an intensive 24-hour sprint. Delivered pixel-perfect interface components, transaction verification, and instant checkout flow.",
       techStack: ["React", "TypeScript", "Tailwind CSS", "REST APIs"],
@@ -76,7 +76,7 @@ export default function AchievementsPage() {
       project: "Billz",
       title: "CRM / ERP Interface",
       details: "UX cited by judges",
-      badgeText: "🥇 1st Place Winner",
+      badgeText: "1st Place Winner",
       description:
         "Built an enterprise-grade CRM/ERP frontend interface tailored for retail and inventory workflows. Commended by judges for exceptional UX polish, accessibility, and micro-interactions.",
       techStack: ["Next.js", "TypeScript", "Tailwind CSS", "State Management"],
@@ -87,7 +87,7 @@ export default function AchievementsPage() {
       project: "Yandex",
       title: "Music MVP",
       details: "Dev Camp",
-      badgeText: "🥉 3rd Place Finish",
+      badgeText: "3rd Place Finish",
       description:
         "Developed a lightweight, web-based music streaming client and recommendation engine prototype during the Yandex Dev Camp hackathon track.",
       techStack: ["React", "TypeScript", "Audio API", "Tailwind CSS"],
@@ -264,7 +264,12 @@ export default function AchievementsPage() {
                             : "bg-zinc-800 text-zinc-300 border border-zinc-700"
                         }`}
                       >
-                        {item.badgeText}
+                        {isFirstPlace ? (
+                          <Trophy className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                        ) : (
+                          <Award className="w-3.5 h-3.5 text-zinc-400 shrink-0" />
+                        )}
+                        <span>{item.badgeText}</span>
                       </span>
                       <span className="text-xs font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded-md">
                         {item.details}
