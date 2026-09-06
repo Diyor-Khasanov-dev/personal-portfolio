@@ -159,9 +159,9 @@ export default function AchievementsPage() {
   ];
 
   return (
-    <main className="max-w-4xl w-full mx-auto px-4 sm:px-6 pt-6 sm:pt-10 pb-20 space-y-12">
+    <main className="max-w-4xl w-full mx-auto px-4 sm:px-6 pt-6 sm:pt-10 pb-20 space-y-12 overflow-hidden">
       {/* Header Banner */}
-      <div className="space-y-4">
+      <div data-aos="fade-down" data-aos-delay="100" className="space-y-4">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-amber-500/20 bg-amber-500/10 text-amber-300 text-xs font-mono">
           <Trophy className="w-3.5 h-3.5 text-amber-400" />
           <span>Track Record & Community Impact</span>
@@ -176,7 +176,7 @@ export default function AchievementsPage() {
 
       {/* Overview Stats Bar */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-        <div className="p-4 rounded-xl border border-zinc-800 bg-zinc-950/60 flex flex-col justify-between space-y-1">
+        <div data-aos="zoom-in" data-aos-delay="150" className="p-4 rounded-xl border border-zinc-800 bg-zinc-950/60 flex flex-col justify-between space-y-1">
           <span className="text-xs font-mono text-zinc-500 uppercase tracking-wider">
             1st Place Wins
           </span>
@@ -186,7 +186,7 @@ export default function AchievementsPage() {
           </div>
         </div>
 
-        <div className="p-4 rounded-xl border border-zinc-800 bg-zinc-950/60 flex flex-col justify-between space-y-1">
+        <div data-aos="zoom-in" data-aos-delay="220" className="p-4 rounded-xl border border-zinc-800 bg-zinc-950/60 flex flex-col justify-between space-y-1">
           <span className="text-xs font-mono text-zinc-500 uppercase tracking-wider">
             Podium Finishes
           </span>
@@ -196,7 +196,7 @@ export default function AchievementsPage() {
           </div>
         </div>
 
-        <div className="p-4 rounded-xl border border-zinc-800 bg-zinc-950/60 flex flex-col justify-between space-y-1">
+        <div data-aos="zoom-in" data-aos-delay="290" className="p-4 rounded-xl border border-zinc-800 bg-zinc-950/60 flex flex-col justify-between space-y-1">
           <span className="text-xs font-mono text-zinc-500 uppercase tracking-wider">
             Production Apps
           </span>
@@ -206,7 +206,7 @@ export default function AchievementsPage() {
           </div>
         </div>
 
-        <div className="p-4 rounded-xl border border-zinc-800 bg-zinc-950/60 flex flex-col justify-between space-y-1">
+        <div data-aos="zoom-in" data-aos-delay="360" className="p-4 rounded-xl border border-zinc-800 bg-zinc-950/60 flex flex-col justify-between space-y-1">
           <span className="text-xs font-mono text-zinc-500 uppercase tracking-wider">
             Community Roles
           </span>
@@ -219,7 +219,7 @@ export default function AchievementsPage() {
 
       {/* Section 1: Hackathons & Competition Wins */}
       <section className="space-y-6">
-        <div className="flex items-center justify-between border-b border-zinc-800/80 pb-3">
+        <div data-aos="fade-right" data-aos-delay="200" className="flex items-center justify-between border-b border-zinc-800/80 pb-3">
           <div className="flex items-center gap-2.5">
             <Award className="w-5 h-5 text-amber-400" />
             <h2 className="text-xl font-bold tracking-tight text-zinc-100">
@@ -237,7 +237,9 @@ export default function AchievementsPage() {
             return (
               <div
                 key={idx}
-                className={`p-5 sm:p-6 rounded-xl border transition-all duration-200 space-y-4 relative overflow-hidden group ${
+                data-aos="fade-up"
+                data-aos-delay={250 + idx * 100}
+                className={`p-5 sm:p-6 rounded-xl border transition-all duration-300 hover:-translate-y-0.5 space-y-4 relative overflow-hidden group ${
                   isFirstPlace
                     ? "border-amber-500/30 bg-zinc-950/80 hover:border-amber-500/50 hover:bg-zinc-900/40"
                     : "border-zinc-800/80 bg-zinc-950/40 hover:border-zinc-700 hover:bg-zinc-900/30"
@@ -308,7 +310,7 @@ export default function AchievementsPage() {
 
       {/* Section 2: Community Involvement & Activities */}
       <section className="space-y-6 pt-4">
-        <div className="flex items-center justify-between border-b border-zinc-800/80 pb-3">
+        <div data-aos="fade-right" data-aos-delay="200" className="flex items-center justify-between border-b border-zinc-800/80 pb-3">
           <div className="flex items-center gap-2.5">
             <Users className="w-5 h-5 text-sky-400" />
             <h2 className="text-xl font-bold tracking-tight text-zinc-100">
@@ -324,7 +326,9 @@ export default function AchievementsPage() {
           {activities.map((act, idx) => (
             <div
               key={idx}
-              className="p-5 rounded-xl border border-zinc-800/80 bg-zinc-950/40 hover:bg-zinc-900/30 hover:border-zinc-700/80 transition-all duration-200 space-y-3 group"
+              data-aos="fade-up"
+              data-aos-delay={250 + idx * 80}
+              className="p-5 rounded-xl border border-zinc-800/80 bg-zinc-950/40 hover:bg-zinc-900/30 hover:border-zinc-700/80 transition-all duration-300 space-y-3 group"
             >
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                 <div>
@@ -364,7 +368,11 @@ export default function AchievementsPage() {
       </section>
 
       {/* Bottom CTA / Link back to projects */}
-      <div className="p-6 rounded-xl border border-zinc-800/80 bg-zinc-900/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div
+        data-aos="zoom-in"
+        data-aos-delay="300"
+        className="p-6 rounded-xl border border-zinc-800/80 bg-zinc-900/30 flex flex-col sm:flex-row items-center justify-between gap-4"
+      >
         <div className="space-y-1 text-center sm:text-left">
           <h3 className="text-sm font-semibold text-white">
             Interested in collaboration or hiring?
