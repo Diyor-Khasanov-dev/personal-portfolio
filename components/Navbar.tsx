@@ -19,6 +19,7 @@ export default function Navbar() {
     { label: "Education", href: "/education" },
     { label: "Achievements", href: "/achievments" },
     { label: "Languages", href: "/languages" },
+    { label: "Contact", href: "/contact" },
   ];
 
   return (
