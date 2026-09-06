@@ -49,13 +49,14 @@ export default function Navbar() {
   }, [mobileMenuOpen]);
 
   const navItems = [
-    { label: "Overview", href: "/", icon: Home },
-    { label: "Tech Stack", href: "/tech-stack", icon: Code2 },
-    { label: "Projects", href: "/projects", icon: FolderGit2 },
-    { label: "Experience", href: "/experience", icon: Briefcase },
-    { label: "Education", href: "/education", icon: GraduationCap },
-    { label: "Achievements", href: "/achievments", icon: Trophy },
-    { label: "Languages", href: "/languages", icon: Languages },
+    { label: "Overview", href: "/" },
+    { label: "Tech Stack", href: "/tech-stack" },
+    { label: "Projects", href: "/projects" },
+    { label: "Experience", href: "/experience" },
+    { label: "Certificates", href: "/certificates" },
+    { label: "Education", href: "/education" },
+    { label: "Achievements", href: "/achievments" },
+    { label: "Languages", href: "/languages" },
   ];
 
   return (
