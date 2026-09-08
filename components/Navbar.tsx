@@ -19,6 +19,7 @@ export default function Navbar() {
     { label: "Education", href: "/education" },
     { label: "Achievements", href: "/achievments" },
     { label: "Languages", href: "/languages" },
+    { label: "Contact", href: "/contact" },
   ];
 
   return (
@@ -91,7 +92,7 @@ export default function Navbar() {
             onClick={() => setMobileMenuOpen((prev) => !prev)}
             type="button"
             aria-label="Toggle Navigation Menu"
-            className="lg:hidden p-2 rounded-xl text-zinc-400 hover:text-white hover:bg-zinc-900 border border-zinc-800 transition-colors"
+            className="lg:hidden p-2 rounded-xl text-zinc-400 hover:text-white hover:bg-zinc-900 border border-zinc-800 transition-colors cursor-pointer"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -116,7 +117,7 @@ export default function Navbar() {
             </Link>
           </div>
 
-          <nav className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+          <nav className="grid grid-cols-2 sm:grid-cols-3 gap-2">
             {navItems.map((item) => {
               const isActive = pathname === item.href;
               return (
