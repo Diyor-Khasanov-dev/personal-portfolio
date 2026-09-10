@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
-import { Search, Command, ArrowRight, X, Terminal, FolderGit2, Briefcase, Mail, Award, Cpu, GraduationCap, FileCheck, Globe, Check } from "lucide-react";
+import { Search, Command, ArrowRight, X, Terminal, FolderGit2, Briefcase, Mail, Award, Cpu, GraduationCap, Globe, Check } from "lucide-react";
 
 interface CommandItem {
   id: string;
@@ -42,7 +42,6 @@ export default function CommandMenu() {
     { id: "projects", title: "View Projects & Linkly", category: "Navigation", icon: <FolderGit2 className="w-4 h-4 text-emerald-400" />, href: "/projects" },
     { id: "tech-stack", title: "Tech Stack & Engineering Skills", category: "Navigation", icon: <Cpu className="w-4 h-4 text-emerald-400" />, href: "/tech-stack" },
     { id: "experience", title: "Work Experience & History", category: "Navigation", icon: <Briefcase className="w-4 h-4 text-emerald-400" />, href: "/experience" },
-    { id: "certificates", title: "Industry Certificates & Badges", category: "Navigation", icon: <FileCheck className="w-4 h-4 text-emerald-400" />, href: "/certificates" },
     { id: "education", title: "Education & Bootcamps", category: "Navigation", icon: <GraduationCap className="w-4 h-4 text-emerald-400" />, href: "/education" },
     { id: "achievements", title: "Achievements & Hackathon Wins", category: "Navigation", icon: <Award className="w-4 h-4 text-emerald-400" />, href: "/achievments" },
     { id: "languages", title: "Languages & Communication", category: "Navigation", icon: <Globe className="w-4 h-4 text-emerald-400" />, href: "/languages" },
