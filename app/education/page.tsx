@@ -4,7 +4,6 @@ import {
   BookOpen,
   Calendar,
   CheckCircle2,
-  Sparkles,
   Award,
   Code2,
 } from "lucide-react";
@@ -129,7 +128,7 @@ export default function EducationPage() {
         <div className="space-y-1 border-l border-zinc-800/80 pl-3 sm:pl-4">
           <span className="text-zinc-500 text-[11px] uppercase tracking-wider block">Bootcamp GPA</span>
           <span className="text-lg font-bold text-whitesmoke flex items-center gap-1.5">
-            <Sparkles className="w-4 h-4 text-whitesmoke" />
+            <Award className="w-4 h-4 text-whitesmoke" />
             3.97 / 4.0
           </span>
         </div>
@@ -157,7 +156,7 @@ export default function EducationPage() {
           >
             {edu.featured && (
               <div className="absolute top-0 right-0 px-3 py-1 bg-indigo-500/10 border-b border-l border-indigo-500/30 text-indigo-300 font-mono text-[10px] uppercase tracking-wider rounded-bl-lg flex items-center gap-1">
-                <Sparkles className="w-3 h-3 text-indigo-400" />
+                <Award className="w-3 h-3 text-indigo-400" />
                 <span>Featured Program</span>
               </div>
             )}

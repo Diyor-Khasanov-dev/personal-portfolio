@@ -13,7 +13,6 @@ import {
   Cpu,
   Search,
   CheckCircle2,
-  Sparkles,
   Zap,
   ArrowUpRight,
   ShieldCheck,
@@ -450,8 +449,6 @@ export default function TechStackClient() {
         <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-white/20 bg-white/10 text-zinc-200 text-xs font-mono">
           <Cpu className="w-3.5 h-3.5 text-whitesmoke" />
           <span>Full Stack & Mobile Senior Engineering Stack</span>
-          <span className="text-zinc-500/50">•</span>
-          <Sparkles className="w-3 h-3 text-amber-400" />
         </div>
 
         <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
@@ -632,9 +629,6 @@ export default function TechStackClient() {
                         <div className="flex items-center justify-between gap-2">
                           <h3 className="text-sm font-bold text-zinc-100 group-hover/card:text-white transition-colors flex items-center gap-2">
                             <span>{skill.name}</span>
-                            {skill.featured && (
-                              <Sparkles className="w-3 h-3 text-amber-400 inline shrink-0" />
-                            )}
                           </h3>
 
                           <div className="flex items-center gap-2">

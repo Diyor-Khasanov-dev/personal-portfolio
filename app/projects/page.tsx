@@ -3,7 +3,7 @@ import {
   FolderGit2,
   ExternalLink,
   Layers,
-  Sparkles,
+  Palette,
   Globe,
   Share2,
   BarChart3,
@@ -78,14 +78,14 @@ const projects: Project[] = [
       { label: "Custom link pages", icon: Link2 },
       { label: "Link management", icon: Sliders },
       { label: "Social media integration", icon: Share2 },
-      { label: "Profile customization", icon: Sparkles },
+      { label: "Profile customization", icon: Palette },
       { label: "Analytics & click tracking", icon: BarChart3 },
       { label: "Responsive design", icon: Smartphone },
       { label: "QR code sharing", icon: QrCode },
       { label: "SEO & share previews", icon: Search },
     ],
     techStack: ["Vue.js", "TypeScript", "NestJS", "MongoDB", "TailwindCSS"],
-    liveDemoLink: "http://linkly-frontend-oep9.vercel.app/",
+    liveDemoLink: "https://linkly-frontend-oep9.vercel.app/",
     githubLink: "https://github.com/Diyor-Khasanov-dev/linkly-frontend",
   },
 ];
@@ -187,7 +187,6 @@ export default function ProjectsPage() {
                   <div className="flex flex-wrap items-center justify-between gap-3">
                     <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white group-hover:text-whitesmoke transition-colors flex items-center gap-2">
                       <span>{project.name}</span>
-                      <Sparkles className="w-5 h-5 text-whitesmoke animate-pulse" />
                     </h3>
                     <div className="flex items-center gap-2">
                       <span className="px-2.5 py-1 rounded-full border border-white/30 bg-white/10 text-zinc-200 text-xs font-mono">
@@ -268,7 +267,7 @@ export default function ProjectsPage() {
                 {/* Key Features Section */}
                 <div className="space-y-3">
                   <h4 className="text-xs font-mono uppercase tracking-wider text-zinc-400 font-semibold flex items-center gap-2">
-                    <Sparkles className="w-3.5 h-3.5 text-whitesmoke" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-whitesmoke" />
                     Key Platform Capabilities
                   </h4>
                   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2.5">
@@ -312,9 +311,9 @@ export default function ProjectsPage() {
                     href={project.liveDemoLink}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-whitesmoke hover:bg-white text-zinc-950 font-medium font-mono text-xs sm:text-sm transition-all duration-200 shadow-md hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:-translate-y-0.5 cursor-pointer"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-white hover:bg-zinc-200 text-zinc-950 font-semibold font-mono text-xs sm:text-sm transition-all duration-200 shadow-md hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:-translate-y-0.5 cursor-pointer"
                   >
-                    <ExternalLink className="w-4 h-4" />
+                    <ExternalLink className="w-4 h-4 text-zinc-950" />
                     <span>Live Demo App</span>
                   </a>
 

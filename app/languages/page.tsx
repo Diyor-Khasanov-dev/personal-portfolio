@@ -5,7 +5,6 @@ import {
   Code2,
   CheckCircle2,
   MessageSquare,
-  Sparkles,
   Zap,
 } from "lucide-react";
 
@@ -306,7 +305,7 @@ export default function LanguagesPage() {
         className="p-5 rounded-2xl border border-zinc-800/80 bg-zinc-950/40 text-center space-y-2"
       >
         <div className="inline-flex items-center gap-2 text-xs font-mono text-whitesmoke">
-          <Sparkles className="w-4 h-4 text-whitesmoke" />
+          <Globe className="w-4 h-4 text-teal-400" />
           <span>Cross-Cultural & Technical Collaboration</span>
         </div>
         <p className="text-xs sm:text-sm text-zinc-400 max-w-2xl mx-auto leading-relaxed">

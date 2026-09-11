@@ -6,7 +6,6 @@ import {
   FileText,
   BookOpen,
   ArrowUpRight,
-  Sparkles,
   Calendar,
   Send,
   Building2,
@@ -101,8 +100,6 @@ export default function HomePage() {
             <span className="relative inline-flex rounded-full h-2 w-2 bg-zinc-100"></span>
           </span>
           <span>Available for Fullstack & Mobile Engineering Roles</span>
-          <span className="text-zinc-600">•</span>
-          <Sparkles className="w-3.5 h-3.5 text-amber-400 group-hover:rotate-12 transition-transform duration-300" />
         </div>
       </div>
 
