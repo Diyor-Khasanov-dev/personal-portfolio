@@ -285,12 +285,12 @@ export default function CommandMenu() {
         onClick={handleOpen}
         type="button"
         aria-label="Open command palette"
-        className="flex items-center gap-2 px-2.5 py-1.5 text-xs font-mono rounded-lg border border-zinc-800 bg-zinc-900/70 hover:bg-zinc-800/90 text-zinc-400 hover:text-zinc-100 transition-all duration-200 shadow-sm hover:border-zinc-700/80 hover:shadow-[0_0_12px_rgba(255,255,255,0.05)] cursor-pointer group"
+        className="flex items-center gap-1.5 px-2 py-1 text-xs font-mono rounded-lg border border-zinc-800 bg-zinc-900/70 hover:bg-zinc-800/90 text-zinc-400 hover:text-zinc-100 transition-all duration-200 shadow-sm hover:border-zinc-700/80 hover:shadow-[0_0_12px_rgba(255,255,255,0.05)] cursor-pointer group"
       >
         <Command className="w-3.5 h-3.5 text-zinc-200 group-hover:scale-110 transition-transform duration-200" />
-        <span className="hidden sm:inline">Search commands...</span>
+        <span className="hidden sm:inline">Search...</span>
         <span className="sm:hidden">Search</span>
-        <kbd className="ml-1 text-[10px] bg-zinc-950 px-1.5 py-0.5 rounded text-zinc-400 border border-zinc-800 font-mono shadow-inner group-hover:border-zinc-700 transition-colors">
+        <kbd className="ml-0.5 text-[10px] bg-zinc-950 px-1.5 py-0.5 rounded text-zinc-400 border border-zinc-800 font-mono shadow-inner group-hover:border-zinc-700 transition-colors">
           ⌘K
         </kbd>
       </button>
