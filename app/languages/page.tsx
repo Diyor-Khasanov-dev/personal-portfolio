@@ -57,7 +57,7 @@ export default function LanguagesPage() {
         "Technical & Business Writing",
         "Team Leadership & Mentorship",
       ],
-      span: "col-span-1",
+      span: "col-span-12 md:col-span-4",
       accent: "from-whitesmoke via-zinc-400 to-transparent",
     },
     {
@@ -76,7 +76,7 @@ export default function LanguagesPage() {
         "System Specs & Documentation",
         "Client Presentations & Demos",
       ],
-      span: "col-span-1 md:col-span-2",
+      span: "col-span-12 md:col-span-8",
       accent: "from-sky-500/80 via-blue-500/40 to-transparent",
     },
     {
@@ -95,7 +95,7 @@ export default function LanguagesPage() {
         "Technical Documentation Reading",
         "Daily Standups & Syncs",
       ],
-      span: "col-span-1 md:col-span-3",
+      span: "col-span-12",
       accent: "from-amber-500/80 via-orange-400/40 to-transparent",
     },
   ];
@@ -108,7 +108,7 @@ export default function LanguagesPage() {
       description:
         "Strict type systems, modern ECMAScript features, Next.js Server Components, React 19 hooks, AST transformations, and asynchronous control flow.",
       tags: ["TypeScript 5.x", "ESNext", "React 19", "Next.js 16"],
-      span: "col-span-1 md:col-span-2",
+    span: "col-span-12 md:col-span-8",
       accent: "from-blue-500/80 via-indigo-500/40 to-transparent",
     },
     {
@@ -118,7 +118,7 @@ export default function LanguagesPage() {
       description:
         "Tailwind CSS v4, CSS Grid/Flexbox, accessibility standards (a11y), responsive design patterns, CSS animations, and performance optimizations.",
       tags: ["Tailwind v4", "Flex/Grid", "WAI-ARIA", "Responsive UI"],
-      span: "col-span-1",
+    span: "col-span-12 md:col-span-4",
       accent: "from-teal-500/80 via-cyan-400/40 to-transparent",
     },
     {
@@ -128,7 +128,7 @@ export default function LanguagesPage() {
       description:
         "Relational database design with PostgreSQL, Prisma ORM schema modeling, index optimization, complex joins, and GraphQL query schemas.",
       tags: ["PostgreSQL", "Prisma ORM", "GraphQL", "MongoDB"],
-      span: "col-span-1 md:col-span-3",
+    span: "col-span-12",
       accent: "from-amber-500/80 via-yellow-400/40 to-transparent",
     },
   ];
@@ -167,7 +167,7 @@ export default function LanguagesPage() {
           </span>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
           {spokenLanguages.map((lang, idx) => (
             <BentoCard
               key={lang.name}
@@ -258,7 +258,7 @@ export default function LanguagesPage() {
           </span>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
           {programmingLanguages.map((lang, idx) => (
             <BentoCard
               key={lang.name}
@@ -313,7 +313,7 @@ export default function LanguagesPage() {
 
       {/* Senior Engineer Summary Note Bento Card */}
       <BentoCard
-        colSpan="col-span-1"
+        colSpan="col-span-12"
         accentGradient="from-teal-500/80 via-emerald-400/50 to-transparent"
         aosDelay={400}
       >

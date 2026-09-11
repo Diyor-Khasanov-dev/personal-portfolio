@@ -49,7 +49,7 @@ export default function ExperiencePage() {
       current: true,
       companyInitial: "ALIA",
       badgeBg: "bg-blue-600/20 text-blue-400 border-blue-500/30",
-      span: "col-span-1 md:col-span-2",
+      span: "col-span-12 md:col-span-8",
       accent: "from-blue-500/80 via-sky-400/50 to-transparent",
       highlights: [
         "Co-founded ALIA venture, driving core platform architecture, tech strategy, and engineering roadmap.",
@@ -69,7 +69,7 @@ export default function ExperiencePage() {
       current: true,
       companyInitial: "FE",
       badgeBg: "bg-sky-600/20 text-sky-400 border-sky-500/30",
-      span: "col-span-1",
+      span: "col-span-12 md:col-span-4",
       accent: "from-sky-500/80 via-teal-400/50 to-transparent",
       highlights: [
         "Teach frontend, backend, and full-stack web development to students, guiding them from foundational concepts to production-ready skills in a structured on-site program.",
@@ -87,7 +87,7 @@ export default function ExperiencePage() {
       location: "Remote",
       companyInitial: "FLI",
       badgeBg: "bg-purple-600/20 text-purple-400 border-purple-500/30",
-      span: "col-span-1",
+      span: "col-span-12 md:col-span-4",
       accent: "from-purple-500/80 via-indigo-400/50 to-transparent",
       highlights: [
         "Working within a venture studio and experiential learning ecosystem that co-builds startups across healthcare, AI, and robotics.",
@@ -105,7 +105,7 @@ export default function ExperiencePage() {
       location: "Remote",
       companyInitial: "G",
       badgeBg: "bg-emerald-600/20 text-emerald-400 border-emerald-500/30",
-      span: "col-span-1 md:col-span-2",
+      span: "col-span-12 md:col-span-8",
       accent: "from-emerald-500/80 via-teal-400/50 to-transparent",
       highlights: [
         "Built end-to-end web and mobile products at a software consultancy with 200+ delivered projects, working in agile teams.",
@@ -123,7 +123,7 @@ export default function ExperiencePage() {
       location: "Samarkand, Uzbekistan · Hybrid",
       companyInitial: "UZIT",
       badgeBg: "bg-teal-600/20 text-teal-400 border-teal-500/30",
-      span: "col-span-1 md:col-span-2",
+      span: "col-span-12 md:col-span-7",
       accent: "from-teal-500/80 via-cyan-400/50 to-transparent",
       highlights: [
         "Contributed to backend systems at a global Digital Marketing and IT company, building scalable server-side solutions.",
@@ -141,7 +141,7 @@ export default function ExperiencePage() {
       location: "Remote",
       companyInitial: "MABA",
       badgeBg: "bg-amber-600/20 text-amber-400 border-amber-500/30",
-      span: "col-span-1",
+      span: "col-span-12 md:col-span-5",
       accent: "from-amber-500/80 via-orange-400/50 to-transparent",
       highlights: [
         "Produced client-facing websites and dashboards for an AI-powered business optimisation agency.",
@@ -168,9 +168,9 @@ export default function ExperiencePage() {
       </div>
 
       {/* Overview Stats Quick Bento Ribbon */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+      <div className="grid grid-cols-12 gap-3">
         <BentoCard
-          colSpan="col-span-1"
+          colSpan="col-span-6 sm:col-span-3"
           accentGradient="from-whitesmoke/80 via-zinc-400/50 to-transparent"
           aosDelay={150}
         >
@@ -184,7 +184,7 @@ export default function ExperiencePage() {
         </BentoCard>
 
         <BentoCard
-          colSpan="col-span-1"
+          colSpan="col-span-6 sm:col-span-3"
           accentGradient="from-blue-500/80 via-sky-400/50 to-transparent"
           aosDelay={200}
         >
@@ -198,7 +198,7 @@ export default function ExperiencePage() {
         </BentoCard>
 
         <BentoCard
-          colSpan="col-span-1"
+          colSpan="col-span-6 sm:col-span-3"
           accentGradient="from-sky-500/80 via-indigo-500/50 to-transparent"
           aosDelay={250}
         >
@@ -212,7 +212,7 @@ export default function ExperiencePage() {
         </BentoCard>
 
         <BentoCard
-          colSpan="col-span-1"
+          colSpan="col-span-6 sm:col-span-3"
           accentGradient="from-purple-500/80 via-pink-500/50 to-transparent"
           aosDelay={300}
         >
@@ -226,7 +226,7 @@ export default function ExperiencePage() {
       </div>
 
       {/* Experience Bento Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
         {experiences.map((exp, idx) => (
           <BentoCard
             key={exp.id}
@@ -317,7 +317,7 @@ export default function ExperiencePage() {
 
       {/* Footer Callout Bento Card */}
       <BentoCard
-        colSpan="col-span-1"
+        colSpan="col-span-12"
         accentGradient="from-whitesmoke via-zinc-400 to-transparent"
         aosDelay={300}
       >

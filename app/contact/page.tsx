@@ -60,10 +60,10 @@ export default function ContactPage() {
       </div>
 
       {/* Main Bento Grid Container */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
         {/* Quick Email Bento Card */}
         <BentoCard
-          colSpan="col-span-1"
+          colSpan="col-span-12 md:col-span-4"
           accentGradient="from-whitesmoke via-zinc-400 to-transparent"
           aosDelay={150}
         >
@@ -102,7 +102,7 @@ export default function ContactPage() {
 
         {/* Schedule Calendly Meeting Bento Card */}
         <BentoCard
-          colSpan="col-span-1"
+          colSpan="col-span-12 md:col-span-4"
           accentGradient="from-amber-500/80 via-yellow-400/50 to-transparent"
           aosDelay={200}
         >
@@ -133,7 +133,7 @@ export default function ContactPage() {
 
         {/* Telegram Direct Chat Bento Card */}
         <BentoCard
-          colSpan="col-span-1"
+          colSpan="col-span-12 md:col-span-4"
           accentGradient="from-teal-500/80 via-sky-400/50 to-transparent"
           aosDelay={250}
         >
@@ -164,7 +164,7 @@ export default function ContactPage() {
 
         {/* Location / Status Info Bento Card */}
         <BentoCard
-          colSpan="col-span-1"
+          colSpan="col-span-12 md:col-span-4"
           accentGradient="from-indigo-500/80 via-blue-500/50 to-transparent"
           aosDelay={300}
         >
@@ -189,7 +189,7 @@ export default function ContactPage() {
 
         {/* Direct Message Interactive Form Bento Card (Large 2-column card) */}
         <BentoCard
-          colSpan="col-span-1 md:col-span-2"
+          colSpan="col-span-12 md:col-span-8"
           accentGradient="from-whitesmoke via-zinc-400 to-transparent"
           aosDelay={350}
           glow

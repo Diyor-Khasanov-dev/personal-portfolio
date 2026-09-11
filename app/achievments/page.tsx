@@ -55,7 +55,7 @@ export default function AchievementsPage() {
         "Architected and deployed a resilient bank payment platform handling secure transactional routing with high reliability. Built end-to-end payment workflows under strict time constraints.",
       techStack: ["React Native", "Expo", "TypeScript", "Next.js", "Payment Gateway API", "Tailwind CSS"],
       highlight: "Deployed & powering live production workloads",
-      span: "col-span-1 md:col-span-2",
+      span: "col-span-12 md:col-span-8",
       accent: "from-amber-500/80 via-yellow-400/50 to-transparent",
     },
     {
@@ -68,7 +68,7 @@ export default function AchievementsPage() {
         "Engineered a competitive coding and automated grading platform for algorithmic robotics contests. Designed real-time leaderboard sync and intuitive UI for contestants.",
       techStack: ["Next.js", "TypeScript", "WebSockets", "Tailwind CSS", "Node.js"],
       highlight: "Live platform serving active contest participants",
-      span: "col-span-1",
+      span: "col-span-12 md:col-span-4",
       accent: "from-amber-500/80 via-yellow-300/40 to-transparent",
     },
     {
@@ -81,7 +81,7 @@ export default function AchievementsPage() {
         "Designed and shipped a prototype payment portal during an intensive 24-hour sprint. Delivered pixel-perfect interface components, transaction verification, and instant checkout flow.",
       techStack: ["React", "TypeScript", "Tailwind CSS", "REST APIs"],
       highlight: "Rapid MVP completed within a strict 24h timeline",
-      span: "col-span-1",
+      span: "col-span-12 md:col-span-5",
       accent: "from-amber-500/80 via-orange-400/40 to-transparent",
     },
     {
@@ -94,7 +94,7 @@ export default function AchievementsPage() {
         "Built an enterprise-grade CRM/ERP frontend interface tailored for retail and inventory workflows. Commended by judges for exceptional UX polish, accessibility, and micro-interactions.",
       techStack: ["Next.js", "TypeScript", "Tailwind CSS", "State Management"],
       highlight: "Highest score for UX design & developer experience",
-      span: "col-span-1 md:col-span-2",
+      span: "col-span-12 md:col-span-7",
       accent: "from-amber-500/80 via-amber-300/40 to-transparent",
     },
     {
@@ -107,7 +107,7 @@ export default function AchievementsPage() {
         "Developed a lightweight, web-based music streaming client and recommendation engine prototype during the Yandex Dev Camp hackathon track.",
       techStack: ["React", "TypeScript", "Audio API", "Tailwind CSS"],
       highlight: "Podium finish among top Dev Camp engineering teams",
-      span: "col-span-1 md:col-span-3",
+      span: "col-span-12",
       accent: "from-zinc-500/80 via-zinc-400/40 to-transparent",
     },
   ];
@@ -124,7 +124,7 @@ export default function AchievementsPage() {
         "Co-organized community meetups and developer workshops",
         "Mentored aspiring frontend & mobile software engineers",
       ],
-      span: "col-span-1 md:col-span-2",
+      span: "col-span-12 md:col-span-7",
       accent: "from-sky-500/80 via-indigo-500/40 to-transparent",
     },
     {
@@ -138,7 +138,7 @@ export default function AchievementsPage() {
         "Supported annual DevFest and local Google tech events",
         "Engaged with local developer community to advocate modern web stacks",
       ],
-      span: "col-span-1",
+      span: "col-span-12 md:col-span-5",
       accent: "from-blue-500/80 via-teal-400/40 to-transparent",
     },
     {
@@ -152,7 +152,7 @@ export default function AchievementsPage() {
         "Regular speaker and attendee at monthly UzGeeks sessions",
         "Contributed to peer mentorship and technical knowledge sharing",
       ],
-      span: "col-span-1",
+      span: "col-span-12 md:col-span-5",
       accent: "from-emerald-500/80 via-teal-500/40 to-transparent",
     },
     {
@@ -166,7 +166,7 @@ export default function AchievementsPage() {
         "Completed rigorous Dev Camp challenges while assisting peers",
         "Earned 3rd place podium award in Music MVP track",
       ],
-      span: "col-span-1 md:col-span-2",
+      span: "col-span-12 md:col-span-7",
       accent: "from-purple-500/80 via-pink-500/40 to-transparent",
     },
   ];
@@ -188,9 +188,9 @@ export default function AchievementsPage() {
       </div>
 
       {/* Overview Stats Bar Bento Cards */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+      <div className="grid grid-cols-12 gap-3">
         <BentoCard
-          colSpan="col-span-1"
+          colSpan="col-span-6 sm:col-span-3"
           accentGradient="from-amber-500/80 via-amber-300/50 to-transparent"
           aosDelay={150}
         >
@@ -204,7 +204,7 @@ export default function AchievementsPage() {
         </BentoCard>
 
         <BentoCard
-          colSpan="col-span-1"
+          colSpan="col-span-6 sm:col-span-3"
           accentGradient="from-zinc-400/80 via-zinc-600/50 to-transparent"
           aosDelay={200}
         >
@@ -218,7 +218,7 @@ export default function AchievementsPage() {
         </BentoCard>
 
         <BentoCard
-          colSpan="col-span-1"
+          colSpan="col-span-6 sm:col-span-3"
           accentGradient="from-whitesmoke/80 via-zinc-400/50 to-transparent"
           aosDelay={250}
         >
@@ -232,7 +232,7 @@ export default function AchievementsPage() {
         </BentoCard>
 
         <BentoCard
-          colSpan="col-span-1"
+          colSpan="col-span-6 sm:col-span-3"
           accentGradient="from-sky-500/80 via-indigo-500/50 to-transparent"
           aosDelay={300}
         >
@@ -260,7 +260,7 @@ export default function AchievementsPage() {
           </span>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
           {hackathons.map((item, idx) => {
             const isFirstPlace = item.place === "1st";
             return (
@@ -344,7 +344,7 @@ export default function AchievementsPage() {
           </span>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
           {activities.map((act, idx) => (
             <BentoCard
               key={act.organization}
@@ -393,7 +393,7 @@ export default function AchievementsPage() {
 
       {/* Bottom CTA Bento Card */}
       <BentoCard
-        colSpan="col-span-1"
+        colSpan="col-span-12"
         accentGradient="from-whitesmoke via-zinc-400 to-transparent"
         aosDelay={300}
       >
