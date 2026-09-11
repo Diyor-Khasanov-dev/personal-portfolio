@@ -12,7 +12,9 @@ import {
   ArrowUpRight,
   Building2,
   Globe,
+  Sparkles,
 } from "lucide-react";
+import BentoCard from "@/components/ui/BentoCard";
 
 export default function ContactPage() {
   const [copiedEmail, setCopiedEmail] = useState(false);
@@ -42,7 +44,7 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="max-w-4xl w-full mx-auto px-4 sm:px-6 pt-6 sm:pt-10 pb-20 space-y-12 overflow-hidden">
+    <main className="max-w-5xl w-full mx-auto px-4 sm:px-6 pt-6 sm:pt-10 pb-20 space-y-12 overflow-hidden">
       {/* Header Banner */}
       <div data-aos="fade-down" data-aos-delay="100" className="space-y-4">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/20 bg-white/10 text-zinc-200 text-xs font-mono">
@@ -57,11 +59,15 @@ export default function ContactPage() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
-        {/* Left Column: Direct Action Badges */}
-        <div data-aos="fade-right" data-aos-delay="200" className="md:col-span-2 space-y-4">
-          {/* Quick Email Card */}
-          <div className="p-5 rounded-xl border border-zinc-800/80 bg-zinc-950/60 space-y-3 relative overflow-hidden group shadow-sm hover:border-zinc-700 transition-all">
+      {/* Main Bento Grid Container */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {/* Quick Email Bento Card */}
+        <BentoCard
+          colSpan="col-span-1"
+          accentGradient="from-whitesmoke via-zinc-400 to-transparent"
+          aosDelay={150}
+        >
+          <div className="space-y-3">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2 text-xs font-mono text-zinc-400">
                 <Mail className="w-4 h-4 text-whitesmoke" />
@@ -70,7 +76,7 @@ export default function ContactPage() {
               <button
                 onClick={handleCopyEmail}
                 type="button"
-                className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-[11px] font-mono text-zinc-300 hover:text-white transition-all active:scale-95 cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-[11px] font-mono text-zinc-300 hover:text-white transition-all cursor-pointer"
               >
                 {copiedEmail ? (
                   <>
@@ -85,71 +91,119 @@ export default function ContactPage() {
                 )}
               </button>
             </div>
-            <p className="text-sm font-mono font-semibold text-white break-all">
+            <p className="text-sm font-mono font-semibold text-white break-all pt-1">
               {emailAddress}
             </p>
+            <p className="text-xs text-zinc-400 font-sans">
+              Always open for fullstack engineering, contract roles, and tech consultations.
+            </p>
           </div>
+        </BentoCard>
 
-          {/* Schedule Calendly Meeting */}
+        {/* Schedule Calendly Meeting Bento Card */}
+        <BentoCard
+          colSpan="col-span-1"
+          accentGradient="from-amber-500/80 via-yellow-400/50 to-transparent"
+          aosDelay={200}
+        >
           <a
             href="https://calendly.com/bdiyorxasanov"
             target="_blank"
             rel="noreferrer"
-            className="p-5 rounded-xl border border-zinc-800/80 bg-zinc-950/60 hover:bg-zinc-900/40 hover:border-zinc-700 transition-all flex items-center justify-between group shadow-sm"
+            className="flex flex-col justify-between h-full space-y-3 group"
           >
-            <div className="space-y-1">
+            <div className="flex items-center justify-between">
               <div className="flex items-center gap-2 text-xs font-mono text-zinc-400">
                 <Calendar className="w-4 h-4 text-amber-400" />
                 <span>Calendly Meeting</span>
               </div>
-              <p className="text-sm font-semibold text-white group-hover:text-amber-300 transition-colors">
-                Book 15-min Call
+              <ArrowUpRight className="w-4 h-4 text-zinc-500 group-hover:text-zinc-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+            </div>
+
+            <div>
+              <p className="text-base font-semibold text-white group-hover:text-amber-300 transition-colors">
+                Book 15-min Discovery Call
+              </p>
+              <p className="text-xs text-zinc-400 font-sans mt-1">
+                Schedule a 1-on-1 video discussion directly on Calendly.
               </p>
             </div>
-            <ArrowUpRight className="w-4 h-4 text-zinc-500 group-hover:text-zinc-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
           </a>
+        </BentoCard>
 
-          {/* Telegram Chat Link */}
+        {/* Telegram Direct Chat Bento Card */}
+        <BentoCard
+          colSpan="col-span-1"
+          accentGradient="from-teal-500/80 via-sky-400/50 to-transparent"
+          aosDelay={250}
+        >
           <a
             href="https://t.me/Diyor_Khasanov_dev"
             target="_blank"
             rel="noreferrer"
-            className="p-5 rounded-xl border border-zinc-800/80 bg-zinc-950/60 hover:bg-zinc-900/40 hover:border-zinc-700 transition-all flex items-center justify-between group shadow-sm"
+            className="flex flex-col justify-between h-full space-y-3 group"
           >
-            <div className="space-y-1">
+            <div className="flex items-center justify-between">
               <div className="flex items-center gap-2 text-xs font-mono text-zinc-400">
-                <Send className="w-4 h-4 text-sky-400" />
+                <Send className="w-4 h-4 text-teal-400" />
                 <span>Telegram Direct</span>
               </div>
-              <p className="text-sm font-semibold text-white group-hover:text-sky-300 transition-colors">
+              <ArrowUpRight className="w-4 h-4 text-zinc-500 group-hover:text-zinc-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+            </div>
+
+            <div>
+              <p className="text-base font-semibold text-white group-hover:text-teal-300 transition-colors">
                 @Diyor_Khasanov_dev
               </p>
+              <p className="text-xs text-zinc-400 font-sans mt-1">
+                Fastest way to reach me for immediate inquiries or quick updates.
+              </p>
             </div>
-            <ArrowUpRight className="w-4 h-4 text-zinc-500 group-hover:text-zinc-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
           </a>
+        </BentoCard>
 
-          {/* Location / Status */}
-          <div className="p-4 rounded-xl border border-zinc-900 bg-zinc-950/30 text-xs font-mono text-zinc-400 space-y-1">
-            <div className="flex items-center gap-2">
-              <Globe className="w-3.5 h-3.5 text-zinc-500" />
-              <span>Samarkand, Uzbekistan (GMT+5)</span>
+        {/* Location / Status Info Bento Card */}
+        <BentoCard
+          colSpan="col-span-1"
+          accentGradient="from-indigo-500/80 via-blue-500/50 to-transparent"
+          aosDelay={300}
+        >
+          <div className="space-y-3">
+            <div className="flex items-center gap-2 text-xs font-mono text-zinc-400">
+              <Globe className="w-4 h-4 text-indigo-400" />
+              <span>Location & Role</span>
             </div>
-            <div className="flex items-center gap-2">
-              <Building2 className="w-3.5 h-3.5 text-zinc-500" />
-              <span>Co-Founder @ A.L.I.A</span>
+
+            <div className="space-y-2 text-xs font-mono text-zinc-300 pt-1">
+              <div className="flex items-center gap-2">
+                <Globe className="w-3.5 h-3.5 text-zinc-500" />
+                <span>Samarkand, Uzbekistan (GMT+5)</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Building2 className="w-3.5 h-3.5 text-zinc-500" />
+                <span>Co-Founder @ A.L.I.A</span>
+              </div>
             </div>
           </div>
-        </div>
+        </BentoCard>
 
-        {/* Right Column: Direct Message Form */}
-        <div data-aos="fade-left" data-aos-delay="300" className="md:col-span-3">
-          <div className="p-6 rounded-xl border border-zinc-800/80 bg-zinc-950/60 space-y-6 shadow-sm">
+        {/* Direct Message Interactive Form Bento Card (Large 2-column card) */}
+        <BentoCard
+          colSpan="col-span-1 md:col-span-2"
+          accentGradient="from-whitesmoke via-zinc-400 to-transparent"
+          aosDelay={350}
+          glow
+        >
+          <div className="space-y-5">
             <div className="flex items-center justify-between border-b border-zinc-900 pb-3">
               <div className="flex items-center gap-2 text-sm font-bold text-white">
                 <MessageSquare className="w-4 h-4 text-whitesmoke" />
                 <span>Send Direct Message</span>
               </div>
-              <span className="text-[11px] font-mono text-zinc-500">Quick Response</span>
+              <span className="text-[11px] font-mono text-zinc-500 flex items-center gap-1">
+                <Sparkles className="w-3 h-3 text-amber-400" />
+                Quick Response
+              </span>
             </div>
 
             {formSubmitted ? (
@@ -164,7 +218,7 @@ export default function ContactPage() {
                 <button
                   type="button"
                   onClick={() => setFormSubmitted(false)}
-                  className="px-4 py-2 text-xs font-mono rounded bg-zinc-900 hover:bg-zinc-800 text-zinc-300 border border-zinc-800 transition-colors mt-2"
+                  className="px-4 py-2 text-xs font-mono rounded bg-zinc-900 hover:bg-zinc-800 text-zinc-300 border border-zinc-800 transition-colors mt-2 cursor-pointer"
                 >
                   Send another message
                 </button>
@@ -222,7 +276,7 @@ export default function ContactPage() {
 
                 <button
                   type="submit"
-                  className="w-full py-3 px-4 rounded-lg bg-zinc-100 hover:bg-white text-zinc-950 font-medium text-xs font-mono transition-all flex items-center justify-center gap-2 group shadow-sm hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
+                  className="w-full py-3 px-4 rounded-lg bg-zinc-100 hover:bg-white text-zinc-950 font-medium text-xs font-mono transition-all flex items-center justify-center gap-2 group shadow-sm cursor-pointer"
                 >
                   <span>Submit Inquiry</span>
                   <Send className="w-3.5 h-3.5 text-zinc-900 group-hover:translate-x-0.5 transition-transform" />
@@ -230,7 +284,7 @@ export default function ContactPage() {
               </form>
             )}
           </div>
-        </div>
+        </BentoCard>
       </div>
     </main>
   );

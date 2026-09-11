@@ -7,6 +7,7 @@ import {
   MessageSquare,
   Zap,
 } from "lucide-react";
+import BentoCard from "@/components/ui/BentoCard";
 
 export const metadata: Metadata = {
   title: "Languages & Communication | Diyor Khasanov",
@@ -24,6 +25,8 @@ interface SpokenLanguage {
   barGradient: string;
   description: string;
   highlights: string[];
+  span: string;
+  accent: string;
 }
 
 interface ProgrammingLanguage {
@@ -32,6 +35,8 @@ interface ProgrammingLanguage {
   level: number;
   description: string;
   tags: string[];
+  span: string;
+  accent: string;
 }
 
 export default function LanguagesPage() {
@@ -52,6 +57,8 @@ export default function LanguagesPage() {
         "Technical & Business Writing",
         "Team Leadership & Mentorship",
       ],
+      span: "col-span-1",
+      accent: "from-whitesmoke via-zinc-400 to-transparent",
     },
     {
       name: "English",
@@ -69,6 +76,8 @@ export default function LanguagesPage() {
         "System Specs & Documentation",
         "Client Presentations & Demos",
       ],
+      span: "col-span-1 md:col-span-2",
+      accent: "from-sky-500/80 via-blue-500/40 to-transparent",
     },
     {
       name: "Russian",
@@ -86,6 +95,8 @@ export default function LanguagesPage() {
         "Technical Documentation Reading",
         "Daily Standups & Syncs",
       ],
+      span: "col-span-1 md:col-span-3",
+      accent: "from-amber-500/80 via-orange-400/40 to-transparent",
     },
   ];
 
@@ -97,6 +108,8 @@ export default function LanguagesPage() {
       description:
         "Strict type systems, modern ECMAScript features, Next.js Server Components, React 19 hooks, AST transformations, and asynchronous control flow.",
       tags: ["TypeScript 5.x", "ESNext", "React 19", "Next.js 16"],
+      span: "col-span-1 md:col-span-2",
+      accent: "from-blue-500/80 via-indigo-500/40 to-transparent",
     },
     {
       name: "HTML5, CSS3 & Tailwind CSS",
@@ -105,6 +118,8 @@ export default function LanguagesPage() {
       description:
         "Tailwind CSS v4, CSS Grid/Flexbox, accessibility standards (a11y), responsive design patterns, CSS animations, and performance optimizations.",
       tags: ["Tailwind v4", "Flex/Grid", "WAI-ARIA", "Responsive UI"],
+      span: "col-span-1",
+      accent: "from-teal-500/80 via-cyan-400/40 to-transparent",
     },
     {
       name: "SQL & Query Languages",
@@ -113,11 +128,13 @@ export default function LanguagesPage() {
       description:
         "Relational database design with PostgreSQL, Prisma ORM schema modeling, index optimization, complex joins, and GraphQL query schemas.",
       tags: ["PostgreSQL", "Prisma ORM", "GraphQL", "MongoDB"],
+      span: "col-span-1 md:col-span-3",
+      accent: "from-amber-500/80 via-yellow-400/40 to-transparent",
     },
   ];
 
   return (
-    <main className="max-w-4xl w-full mx-auto px-4 sm:px-6 pt-6 sm:pt-10 pb-20 space-y-12 overflow-hidden">
+    <main className="max-w-5xl w-full mx-auto px-4 sm:px-6 pt-6 sm:pt-10 pb-20 space-y-12 overflow-hidden">
       {/* Header Banner */}
       <div data-aos="fade-down" data-aos-delay="100" className="space-y-4">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-teal-500/20 bg-teal-500/10 text-teal-300 text-xs font-mono">
@@ -128,11 +145,11 @@ export default function LanguagesPage() {
           Languages & Communication
         </h1>
         <p className="text-sm sm:text-base text-zinc-400 font-normal leading-relaxed max-w-2xl">
-          Effective global engineering requires clear communication. Here is an overview of my spoken languages and core programming language proficiencies.
+          Effective global engineering requires clear communication. Bento Grid overview of my spoken languages and core programming language proficiencies.
         </p>
       </div>
 
-      {/* Section 1: Spoken Human Languages */}
+      {/* Section 1: Spoken Human Languages Bento Grid */}
       <section className="space-y-6">
         <div
           data-aos="fade-right"
@@ -150,19 +167,18 @@ export default function LanguagesPage() {
           </span>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {spokenLanguages.map((lang, idx) => (
-            <div
+            <BentoCard
               key={lang.name}
-              data-aos="fade-up"
-              data-aos-delay={200 + idx * 100}
-              className="p-5 rounded-2xl border border-zinc-800/80 bg-zinc-950/70 hover:border-zinc-700 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between space-y-4 relative overflow-hidden group shadow-lg hover:shadow-[0_12px_24px_rgba(0,0,0,0.5)]"
+              colSpan={lang.span}
+              accentGradient={lang.accent}
+              aosDelay={200 + idx * 100}
             >
-              {/* Header: Name, Native Name & Level Badge */}
-              <div className="space-y-2">
+              <div className="space-y-4">
                 <div className="flex items-center justify-between gap-2">
                   <div>
-                    <h3 className="text-lg font-bold text-white group-hover:text-teal-300 transition-colors">
+                    <h3 className="text-lg font-bold text-white">
                       {lang.name}
                     </h3>
                     <p className="text-xs text-zinc-500 font-mono">
@@ -177,12 +193,12 @@ export default function LanguagesPage() {
                   </span>
                 </div>
 
-                <p className="text-xs font-mono text-zinc-400 pt-1">
+                <p className="text-xs font-mono text-zinc-400">
                   {lang.subtext}
                 </p>
 
                 {/* Progress Bar Gauge */}
-                <div className="space-y-1 pt-1">
+                <div className="space-y-1">
                   <div className="flex justify-between items-center text-[10px] font-mono text-zinc-500">
                     <span>Fluency Level</span>
                     <span>{lang.level}%</span>
@@ -195,37 +211,36 @@ export default function LanguagesPage() {
                   </div>
                 </div>
 
-                <p className="text-xs text-zinc-300 leading-relaxed font-sans pt-2">
+                <p className="text-xs text-zinc-300 leading-relaxed font-sans">
                   {lang.description}
                 </p>
-              </div>
 
-              {/* Highlights / Usage Pills */}
-              <div className="space-y-2 pt-3 border-t border-zinc-900">
-                <div className="flex items-center gap-1.5 text-[11px] font-mono text-zinc-400">
-                  <MessageSquare className="w-3 h-3 text-teal-400" />
-                  <span className="uppercase tracking-wider text-[10px] text-zinc-500">
-                    Key Highlights
-                  </span>
-                </div>
-                <div className="flex flex-col gap-1.5">
-                  {lang.highlights.map((highlight) => (
-                    <div
-                      key={highlight}
-                      className="flex items-center gap-2 text-xs text-zinc-300"
-                    >
-                      <CheckCircle2 className="w-3.5 h-3.5 text-teal-400 shrink-0" />
-                      <span>{highlight}</span>
-                    </div>
-                  ))}
+                <div className="space-y-2 pt-2 border-t border-zinc-900">
+                  <div className="flex items-center gap-1.5 text-[10px] font-mono text-zinc-400">
+                    <MessageSquare className="w-3 h-3 text-teal-400" />
+                    <span className="uppercase tracking-wider text-[10px] text-zinc-500">
+                      Highlights
+                    </span>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {lang.highlights.map((highlight) => (
+                      <div
+                        key={highlight}
+                        className="flex items-center gap-1.5 text-xs text-zinc-300 bg-zinc-900/80 px-2 py-0.5 rounded border border-zinc-800"
+                      >
+                        <CheckCircle2 className="w-3 h-3 text-teal-400 shrink-0" />
+                        <span>{highlight}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
+            </BentoCard>
           ))}
         </div>
       </section>
 
-      {/* Section 2: Programming & Query Languages */}
+      {/* Section 2: Programming Languages Bento Grid */}
       <section className="space-y-6 pt-4">
         <div
           data-aos="fade-right"
@@ -243,17 +258,17 @@ export default function LanguagesPage() {
           </span>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {programmingLanguages.map((lang, idx) => (
-            <div
+            <BentoCard
               key={lang.name}
-              data-aos="fade-up"
-              data-aos-delay={200 + idx * 100}
-              className="p-5 rounded-2xl border border-zinc-800/80 bg-zinc-950/70 hover:border-zinc-700 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between space-y-4 relative overflow-hidden group shadow-lg hover:shadow-[0_12px_24px_rgba(0,0,0,0.5)]"
+              colSpan={lang.span}
+              accentGradient={lang.accent}
+              aosDelay={200 + idx * 100}
             >
-              <div className="space-y-2">
+              <div className="space-y-3">
                 <div className="flex items-center justify-between gap-2">
-                  <h3 className="text-base font-bold text-white group-hover:text-indigo-300 transition-colors">
+                  <h3 className="text-base font-bold text-white">
                     {lang.name}
                   </h3>
                   <span className="text-[11px] font-mono text-indigo-400 bg-indigo-500/10 border border-indigo-500/20 px-2 py-0.5 rounded-md shrink-0">
@@ -263,7 +278,6 @@ export default function LanguagesPage() {
 
                 <p className="text-xs font-mono text-zinc-400">{lang.proficiency}</p>
 
-                {/* Bar */}
                 <div className="w-full h-1.5 rounded-full bg-zinc-900 border border-zinc-800 overflow-hidden">
                   <div
                     className="h-full bg-gradient-to-r from-indigo-500 to-sky-400 rounded-full transition-all duration-1000"
@@ -271,47 +285,48 @@ export default function LanguagesPage() {
                   />
                 </div>
 
-                <p className="text-xs text-zinc-300 leading-relaxed font-sans pt-1">
+                <p className="text-xs text-zinc-300 leading-relaxed font-sans">
                   {lang.description}
                 </p>
-              </div>
 
-              {/* Tags */}
-              <div className="pt-3 border-t border-zinc-900 space-y-2">
-                <div className="flex items-center gap-1.5 text-[10px] font-mono text-zinc-500 uppercase tracking-wider">
-                  <Zap className="w-3 h-3 text-indigo-400" />
-                  <span>Key Competencies</span>
-                </div>
-                <div className="flex flex-wrap gap-1.5">
-                  {lang.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-2 py-0.5 rounded bg-zinc-900/90 border border-zinc-800 text-[10px] font-mono text-zinc-300"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+                <div className="pt-2 border-t border-zinc-900 space-y-2">
+                  <div className="flex items-center gap-1.5 text-[10px] font-mono text-zinc-500 uppercase tracking-wider">
+                    <Zap className="w-3 h-3 text-indigo-400" />
+                    <span>Competencies</span>
+                  </div>
+                  <div className="flex flex-wrap gap-1.5">
+                    {lang.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-2 py-0.5 rounded bg-zinc-900/90 border border-zinc-800 text-[10px] font-mono text-zinc-300"
+                      >
+                        #{tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
+            </BentoCard>
           ))}
         </div>
       </section>
 
-      {/* Senior Engineer Summary Note */}
-      <div
-        data-aos="fade-up"
-        data-aos-delay="400"
-        className="p-5 rounded-2xl border border-zinc-800/80 bg-zinc-950/40 text-center space-y-2"
+      {/* Senior Engineer Summary Note Bento Card */}
+      <BentoCard
+        colSpan="col-span-1"
+        accentGradient="from-teal-500/80 via-emerald-400/50 to-transparent"
+        aosDelay={400}
       >
-        <div className="inline-flex items-center gap-2 text-xs font-mono text-whitesmoke">
-          <Globe className="w-4 h-4 text-teal-400" />
-          <span>Cross-Cultural & Technical Collaboration</span>
+        <div className="text-center space-y-2">
+          <div className="inline-flex items-center gap-2 text-xs font-mono text-whitesmoke">
+            <Globe className="w-4 h-4 text-teal-400" />
+            <span>Cross-Cultural & Technical Collaboration</span>
+          </div>
+          <p className="text-xs sm:text-sm text-zinc-400 max-w-2xl mx-auto leading-relaxed">
+            Fluid communication in <span className="text-white font-medium">English (Advanced)</span>, <span className="text-white font-medium">Uzbek (Native)</span>, and <span className="text-white font-medium">Russian (Intermediate)</span> enables smooth cross-border collaboration with engineering teams and clients worldwide.
+          </p>
         </div>
-        <p className="text-xs sm:text-sm text-zinc-400 max-w-2xl mx-auto leading-relaxed">
-          Fluid communication in <span className="text-white font-medium">English (Advanced)</span>, <span className="text-white font-medium">Uzbek (Native)</span>, and <span className="text-white font-medium">Russian (Intermediate)</span> enables smooth cross-border collaboration with engineering teams and clients worldwide.
-        </p>
-      </div>
+      </BentoCard>
     </main>
   );
 }
