@@ -18,6 +18,7 @@ import {
   ShieldCheck,
   Flame,
 } from "lucide-react";
+import BentoCard from "@/components/ui/BentoCard";
 
 export interface SkillItem {
   name: string;
@@ -35,6 +36,8 @@ export interface SkillGroup {
   badge: string;
   description: string;
   skills: SkillItem[];
+  span: string;
+  accent: string;
 }
 
 export default function TechStackClient() {
@@ -49,6 +52,8 @@ export default function TechStackClient() {
       badge: "Core Expertise",
       description:
         "Building resilient, accessible, sub-50ms web applications with server components, hydration optimization, and micro-frontend architectures.",
+      span: "col-span-1 md:col-span-2",
+      accent: "from-whitesmoke via-zinc-400 to-transparent",
       skills: [
         {
           name: "React (v18 / v19)",
@@ -69,20 +74,12 @@ export default function TechStackClient() {
           featured: true,
         },
         {
-          name: "Vue.js (v2 / v3)",
+          name: "Vue.js & Nuxt.js",
           level: "Proficient",
           years: "2+ yrs",
           description:
-            "Composition API, Reactivity System, Teleport, Pinia, Custom Directives, and reactive state orchestration.",
-          tags: ["Composition API", "Reactivity", "Pinia", "Provide/Inject"],
-        },
-        {
-          name: "Nuxt.js (v3)",
-          level: "Proficient",
-          years: "2+ yrs",
-          description:
-            "Universal SSR rendering, Nitro engine server routes, auto-imports, and module ecosystem for high-speed Vue apps.",
-          tags: ["Nitro Engine", "SSR", "Server Routes", "Nuxt Modules"],
+            "Composition API, Reactivity System, Pinia, Nitro engine server routes, and reactive state orchestration.",
+          tags: ["Composition API", "Nitro Engine", "Pinia", "Nuxt 3"],
         },
         {
           name: "TypeScript",
@@ -97,36 +94,22 @@ export default function TechStackClient() {
     },
     {
       id: "styling",
-      title: "Styling, UI Systems & Design Systems",
+      title: "Styling, UI Systems & Design",
       icon: <Palette className="w-5 h-5 text-pink-400" />,
       badge: "Design Craft",
       description:
         "Crafting pixel-perfect, dark-mode first design systems with atomic CSS, accessible headless primitives, and responsive micro-interactions.",
+      span: "col-span-1",
+      accent: "from-pink-500/80 via-rose-400/50 to-transparent",
       skills: [
         {
           name: "Tailwind CSS (v3 / v4)",
           level: "Expert",
           years: "4+ yrs",
           description:
-            "Utility-first mastery, JIT compilation, dynamic theme variables, CSS container queries, and custom Tailwind plugin extensions.",
-          tags: ["Tailwind v4", "JIT", "Design Tokens", "PostCSS"],
+            "Utility-first mastery, JIT compilation, dynamic theme variables, CSS container queries, and custom Tailwind plugins.",
+          tags: ["Tailwind v4", "JIT", "Design Tokens"],
           featured: true,
-        },
-        {
-          name: "Material UI (MUI)",
-          level: "Advanced",
-          years: "3+ yrs",
-          description:
-            "Custom emotion themes, slot props overrides, heavy enterprise dashboard styling, DataGrid custom filters, and WCAG accessibility.",
-          tags: ["Emotion", "Theme Provider", "DataGrid", "A11y"],
-        },
-        {
-          name: "Ant Design (AntD)",
-          level: "Advanced",
-          years: "2+ yrs",
-          description:
-            "Enterprise back-office layouts, Form validation integration, table virtual pagination, and localization tokens.",
-          tags: ["Enterprise UI", "Form Rules", "Virtual Lists"],
         },
         {
           name: "Shadcn UI & Radix Primitives",
@@ -134,16 +117,16 @@ export default function TechStackClient() {
           years: "2+ yrs",
           description:
             "Copy-paste headless component architectures, ARIA compliance, custom CVA variants, and keyboard focus traps.",
-          tags: ["Headless", "Radix UI", "CVA", "Accessibility"],
+          tags: ["Headless", "Radix UI", "CVA"],
           featured: true,
         },
         {
-          name: "Framer Motion & CSS Animations",
+          name: "Material UI & Ant Design",
           level: "Advanced",
           years: "3+ yrs",
           description:
-            "Smooth page transitions, layout animations, exit animations, and gesture-driven micro-interactions.",
-          tags: ["Layout Animations", "Gestures", "Keyframes"],
+            "Custom emotion themes, enterprise back-office layouts, virtual pagination, and WCAG accessibility.",
+          tags: ["MUI", "AntD", "DataGrid"],
         },
       ],
     },
@@ -154,40 +137,26 @@ export default function TechStackClient() {
       badge: "Data Flow",
       description:
         "Predictable global state, optimistic UI updates, zero-boilerplate client stores, and intelligent query caching.",
+      span: "col-span-1",
+      accent: "from-sky-500/80 via-blue-400/50 to-transparent",
       skills: [
         {
-          name: "TanStack Query (React Query)",
+          name: "TanStack Query",
           level: "Expert",
           years: "3+ yrs",
           description:
-            "Server-state synchronization, optimistic mutations, infinite scrolling queries, background refetching, and query key factories.",
-          tags: ["Cache Mgmt", "Optimistic Updates", "Infinite Query"],
+            "Server-state synchronization, optimistic mutations, infinite scrolling queries, and query key factories.",
+          tags: ["Cache Mgmt", "Optimistic Updates"],
           featured: true,
         },
         {
-          name: "Zustand",
-          level: "Expert",
-          years: "3+ yrs",
-          description:
-            "Lightweight atomic client state, selector optimization, slice pattern, persist middleware, and React 19 external store sync.",
-          tags: ["Atomic State", "Persist Middleware", "Selectors"],
-          featured: true,
-        },
-        {
-          name: "Redux & Redux Toolkit (RTK)",
-          level: "Advanced",
-          years: "3+ yrs",
-          description:
-            "RTK Query endpoints, normalized slice stores, custom middleware, Redux Saga/Thunk, and immutability via Immer.",
-          tags: ["RTK Query", "Slices", "Middleware", "Immer"],
-        },
-        {
-          name: "React Context & React 19 Actions",
+          name: "Zustand & Redux Toolkit",
           level: "Expert",
           years: "4+ yrs",
           description:
-            "Custom Provider abstractions, useActionState, useFormStatus, and re-render mitigation via memoization.",
-          tags: ["UseActionState", "FormStatus", "Providers"],
+            "Atomic client state, selector optimization, persist middleware, RTK Query endpoints, and normalized stores.",
+          tags: ["Zustand", "RTK Query", "Atomic State"],
+          featured: true,
         },
       ],
     },
@@ -195,34 +164,28 @@ export default function TechStackClient() {
       id: "backend",
       title: "Backend Services & API Architecture",
       icon: <Server className="w-5 h-5 text-indigo-400" />,
-      badge: "Server & Microservices",
+      badge: "Server Microservices",
       description:
-        "Designing scalable REST & GraphQL APIs, real-time WebSockets engines, and enterprise backend microservices with strong validation.",
+        "Designing scalable REST & GraphQL APIs, real-time WebSockets engines, and enterprise backend microservices.",
+      span: "col-span-1 md:col-span-2",
+      accent: "from-indigo-500/80 via-purple-500/50 to-transparent",
       skills: [
         {
-          name: "Node.js",
+          name: "Node.js & Express.js",
           level: "Expert",
           years: "4+ yrs",
           description:
-            "Event Loop optimization, streams, worker threads, async I/O handling, NPM/pnpm package development, and memory leak profiling.",
-          tags: ["Event Loop", "Streams", "Async I/O", "Worker Threads"],
+            "Event Loop optimization, streams, RESTful API design, JWT/OAuth2 authentication, rate limiting, and structured error boundaries.",
+          tags: ["Event Loop", "JWT Auth", "Streams"],
           featured: true,
-        },
-        {
-          name: "Express.js",
-          level: "Expert",
-          years: "4+ yrs",
-          description:
-            "Robust RESTful API design, custom middleware pipelines, JWT/OAuth2 authentication, rate limiting, and structured error boundaries.",
-          tags: ["REST API", "JWT Auth", "Rate Limit", "Middleware"],
         },
         {
           name: "NestJS",
           level: "Advanced",
           years: "2+ yrs",
           description:
-            "Enterprise modular architecture, Dependency Injection, Decorators, Guards, Interceptors, Pipes, and Swagger OpenAPI generation.",
-          tags: ["Dependency Injection", "Guards", "Swagger", "Modules"],
+            "Enterprise modular architecture, Dependency Injection, Decorators, Guards, Interceptors, Pipes, and Swagger OpenAPI.",
+          tags: ["Dependency Injection", "Guards", "Modules"],
           featured: true,
         },
         {
@@ -230,8 +193,8 @@ export default function TechStackClient() {
           level: "Advanced",
           years: "3+ yrs",
           description:
-            "Apollo Server, Schema-first & Code-first definitions, DataLoader batching, Socket.io real-time event rooms.",
-          tags: ["Apollo", "DataLoader", "Socket.io", "Real-Time"],
+            "Apollo Server, DataLoader batching, Socket.io real-time event rooms.",
+          tags: ["Apollo", "DataLoader", "Socket.io"],
         },
       ],
     },
@@ -242,40 +205,26 @@ export default function TechStackClient() {
       badge: "Persistence Layer",
       description:
         "High-performance data modeling, relational normalization, NoSQL document store tuning, and sub-millisecond Redis caching.",
+      span: "col-span-1",
+      accent: "from-amber-500/80 via-yellow-400/50 to-transparent",
       skills: [
         {
-          name: "PostgreSQL",
+          name: "PostgreSQL & Prisma ORM",
           level: "Expert",
           years: "3+ yrs",
           description:
-            "Relational schema design, indexes (B-Tree, GIN), CTEs, JSONB columns, ACID transactions, and query execution plan tuning.",
-          tags: ["Indexing", "JSONB", "ACID", "Query Plan"],
+            "Relational schema design, indexes (B-Tree, GIN), CTEs, JSONB columns, ACID transactions, and Drizzle/Prisma type-safe clients.",
+          tags: ["PostgreSQL", "Prisma ORM", "ACID"],
           featured: true,
         },
         {
-          name: "MongoDB",
+          name: "MongoDB & Redis",
           level: "Advanced",
           years: "3+ yrs",
           description:
-            "Document schema design, aggregation pipelines, compound indexing, Mongoose ORM models, and sharding strategies.",
-          tags: ["Aggregation", "NoSQL", "Document Store", "Mongoose"],
-        },
-        {
-          name: "Redis",
-          level: "Advanced",
-          years: "3+ yrs",
-          description:
-            "In-memory key-value caching, Pub/Sub event broadcasting, rate limiting tokens, session store, and TTL cache eviction strategies.",
-          tags: ["In-Memory", "Pub/Sub", "Session Cache", "TTL"],
+            "Document schema design, aggregation pipelines, in-memory Pub/Sub, rate limiting tokens, and TTL cache eviction.",
+          tags: ["MongoDB", "Redis", "In-Memory"],
           featured: true,
-        },
-        {
-          name: "Prisma & Drizzle ORM",
-          level: "Expert",
-          years: "3+ yrs",
-          description:
-            "Type-safe database client generation, automated migrations, relational joins, raw SQL fallbacks, and multi-tenant schema isolation.",
-          tags: ["Type-Safe ORM", "Migrations", "Client Gen"],
         },
       ],
     },
@@ -286,23 +235,16 @@ export default function TechStackClient() {
       badge: "iOS & Android",
       description:
         "Crafting native-grade iOS & Android mobile apps with shared TypeScript codebases, smooth 60fps gestures, and native module bridges.",
+      span: "col-span-1 md:col-span-2",
+      accent: "from-cyan-500/80 via-teal-400/50 to-transparent",
       skills: [
         {
-          name: "React Native",
+          name: "React Native & Expo",
           level: "Expert",
           years: "3+ yrs",
           description:
-            "Bridgeless architecture (Fabric/Turbomodules), native UI responsiveness, memory management, native build tuning, and app stores submission.",
-          tags: ["Fabric", "Turbomodules", "iOS/Android", "App Store"],
-          featured: true,
-        },
-        {
-          name: "Expo (EAS Build & Updates)",
-          level: "Expert",
-          years: "3+ yrs",
-          description:
-            "Expo Router v3, EAS Cloud Build & OTA Updates, Config Plugins, Camera/Location SDKs, and Push Notifications setup.",
-          tags: ["Expo Router", "EAS Cloud", "OTA Updates", "Config Plugins"],
+            "Bridgeless architecture (Fabric/Turbomodules), Expo Router v3, EAS Cloud Build & OTA Updates, Config Plugins, and Push Notifications.",
+          tags: ["Fabric", "Expo Router", "EAS Cloud"],
           featured: true,
         },
         {
@@ -311,103 +253,37 @@ export default function TechStackClient() {
           years: "2+ yrs",
           description:
             "Declarative UI animations running directly on the UI thread, complex swipe gestures, bottom sheets, and native feel.",
-          tags: ["UI Thread", "Worklets", "Gestures", "BottomSheet"],
+          tags: ["UI Thread", "Worklets", "Gestures"],
         },
       ],
     },
     {
       id: "ai-tools",
-      title: "AI Tools & AI-Driven Engineering",
+      title: "AI Tools & AI Engineering",
       icon: <Bot className="w-5 h-5 text-purple-400" />,
       badge: "Dev Speed Multiplier",
       description:
         "Leveraging cutting-edge AI coding agents and autonomous LLM workflows to accelerate feature delivery, test generation, and code review.",
+      span: "col-span-1 md:col-span-3",
+      accent: "from-purple-500/80 via-indigo-500/50 to-transparent",
       skills: [
         {
-          name: "Claude Code",
+          name: "Claude Code & Jules AI Agent",
           level: "Expert",
           years: "Daily",
           description:
-            "Command-line agentic reasoning, code search, automated refactoring, and multi-file architectural execution.",
-          tags: ["Agentic Refactor", "CLI Workflow", "Code Analysis"],
+            "Command-line agentic reasoning, code search, automated refactoring, multi-file architectural execution, and PR automation.",
+          tags: ["Claude Code", "Jules Agent", "Agentic Coding"],
           featured: true,
         },
         {
-          name: "ChatGPT & Codex",
-          level: "Expert",
-          years: "Daily",
-          description:
-            "Prompt engineering, context window optimization, unit test generation, algorithm design, and code conversion.",
-          tags: ["Prompt Eng", "Unit Test Gen", "Algorithm Design"],
-          featured: true,
-        },
-        {
-          name: "Jules (GitHub / AI Coding Agent)",
-          level: "Expert",
-          years: "Daily",
-          description:
-            "Autonomous repository exploration, automated issue resolution, structured plan execution, and pull request generation.",
-          tags: ["Autonomous Coding", "PR Automation", "Task Planning"],
-          featured: true,
-        },
-        {
-          name: "Google Stitch / Gemini Code Assist",
-          level: "Proficient",
-          years: "Daily",
-          description:
-            "AI-assisted UI design generation, component prototyping, and natural language layout synthesis.",
-          tags: ["UI Generation", "Prototype", "Layout Synthesis"],
-        },
-        {
-          name: "Cursor & GitHub Copilot",
+          name: "ChatGPT, Codex & Cursor",
           level: "Expert",
           years: "2+ yrs",
           description:
-            "In-editor agentic coding, multi-file edits, custom `.cursorrules` configuration, inline completions, and doc lookup.",
-          tags: ["CursorRules", "Inline AI", "Context Indexing"],
-        },
-      ],
-    },
-    {
-      id: "devops",
-      title: "DevOps, Testing & Tooling",
-      icon: <Terminal className="w-5 h-5 text-whitesmoke" />,
-      badge: "Quality & Delivery",
-      description:
-        "Ensuring production stability with automated CI/CD pipelines, containerization, end-to-end testing, and zero-downtime deployments.",
-      skills: [
-        {
-          name: "Docker & Containerization",
-          level: "Advanced",
-          years: "3+ yrs",
-          description:
-            "Multi-stage Dockerfile builds, docker-compose local dev, image size minimization, and microservice isolation.",
-          tags: ["Dockerfile", "Docker Compose", "Multi-stage"],
-        },
-        {
-          name: "AWS & Vercel Infrastructure",
-          level: "Advanced",
-          years: "3+ yrs",
-          description:
-            "AWS S3, CloudFront CDN, Lambda Serverless, EC2, Vercel Edge Network, custom domain SSL, and env security.",
-          tags: ["S3", "CloudFront", "Lambda", "Vercel Edge"],
+            "Prompt engineering, context window optimization, unit test generation, custom `.cursorrules`, and natural language synthesis.",
+          tags: ["Prompt Eng", "CursorRules", "Unit Test Gen"],
           featured: true,
-        },
-        {
-          name: "CI/CD & GitHub Actions",
-          level: "Advanced",
-          years: "3+ yrs",
-          description:
-            "Automated test runners, lint verification, build previews, release tagging, and automated npm/expo deployment pipelines.",
-          tags: ["GitHub Actions", "Workflows", "Auto-Release"],
-        },
-        {
-          name: "Testing (Jest, Playwright, Vitest)",
-          level: "Advanced",
-          years: "3+ yrs",
-          description:
-            "Unit testing, integration testing, headless browser e2e testing, snapshot testing, and mock service worker (MSW) mocks.",
-          tags: ["Unit & Integration", "Playwright E2E", "Vitest", "MSW"],
         },
       ],
     },
@@ -423,7 +299,6 @@ export default function TechStackClient() {
     { id: "database", label: "Databases", count: skillGroups.find((g) => g.id === "database")?.skills.length || 0 },
     { id: "mobile", label: "Mobile", count: skillGroups.find((g) => g.id === "mobile")?.skills.length || 0 },
     { id: "ai-tools", label: "AI Tools", count: skillGroups.find((g) => g.id === "ai-tools")?.skills.length || 0 },
-    { id: "devops", label: "DevOps & Testing", count: skillGroups.find((g) => g.id === "devops")?.skills.length || 0 },
   ];
 
   // Filter groups and skills
@@ -456,60 +331,71 @@ export default function TechStackClient() {
         </h1>
 
         <p className="text-sm sm:text-base text-zinc-400 font-normal leading-relaxed max-w-3xl">
-          A deeply battle-tested ecosystem of frameworks, tools, databases, and AI accelerators engineered for production resilience, type safety, sub-50ms user interfaces, and rapid product velocity.
+          A deeply battle-tested ecosystem of frameworks, tools, databases, and AI accelerators in a Bento Grid layout engineered for production resilience and sub-50ms user interfaces.
         </p>
       </div>
 
-      {/* Quick Metrics Bar */}
-      <div
-        data-aos="fade-up"
-        data-aos-delay="150"
-        className="grid grid-cols-2 sm:grid-cols-4 gap-3 p-4 rounded-xl border border-zinc-800/80 bg-zinc-950/60"
-      >
-        <div className="space-y-1 border-r border-zinc-900 pr-3">
+      {/* Quick Metrics Bento Bar */}
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        <BentoCard
+          colSpan="col-span-1"
+          accentGradient="from-amber-500/80 via-yellow-400/50 to-transparent"
+          aosDelay={150}
+        >
           <div className="text-xs font-mono text-zinc-500 flex items-center gap-1.5">
             <Flame className="w-3.5 h-3.5 text-amber-400" />
             <span>Primary Focus</span>
           </div>
-          <div className="text-sm font-semibold text-zinc-100 font-mono">
+          <div className="text-sm font-semibold text-zinc-100 font-mono pt-1">
             React / Next / RN
           </div>
-        </div>
+        </BentoCard>
 
-        <div className="space-y-1 border-r border-zinc-900 pr-3">
+        <BentoCard
+          colSpan="col-span-1"
+          accentGradient="from-whitesmoke/80 via-zinc-400/50 to-transparent"
+          aosDelay={200}
+        >
           <div className="text-xs font-mono text-zinc-500 flex items-center gap-1.5">
             <ShieldCheck className="w-3.5 h-3.5 text-whitesmoke" />
             <span>Type Safety</span>
           </div>
-          <div className="text-sm font-semibold text-whitesmoke font-mono">
+          <div className="text-sm font-semibold text-whitesmoke font-mono pt-1">
             100% TypeScript
           </div>
-        </div>
+        </BentoCard>
 
-        <div className="space-y-1 border-r border-zinc-900 pr-3">
+        <BentoCard
+          colSpan="col-span-1"
+          accentGradient="from-sky-500/80 via-blue-400/50 to-transparent"
+          aosDelay={250}
+        >
           <div className="text-xs font-mono text-zinc-500 flex items-center gap-1.5">
             <Zap className="w-3.5 h-3.5 text-sky-400" />
             <span>Target Speed</span>
           </div>
-          <div className="text-sm font-semibold text-sky-300 font-mono">
+          <div className="text-sm font-semibold text-sky-300 font-mono pt-1">
             Sub-50ms UI
           </div>
-        </div>
+        </BentoCard>
 
-        <div className="space-y-1">
+        <BentoCard
+          colSpan="col-span-1"
+          accentGradient="from-purple-500/80 via-indigo-400/50 to-transparent"
+          aosDelay={300}
+        >
           <div className="text-xs font-mono text-zinc-500 flex items-center gap-1.5">
             <Bot className="w-3.5 h-3.5 text-purple-400" />
             <span>AI Accelerated</span>
           </div>
-          <div className="text-sm font-semibold text-purple-300 font-mono">
+          <div className="text-sm font-semibold text-purple-300 font-mono pt-1">
             Claude Code & Jules
           </div>
-        </div>
+        </BentoCard>
       </div>
 
       {/* Search & Category Filter Controls */}
       <div data-aos="fade-up" data-aos-delay="200" className="space-y-4">
-        {/* Search Input */}
         <div className="relative">
           <Search className="w-4 h-4 text-zinc-500 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
           <input
@@ -522,14 +408,13 @@ export default function TechStackClient() {
           {searchQuery && (
             <button
               onClick={() => setSearchQuery("")}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-zinc-500 hover:text-zinc-200 font-mono bg-zinc-900 px-2 py-0.5 rounded border border-zinc-800"
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-zinc-500 hover:text-zinc-200 font-mono bg-zinc-900 px-2 py-0.5 rounded border border-zinc-800 cursor-pointer"
             >
               Clear
             </button>
           )}
         </div>
 
-        {/* Horizontal Category Pills */}
         <div className="flex items-center gap-1.5 overflow-x-auto pb-2 scrollbar-none">
           {categories.map((cat) => {
             const isActive = activeCategory === cat.id;
@@ -537,7 +422,7 @@ export default function TechStackClient() {
               <button
                 key={cat.id}
                 onClick={() => setActiveCategory(cat.id)}
-                className={`px-3 py-1.5 rounded-lg text-xs font-mono whitespace-nowrap transition-all duration-200 flex items-center gap-1.5 shrink-0 ${
+                className={`px-3 py-1.5 rounded-lg text-xs font-mono whitespace-nowrap transition-all duration-200 flex items-center gap-1.5 shrink-0 cursor-pointer ${
                   isActive
                     ? "bg-zinc-100 text-zinc-950 font-semibold shadow-sm"
                     : "bg-zinc-950 border border-zinc-800/80 text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900"
@@ -559,7 +444,7 @@ export default function TechStackClient() {
         </div>
       </div>
 
-      {/* Filtered Groups Display */}
+      {/* Filtered Groups Display in Bento Grid */}
       {filteredGroups.length === 0 ? (
         <div className="py-16 text-center space-y-3 rounded-xl border border-zinc-800/80 bg-zinc-950/40">
           <Terminal className="w-8 h-8 text-zinc-600 mx-auto" />
@@ -571,142 +456,132 @@ export default function TechStackClient() {
               setSearchQuery("");
               setActiveCategory("all");
             }}
-            className="px-3.5 py-1.5 rounded-lg bg-zinc-900 border border-zinc-800 text-xs font-mono text-whitesmoke hover:text-white"
+            className="px-3.5 py-1.5 rounded-lg bg-zinc-900 border border-zinc-800 text-xs font-mono text-whitesmoke hover:text-white cursor-pointer"
           >
             Reset Filters
           </button>
         </div>
       ) : (
-        <div className="space-y-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {filteredGroups.map((group, groupIdx) => (
-            <section
+            <BentoCard
               key={group.id}
-              data-aos="fade-up"
-              data-aos-delay={100 + groupIdx * 80}
-              className="p-5 sm:p-6 rounded-xl border border-zinc-800/80 bg-zinc-950/60 hover:border-zinc-700/80 transition-all duration-300 space-y-5 relative overflow-hidden shadow-sm"
+              colSpan={group.span}
+              accentGradient={group.accent}
+              aosDelay={100 + groupIdx * 80}
             >
-              {/* Group Header */}
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-zinc-900 pb-4">
-                <div className="flex items-center gap-3">
-                  <div className="p-2.5 rounded-lg bg-zinc-900 border border-zinc-800/90 shadow-sm">
-                    {group.icon}
-                  </div>
-                  <div>
-                    <div className="flex items-center gap-2">
-                      <h2 className="text-lg font-bold text-white tracking-tight">
+              <div className="space-y-4">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-zinc-900 pb-3">
+                  <div className="flex items-center gap-2.5">
+                    <div className="p-2 rounded-lg bg-zinc-900 border border-zinc-800">
+                      {group.icon}
+                    </div>
+                    <div>
+                      <h2 className="text-base font-bold text-white tracking-tight">
                         {group.title}
                       </h2>
-                      <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-zinc-900 text-zinc-400 border border-zinc-800">
+                      <span className="text-[10px] font-mono text-zinc-400">
                         {group.badge}
                       </span>
                     </div>
-                    <p className="text-xs text-zinc-400 mt-1 max-w-2xl font-sans">
-                      {group.description}
-                    </p>
                   </div>
+
+                  <span className="text-[11px] font-mono text-zinc-500 shrink-0">
+                    {group.skills.length} Items
+                  </span>
                 </div>
 
-                <span className="text-xs font-mono text-zinc-500 shrink-0 self-start sm:self-center">
-                  {group.skills.length} Stack Items
-                </span>
-              </div>
+                <p className="text-xs text-zinc-400 font-sans">
+                  {group.description}
+                </p>
 
-              {/* Skill Cards Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {group.skills.map((skill, sIdx) => {
-                  const isExpert = skill.level === "Expert";
-                  return (
-                    <div
-                      key={sIdx}
-                      className={`p-4 rounded-lg border transition-all duration-200 flex flex-col justify-between space-y-3 group/card ${
-                        skill.featured
-                          ? "border-zinc-800 bg-zinc-900/50 hover:bg-zinc-900/90 hover:border-zinc-700"
-                          : "border-zinc-900 bg-zinc-950/80 hover:bg-zinc-900/40 hover:border-zinc-800"
-                      }`}
-                    >
-                      <div className="space-y-2">
-                        {/* Title + Level Badge */}
-                        <div className="flex items-center justify-between gap-2">
-                          <h3 className="text-sm font-bold text-zinc-100 group-hover/card:text-white transition-colors flex items-center gap-2">
-                            <span>{skill.name}</span>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+                  {group.skills.map((skill, sIdx) => {
+                    const isExpert = skill.level === "Expert";
+                    return (
+                      <div
+                        key={sIdx}
+                        className={`p-3 rounded-lg border transition-all space-y-2 ${
+                          skill.featured
+                            ? "border-zinc-800 bg-zinc-900/60"
+                            : "border-zinc-900 bg-zinc-950/80"
+                        }`}
+                      >
+                        <div className="flex items-center justify-between gap-1">
+                          <h3 className="text-xs font-bold text-zinc-100 font-mono">
+                            {skill.name}
                           </h3>
-
-                          <div className="flex items-center gap-2">
-                            <span
-                              className={`text-[10px] font-mono px-2 py-0.5 rounded border ${
-                                isExpert
-                                  ? "bg-white/10 border-white/30 text-zinc-200"
-                                  : "bg-zinc-800 border-zinc-700 text-zinc-300"
-                              }`}
-                            >
-                              {skill.level}
-                            </span>
-                            <span className="text-[10px] font-mono text-zinc-500 bg-zinc-900 px-1.5 py-0.5 rounded border border-zinc-800">
-                              {skill.years}
-                            </span>
-                          </div>
+                          <span
+                            className={`text-[9px] font-mono px-1.5 py-0.2 rounded border ${
+                              isExpert
+                                ? "bg-white/10 border-white/30 text-zinc-200"
+                                : "bg-zinc-800 border-zinc-700 text-zinc-400"
+                            }`}
+                          >
+                            {skill.level}
+                          </span>
                         </div>
 
-                        {/* Description */}
-                        <p className="text-xs text-zinc-300 leading-relaxed font-sans pt-0.5">
+                        <p className="text-[11px] text-zinc-300 leading-relaxed font-sans">
                           {skill.description}
                         </p>
-                      </div>
 
-                      {/* Tag Pills */}
-                      <div className="flex flex-wrap gap-1.5 pt-2 border-t border-zinc-900/80">
-                        {skill.tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className="px-2 py-0.5 rounded bg-zinc-900/80 border border-zinc-800/80 text-[10px] font-mono text-zinc-400 group-hover/card:text-zinc-300 transition-colors"
-                          >
-                            #{tag}
-                          </span>
-                        ))}
+                        <div className="flex flex-wrap gap-1 pt-1">
+                          {skill.tags.map((tag) => (
+                            <span
+                              key={tag}
+                              className="px-1.5 py-0.2 rounded bg-zinc-900 border border-zinc-800/80 text-[9px] font-mono text-zinc-400"
+                            >
+                              #{tag}
+                            </span>
+                          ))}
+                        </div>
                       </div>
-                    </div>
-                  );
-                })}
+                    );
+                  })}
+                </div>
               </div>
-            </section>
+            </BentoCard>
           ))}
         </div>
       )}
 
-      {/* Senior Architectural Engineering Manifesto Callout */}
-      <div
-        data-aos="zoom-in"
-        data-aos-delay="200"
-        className="p-6 rounded-xl border border-zinc-800/80 bg-zinc-950/80 space-y-4 relative overflow-hidden"
+      {/* Senior Architectural Engineering Manifesto Callout Bento Card */}
+      <BentoCard
+        colSpan="col-span-1"
+        accentGradient="from-whitesmoke via-zinc-400 to-transparent"
+        aosDelay={200}
       >
-        <div className="flex items-center gap-2.5 text-xs font-mono text-whitesmoke uppercase tracking-wider">
-          <CheckCircle2 className="w-4 h-4 text-whitesmoke" />
-          <span>Architectural Philosophy & Quality Assurance</span>
-        </div>
-
-        <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-sans">
-          Technology frameworks change rapidly, but foundational computer science principles, clean component design, strict static typing, and performance profiling remain timeless. I advocate for minimal bundle overhead, zero-delay micro-interactions, robust CI/CD, and strategic AI agent integration to supercharge engineering output.
-        </p>
-
-        <div className="flex flex-wrap items-center justify-between gap-4 pt-2 border-t border-zinc-900">
-          <div className="flex items-center gap-3 text-xs font-mono text-zinc-400">
-            <span>• Next.js App Router</span>
-            <span>• React Native Expo</span>
-            <span>• NestJS & Node</span>
-            <span>• Tailwind v4</span>
+        <div className="space-y-3">
+          <div className="flex items-center gap-2 text-xs font-mono text-whitesmoke uppercase tracking-wider">
+            <CheckCircle2 className="w-4 h-4 text-whitesmoke" />
+            <span>Architectural Philosophy & Quality Assurance</span>
           </div>
 
-          <a
-            href="https://github.com/Diyor-Khasanov-dev"
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-1.5 text-xs font-mono text-whitesmoke hover:text-white transition-colors"
-          >
-            <span>Explore Repositories</span>
-            <ArrowUpRight className="w-3.5 h-3.5" />
-          </a>
+          <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-sans">
+            Technology frameworks change rapidly, but foundational computer science principles, clean component design, strict static typing, and performance profiling remain timeless. I advocate for minimal bundle overhead, zero-delay micro-interactions, robust CI/CD, and strategic AI agent integration to supercharge engineering output.
+          </p>
+
+          <div className="flex flex-wrap items-center justify-between gap-4 pt-2 border-t border-zinc-900">
+            <div className="flex items-center gap-3 text-xs font-mono text-zinc-400">
+              <span>• Next.js App Router</span>
+              <span>• React Native Expo</span>
+              <span>• NestJS & Node</span>
+              <span>• Tailwind v4</span>
+            </div>
+
+            <a
+              href="https://github.com/Diyor-Khasanov-dev"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1.5 text-xs font-mono text-whitesmoke hover:text-white transition-colors"
+            >
+              <span>Explore Repositories</span>
+              <ArrowUpRight className="w-3.5 h-3.5" />
+            </a>
+          </div>
         </div>
-      </div>
+      </BentoCard>
     </main>
   );
 }
