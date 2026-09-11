@@ -51,14 +51,14 @@ export default function Navbar() {
         </div>
 
         {/* Desktop Navigation links - Refined sleek active tabs */}
-        <nav className="hidden lg:flex items-center gap-1 xl:gap-1.5 overflow-x-auto no-scrollbar py-1">
+        <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1.5 overflow-x-auto no-scrollbar py-1">
           {navItems.map((item) => {
             const isActive = pathname === item.href;
             return (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`px-3 py-1.5 text-xs font-mono rounded-lg transition-all duration-200 relative whitespace-nowrap flex items-center justify-center ${
+                className={`px-2.5 xl:px-3 py-1.5 text-xs font-mono rounded-lg transition-all duration-200 relative whitespace-nowrap flex items-center justify-center ${
                   isActive
                     ? "text-white bg-zinc-800/90 border border-zinc-700/60 shadow-md font-semibold"
                     : "text-zinc-400 hover:text-zinc-100 hover:bg-zinc-900/80 border border-transparent"
@@ -74,12 +74,12 @@ export default function Navbar() {
         </nav>
 
         {/* Right Action Trigger */}
-        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+        <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
           <CommandMenu />
 
           <Link
             href="/contact"
-            className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold font-mono text-zinc-950 bg-white hover:bg-zinc-100 rounded-lg transition-all duration-200 shadow-[0_0_15px_rgba(255,255,255,0.15)] hover:shadow-[0_0_22px_rgba(255,255,255,0.35)] hover:-translate-y-0.5 active:translate-y-0"
+            className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold font-mono text-zinc-950 bg-white hover:bg-zinc-100 rounded-lg transition-all duration-200 shadow-[0_0_15px_rgba(255,255,255,0.15)] hover:shadow-[0_0_22px_rgba(255,255,255,0.35)] hover:-translate-y-0.5 active:translate-y-0"
           >
             <span>Hire me</span>
             <ArrowUpRight className="w-3.5 h-3.5 text-zinc-950 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
