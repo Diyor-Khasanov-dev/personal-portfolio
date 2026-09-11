@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, Sparkles, ArrowUpRight } from "lucide-react";
+import { Menu, X, ArrowUpRight } from "lucide-react";
 import CommandMenu from "./CommandMenu";
 
 export default function Navbar() {
@@ -102,7 +102,6 @@ export default function Navbar() {
         <div className="lg:hidden border-b border-zinc-800/80 bg-zinc-950/95 backdrop-blur-2xl px-4 py-4 space-y-3 animate-in slide-in-from-top-2 duration-200 shadow-2xl">
           <div className="flex items-center justify-between px-1 pb-2 border-b border-zinc-900">
             <span className="text-xs font-mono text-zinc-400 flex items-center gap-1.5">
-              <Sparkles className="w-3.5 h-3.5 text-zinc-200" />
               <span>Navigation</span>
             </span>
             <Link

@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @import "aos/dist/aos.css";
 
+@theme {
+  --color-whitesmoke: #f5f5f5;
+}
+
 @layer base {
   :root {
     --background: #000000;

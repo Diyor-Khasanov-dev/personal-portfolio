@@ -8,8 +8,8 @@ import {
   MessageSquare,
   Copy,
   Check,
+  CheckCircle2,
   ArrowUpRight,
-  Sparkles,
   Building2,
   Globe,
 } from "lucide-react";
@@ -132,7 +132,7 @@ export default function ContactPage() {
           <div className="p-4 rounded-xl border border-zinc-900 bg-zinc-950/30 text-xs font-mono text-zinc-400 space-y-1">
             <div className="flex items-center gap-2">
               <Globe className="w-3.5 h-3.5 text-zinc-500" />
-              <span>Tashkent, Uzbekistan (GMT+5)</span>
+              <span>Samarkand, Uzbekistan (GMT+5)</span>
             </div>
             <div className="flex items-center gap-2">
               <Building2 className="w-3.5 h-3.5 text-zinc-500" />
@@ -155,7 +155,7 @@ export default function ContactPage() {
             {formSubmitted ? (
               <div className="py-12 text-center space-y-3 animate-in fade-in duration-300">
                 <div className="w-12 h-12 rounded-full bg-white/10 border border-white/30 flex items-center justify-center mx-auto text-whitesmoke">
-                  <Sparkles className="w-6 h-6" />
+                  <CheckCircle2 className="w-6 h-6" />
                 </div>
                 <h3 className="text-base font-bold text-white">Message Dispatched!</h3>
                 <p className="text-xs text-zinc-400 max-w-sm mx-auto">

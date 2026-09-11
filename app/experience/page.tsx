@@ -4,7 +4,6 @@ import {
   Building2,
   Calendar,
   MapPin,
-  Sparkles,
   ArrowUpRight,
   GraduationCap,
   Layers,
@@ -168,7 +167,7 @@ export default function ExperiencePage() {
         <div className="space-y-1 border-l border-zinc-800/80 pl-3 sm:pl-4">
           <span className="text-zinc-500 text-[11px] uppercase tracking-wider block">Active Roles</span>
           <span className="text-lg font-bold text-whitesmoke flex items-center gap-1.5">
-            <Sparkles className="w-4 h-4 text-whitesmoke" />
+            <Briefcase className="w-4 h-4 text-whitesmoke" />
             2 Active
           </span>
         </div>
@@ -215,7 +214,7 @@ export default function ExperiencePage() {
             <div className="p-5 sm:p-6 rounded-xl border border-zinc-800/80 bg-zinc-950/60 hover:bg-zinc-900/40 hover:border-zinc-700 transition-all duration-300 space-y-4 group relative overflow-hidden shadow-sm hover:shadow-[0_8px_20px_rgba(0,0,0,0.4)]">
               {exp.current && (
                 <div className="absolute top-0 right-0 px-3 py-1 bg-white/10 border-b border-l border-white/20 text-zinc-200 font-mono text-[10px] uppercase tracking-wider rounded-bl-lg flex items-center gap-1">
-                  <Sparkles className="w-3 h-3 text-whitesmoke" />
+                  <CheckCircle2 className="w-3 h-3 text-whitesmoke" />
                   <span>Present Role</span>
                 </div>
               )}
