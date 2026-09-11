@@ -52,7 +52,7 @@ export default function TechStackClient() {
       badge: "Core Expertise",
       description:
         "Building resilient, accessible, sub-50ms web applications with server components, hydration optimization, and micro-frontend architectures.",
-      span: "col-span-1 md:col-span-2",
+      span: "col-span-12 md:col-span-8",
       accent: "from-whitesmoke via-zinc-400 to-transparent",
       skills: [
         {
@@ -99,7 +99,7 @@ export default function TechStackClient() {
       badge: "Design Craft",
       description:
         "Crafting pixel-perfect, dark-mode first design systems with atomic CSS, accessible headless primitives, and responsive micro-interactions.",
-      span: "col-span-1",
+      span: "col-span-12 md:col-span-4",
       accent: "from-pink-500/80 via-rose-400/50 to-transparent",
       skills: [
         {
@@ -137,7 +137,7 @@ export default function TechStackClient() {
       badge: "Data Flow",
       description:
         "Predictable global state, optimistic UI updates, zero-boilerplate client stores, and intelligent query caching.",
-      span: "col-span-1",
+      span: "col-span-12 md:col-span-4",
       accent: "from-sky-500/80 via-blue-400/50 to-transparent",
       skills: [
         {
@@ -167,7 +167,7 @@ export default function TechStackClient() {
       badge: "Server Microservices",
       description:
         "Designing scalable REST & GraphQL APIs, real-time WebSockets engines, and enterprise backend microservices.",
-      span: "col-span-1 md:col-span-2",
+      span: "col-span-12 md:col-span-8",
       accent: "from-indigo-500/80 via-purple-500/50 to-transparent",
       skills: [
         {
@@ -205,7 +205,7 @@ export default function TechStackClient() {
       badge: "Persistence Layer",
       description:
         "High-performance data modeling, relational normalization, NoSQL document store tuning, and sub-millisecond Redis caching.",
-      span: "col-span-1",
+      span: "col-span-12 md:col-span-4",
       accent: "from-amber-500/80 via-yellow-400/50 to-transparent",
       skills: [
         {
@@ -235,7 +235,7 @@ export default function TechStackClient() {
       badge: "iOS & Android",
       description:
         "Crafting native-grade iOS & Android mobile apps with shared TypeScript codebases, smooth 60fps gestures, and native module bridges.",
-      span: "col-span-1 md:col-span-2",
+      span: "col-span-12 md:col-span-8",
       accent: "from-cyan-500/80 via-teal-400/50 to-transparent",
       skills: [
         {
@@ -264,7 +264,7 @@ export default function TechStackClient() {
       badge: "Dev Speed Multiplier",
       description:
         "Leveraging cutting-edge AI coding agents and autonomous LLM workflows to accelerate feature delivery, test generation, and code review.",
-      span: "col-span-1 md:col-span-3",
+      span: "col-span-12 md:col-span-12",
       accent: "from-purple-500/80 via-indigo-500/50 to-transparent",
       skills: [
         {
@@ -336,9 +336,9 @@ export default function TechStackClient() {
       </div>
 
       {/* Quick Metrics Bento Bar */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+      <div className="grid grid-cols-12 gap-3">
         <BentoCard
-          colSpan="col-span-1"
+          colSpan="col-span-6 sm:col-span-3"
           accentGradient="from-amber-500/80 via-yellow-400/50 to-transparent"
           aosDelay={150}
         >
@@ -352,7 +352,7 @@ export default function TechStackClient() {
         </BentoCard>
 
         <BentoCard
-          colSpan="col-span-1"
+          colSpan="col-span-6 sm:col-span-3"
           accentGradient="from-whitesmoke/80 via-zinc-400/50 to-transparent"
           aosDelay={200}
         >
@@ -366,7 +366,7 @@ export default function TechStackClient() {
         </BentoCard>
 
         <BentoCard
-          colSpan="col-span-1"
+          colSpan="col-span-6 sm:col-span-3"
           accentGradient="from-sky-500/80 via-blue-400/50 to-transparent"
           aosDelay={250}
         >
@@ -380,7 +380,7 @@ export default function TechStackClient() {
         </BentoCard>
 
         <BentoCard
-          colSpan="col-span-1"
+          colSpan="col-span-6 sm:col-span-3"
           accentGradient="from-purple-500/80 via-indigo-400/50 to-transparent"
           aosDelay={300}
         >
@@ -462,7 +462,7 @@ export default function TechStackClient() {
           </button>
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
           {filteredGroups.map((group, groupIdx) => (
             <BentoCard
               key={group.id}
@@ -548,7 +548,7 @@ export default function TechStackClient() {
 
       {/* Senior Architectural Engineering Manifesto Callout Bento Card */}
       <BentoCard
-        colSpan="col-span-1"
+        colSpan="col-span-12"
         accentGradient="from-whitesmoke via-zinc-400 to-transparent"
         aosDelay={200}
       >

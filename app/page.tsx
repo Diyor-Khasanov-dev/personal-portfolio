@@ -23,9 +23,9 @@ export default function HomePage() {
       title: "4x Hackathon Winner",
       subtitle: "Rapid Innovation",
       description:
-        "Proven track record of rapid innovation, high-pressure execution & winning pitch builds.",
+        "Proven track record of rapid innovation, high-pressure execution & winning pitch builds across major developer events.",
       icon: Trophy,
-      span: "col-span-1 md:col-span-2",
+      span: "col-span-12 md:col-span-7",
       accent: "from-amber-500/80 via-yellow-400/50 to-transparent",
       tag: "Competitive",
     },
@@ -35,7 +35,7 @@ export default function HomePage() {
       description:
         "World-class industry certifications in cloud infrastructure & modern software engineering.",
       icon: Award,
-      span: "col-span-1",
+      span: "col-span-12 md:col-span-5",
       accent: "from-indigo-500/80 via-purple-500/50 to-transparent",
       tag: "Verified",
     },
@@ -45,7 +45,7 @@ export default function HomePage() {
       description:
         "Delivering production-grade, highly reliable systems with sub-50ms performance targets.",
       icon: Briefcase,
-      span: "col-span-1",
+      span: "col-span-12 md:col-span-5",
       accent: "from-emerald-500/80 via-teal-500/50 to-transparent",
       tag: "Production",
     },
@@ -55,7 +55,7 @@ export default function HomePage() {
       description:
         "Architecting end-to-end web platforms, REST/GraphQL APIs, and native-grade mobile apps.",
       icon: Smartphone,
-      span: "col-span-1 md:col-span-2",
+      span: "col-span-12 md:col-span-7",
       accent: "from-sky-500/80 via-blue-500/50 to-transparent",
       tag: "Full Spectrum",
     },
@@ -121,10 +121,10 @@ export default function HomePage() {
   return (
     <main className="max-w-5xl w-full mx-auto px-4 sm:px-6 pt-6 sm:pt-10 pb-16 space-y-10 overflow-hidden">
       {/* Bento Grid Header & Hero Section */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
         {/* Main Hero Bento Card */}
         <BentoCard
-          colSpan="col-span-1 md:col-span-2"
+          colSpan="col-span-12 md:col-span-8"
           accentGradient="from-whitesmoke via-zinc-400 to-transparent"
           glow
           aosDelay={100}
@@ -200,7 +200,7 @@ export default function HomePage() {
 
         {/* Side Stat Bento Card */}
         <BentoCard
-          colSpan="col-span-1"
+          colSpan="col-span-12 md:col-span-4"
           accentGradient="from-indigo-500/80 via-sky-400/50 to-transparent"
           aosDelay={200}
         >
@@ -254,7 +254,7 @@ export default function HomePage() {
           <span className="text-xs font-mono text-zinc-500">Bento Grid View</span>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
           {highlights.map((item, idx) => {
             const IconComponent = item.icon;
             return (

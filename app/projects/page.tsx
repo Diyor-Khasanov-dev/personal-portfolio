@@ -107,7 +107,7 @@ const openSourceContributions: OpenSourceContribution[] = [
     ],
     techStack: ["TypeScript", "Node.js", "Google Gemini API", "React Ink", "REST APIs"],
     githubLink: "https://github.com/google-gemini/gemini-cli",
-    span: "col-span-1 md:col-span-2",
+    span: "col-span-12 md:col-span-7",
     accent: "from-sky-500/80 via-blue-500/40 to-transparent",
   },
   {
@@ -123,7 +123,7 @@ const openSourceContributions: OpenSourceContribution[] = [
     ],
     techStack: ["Go", "Kubernetes", "Docker", "gRPC", "Distributed Systems"],
     githubLink: "https://github.com/kubernetes/kubernetes",
-    span: "col-span-1",
+    span: "col-span-12 md:col-span-5",
     accent: "from-blue-600/80 via-cyan-500/40 to-transparent",
   },
   {
@@ -139,7 +139,7 @@ const openSourceContributions: OpenSourceContribution[] = [
     ],
     techStack: ["TypeScript", "Electron", "React", "CSS Modules", "VS Code API"],
     githubLink: "https://github.com/microsoft/vscode",
-    span: "col-span-1 md:col-span-3",
+    span: "col-span-12",
     accent: "from-purple-500/80 via-indigo-500/40 to-transparent",
   },
 ];
@@ -179,11 +179,11 @@ export default function ProjectsPage() {
           </span>
         </div>
 
-        <div className="grid grid-cols-1 gap-6">
+        <div className="grid grid-cols-12 gap-6">
           {projects.map((project, idx) => (
             <BentoCard
               key={project.name}
-              colSpan="col-span-1"
+              colSpan="col-span-12"
               accentGradient="from-whitesmoke via-zinc-300 to-zinc-500"
               aosDelay={200 + idx * 100}
               glow
@@ -354,7 +354,7 @@ export default function ProjectsPage() {
           </span>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
           {openSourceContributions.map((item, idx) => (
             <BentoCard
               key={item.name}

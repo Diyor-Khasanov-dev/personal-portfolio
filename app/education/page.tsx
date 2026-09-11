@@ -44,7 +44,7 @@ export default function EducationPage() {
       featured: true,
       initials: "NT",
       badgeBg: "bg-blue-600/20 text-blue-400 border-blue-500/30",
-      span: "col-span-1 md:col-span-2",
+      span: "col-span-12 md:col-span-7",
       accent: "from-indigo-500/80 via-purple-500/50 to-transparent",
       description:
         "Intensive software engineering program covering modern frontend architectures, responsive UI engineering, web performance, and production-grade Web development.",
@@ -69,7 +69,7 @@ export default function EducationPage() {
       grade: "Professional Certificate",
       initials: "META",
       badgeBg: "bg-sky-600/20 text-sky-400 border-sky-500/30",
-      span: "col-span-1",
+      span: "col-span-12 md:col-span-5",
       accent: "from-sky-500/80 via-blue-500/40 to-transparent",
       description:
         "Comprehensive professional credential covering core web technologies, React components, advanced state management, UI/UX design principles, and frontend testing.",
@@ -90,7 +90,7 @@ export default function EducationPage() {
       grade: "Specialization Course",
       initials: "SCR",
       badgeBg: "bg-purple-600/20 text-purple-400 border-purple-500/30",
-      span: "col-span-1 md:col-span-3",
+      span: "col-span-12",
       accent: "from-purple-500/80 via-pink-500/40 to-transparent",
       description:
         "Interactive mastery of strongly-typed frontend architecture with TypeScript, complex data structures & algorithms in JS, and AI prompt engineering workflows.",
@@ -122,9 +122,9 @@ export default function EducationPage() {
       </div>
 
       {/* Quick Overview Bento Ribbon */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+      <div className="grid grid-cols-12 gap-3">
         <BentoCard
-          colSpan="col-span-1"
+          colSpan="col-span-12 sm:col-span-4"
           accentGradient="from-indigo-500/80 via-purple-500/50 to-transparent"
           aosDelay={150}
         >
@@ -136,7 +136,7 @@ export default function EducationPage() {
         </BentoCard>
 
         <BentoCard
-          colSpan="col-span-1"
+          colSpan="col-span-12 sm:col-span-4"
           accentGradient="from-whitesmoke/80 via-zinc-400/50 to-transparent"
           aosDelay={200}
         >
@@ -148,7 +148,7 @@ export default function EducationPage() {
         </BentoCard>
 
         <BentoCard
-          colSpan="col-span-2 sm:col-span-1"
+          colSpan="col-span-12 sm:col-span-4"
           accentGradient="from-sky-500/80 via-blue-500/50 to-transparent"
           aosDelay={250}
         >
@@ -161,7 +161,7 @@ export default function EducationPage() {
       </div>
 
       {/* Education Bento Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
         {educationList.map((edu, idx) => (
           <BentoCard
             key={edu.id}
