@@ -44,8 +44,8 @@ export default function LanguagesPage() {
       subtext: "First Language / Mother Tongue",
       level: 100,
       badgeColor:
-        "border-emerald-500/30 bg-emerald-500/10 text-emerald-300 shadow-[0_0_12px_rgba(16,185,129,0.15)]",
-      barGradient: "from-emerald-500 to-teal-400",
+        "border-white/30 bg-white/10 text-zinc-200 shadow-[0_0_12px_rgba(255,255,255,0.15)]",
+      barGradient: "from-whitesmoke to-zinc-400",
       description:
         "Full native mastery in verbal, written, and technical communication. Primary language for local community engagements and team leadership.",
       highlights: [
@@ -305,8 +305,8 @@ export default function LanguagesPage() {
         data-aos-delay="400"
         className="p-5 rounded-2xl border border-zinc-800/80 bg-zinc-950/40 text-center space-y-2"
       >
-        <div className="inline-flex items-center gap-2 text-xs font-mono text-emerald-400">
-          <Sparkles className="w-4 h-4 text-emerald-400" />
+        <div className="inline-flex items-center gap-2 text-xs font-mono text-whitesmoke">
+          <Sparkles className="w-4 h-4 text-whitesmoke" />
           <span>Cross-Cultural & Technical Collaboration</span>
         </div>
         <p className="text-xs sm:text-sm text-zinc-400 max-w-2xl mx-auto leading-relaxed">

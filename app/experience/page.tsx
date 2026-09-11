@@ -140,8 +140,8 @@ export default function ExperiencePage() {
     <main className="max-w-4xl w-full mx-auto px-4 sm:px-6 pt-6 sm:pt-10 pb-20 space-y-12 overflow-hidden">
       {/* Header Banner */}
       <div data-aos="fade-down" data-aos-delay="100" className="space-y-4">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/20 bg-emerald-500/10 text-emerald-300 text-xs font-mono">
-          <Briefcase className="w-3.5 h-3.5 text-emerald-400" />
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/20 bg-white/10 text-zinc-200 text-xs font-mono">
+          <Briefcase className="w-3.5 h-3.5 text-whitesmoke" />
           <span>Professional Career & Impact</span>
         </div>
         <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-white">
@@ -161,14 +161,14 @@ export default function ExperiencePage() {
         <div className="space-y-1">
           <span className="text-zinc-500 text-[11px] uppercase tracking-wider block">Total Roles</span>
           <span className="text-lg font-bold text-zinc-100 flex items-center gap-1.5">
-            <Layers className="w-4 h-4 text-emerald-400" />
+            <Layers className="w-4 h-4 text-whitesmoke" />
             6 Positions
           </span>
         </div>
         <div className="space-y-1 border-l border-zinc-800/80 pl-3 sm:pl-4">
           <span className="text-zinc-500 text-[11px] uppercase tracking-wider block">Active Roles</span>
-          <span className="text-lg font-bold text-emerald-400 flex items-center gap-1.5">
-            <Sparkles className="w-4 h-4 text-emerald-400" />
+          <span className="text-lg font-bold text-whitesmoke flex items-center gap-1.5">
+            <Sparkles className="w-4 h-4 text-whitesmoke" />
             2 Active
           </span>
         </div>
@@ -200,13 +200,13 @@ export default function ExperiencePage() {
             <div
               className={`absolute -left-[31px] sm:-left-[39px] top-2 w-4 h-4 rounded-full border-2 flex items-center justify-center transition-all duration-300 ${
                 exp.current
-                  ? "border-emerald-500 bg-emerald-950 shadow-[0_0_12px_rgba(16,185,129,0.5)]"
+                  ? "border-white bg-zinc-900 shadow-[0_0_12px_rgba(255,255,255,0.5)]"
                   : "border-zinc-700 bg-zinc-900 group-hover:border-zinc-500"
               }`}
             >
               <div
                 className={`w-1.5 h-1.5 rounded-full ${
-                  exp.current ? "bg-emerald-400 animate-pulse" : "bg-zinc-500"
+                  exp.current ? "bg-whitesmoke animate-pulse" : "bg-zinc-500"
                 }`}
               />
             </div>
@@ -214,8 +214,8 @@ export default function ExperiencePage() {
             {/* Experience Card */}
             <div className="p-5 sm:p-6 rounded-xl border border-zinc-800/80 bg-zinc-950/60 hover:bg-zinc-900/40 hover:border-zinc-700 transition-all duration-300 space-y-4 group relative overflow-hidden shadow-sm hover:shadow-[0_8px_20px_rgba(0,0,0,0.4)]">
               {exp.current && (
-                <div className="absolute top-0 right-0 px-3 py-1 bg-emerald-500/10 border-b border-l border-emerald-500/30 text-emerald-400 font-mono text-[10px] uppercase tracking-wider rounded-bl-lg flex items-center gap-1">
-                  <Sparkles className="w-3 h-3" />
+                <div className="absolute top-0 right-0 px-3 py-1 bg-white/10 border-b border-l border-white/20 text-zinc-200 font-mono text-[10px] uppercase tracking-wider rounded-bl-lg flex items-center gap-1">
+                  <Sparkles className="w-3 h-3 text-whitesmoke" />
                   <span>Present Role</span>
                 </div>
               )}
@@ -229,12 +229,12 @@ export default function ExperiencePage() {
                   </div>
 
                   <div>
-                    <h2 className="text-lg font-bold text-white group-hover:text-emerald-300 transition-colors">
+                    <h2 className="text-lg font-bold text-white group-hover:text-whitesmoke transition-colors">
                       {exp.role}
                     </h2>
 
                     <div className="flex flex-wrap items-center gap-2 pt-1 text-xs">
-                      <span className="font-semibold text-emerald-400 font-mono flex items-center gap-1">
+                      <span className="font-semibold text-whitesmoke font-mono flex items-center gap-1">
                         <Building2 className="w-3.5 h-3.5" />
                         {exp.company}
                       </span>
@@ -257,7 +257,7 @@ export default function ExperiencePage() {
                     <Calendar className="w-3.5 h-3.5 text-zinc-400" />
                     <span>{exp.period}</span>
                     <span className="text-zinc-600">·</span>
-                    <span className="text-emerald-400 font-semibold">{exp.duration}</span>
+                    <span className="text-whitesmoke font-semibold">{exp.duration}</span>
                   </div>
 
                   <div className="flex items-center gap-1 text-[11px] font-mono text-zinc-400 pt-0.5">
@@ -274,7 +274,7 @@ export default function ExperiencePage() {
                 </p>
                 {exp.highlights.map((hl, hIdx) => (
                   <div key={hIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-zinc-300 leading-relaxed font-sans">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-whitesmoke shrink-0 mt-0.5" />
                     <span>{hl}</span>
                   </div>
                 ))}

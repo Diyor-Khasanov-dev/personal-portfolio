@@ -128,8 +128,8 @@ export default function EducationPage() {
         </div>
         <div className="space-y-1 border-l border-zinc-800/80 pl-3 sm:pl-4">
           <span className="text-zinc-500 text-[11px] uppercase tracking-wider block">Bootcamp GPA</span>
-          <span className="text-lg font-bold text-emerald-400 flex items-center gap-1.5">
-            <Sparkles className="w-4 h-4 text-emerald-400" />
+          <span className="text-lg font-bold text-whitesmoke flex items-center gap-1.5">
+            <Sparkles className="w-4 h-4 text-whitesmoke" />
             3.97 / 4.0
           </span>
         </div>
@@ -186,7 +186,7 @@ export default function EducationPage() {
                       </span>
                     )}
                     {edu.gpa && (
-                      <span className="px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/30 text-[11px] text-emerald-400 font-semibold">
+                      <span className="px-2 py-0.5 rounded bg-white/10 border border-white/30 text-[11px] text-whitesmoke font-semibold">
                         GPA: {edu.gpa}
                       </span>
                     )}
@@ -218,7 +218,7 @@ export default function EducationPage() {
                     key={sIdx}
                     className="flex items-center gap-1.5 px-2.5 py-1 rounded bg-zinc-900/80 border border-zinc-800 text-xs text-zinc-300"
                   >
-                    <CheckCircle2 className="w-3 h-3 text-emerald-400 shrink-0" />
+                    <CheckCircle2 className="w-3 h-3 text-whitesmoke shrink-0" />
                     <span>{skill}</span>
                   </div>
                 ))}

@@ -5,6 +5,7 @@
   :root {
     --background: #000000;
     --foreground: #ededed;
+    --main-color: whitesmoke;
   }
 
   body {
@@ -33,7 +34,7 @@
 }
 
 .bg-radial-gradient {
-  background: radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.08) 0%, rgba(56, 189, 248, 0.04) 40%, transparent 70%);
+  background: radial-gradient(circle at 50% 0%, rgba(245, 245, 245, 0.12) 0%, rgba(212, 212, 216, 0.05) 40%, transparent 70%);
 }
 
 .bg-linear-border {

@@ -40,10 +40,10 @@ export default function Footer() {
             <p className="text-xs text-zinc-400 font-sans max-w-sm leading-relaxed">
               Software Engineer & Co-Founder @ A.L.I.A. Architecting high-impact web applications, resilient APIs, and mobile systems with sub-50ms performance targets.
             </p>
-            <div className="flex items-center gap-2 text-[11px] font-mono text-emerald-400 pt-1">
+            <div className="flex items-center gap-2 text-[11px] font-mono text-zinc-300 pt-1">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-zinc-200 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-zinc-100"></span>
               </span>
               <span>Available for engineering roles & consultations</span>
             </div>

@@ -46,7 +46,7 @@ export default function TechStackClient() {
     {
       id: "frontend",
       title: "Frontend Frameworks & Architecture",
-      icon: <Code2 className="w-5 h-5 text-emerald-400" />,
+      icon: <Code2 className="w-5 h-5 text-whitesmoke" />,
       badge: "Core Expertise",
       description:
         "Building resilient, accessible, sub-50ms web applications with server components, hydration optimization, and micro-frontend architectures.",
@@ -372,7 +372,7 @@ export default function TechStackClient() {
     {
       id: "devops",
       title: "DevOps, Testing & Tooling",
-      icon: <Terminal className="w-5 h-5 text-emerald-400" />,
+      icon: <Terminal className="w-5 h-5 text-whitesmoke" />,
       badge: "Quality & Delivery",
       description:
         "Ensuring production stability with automated CI/CD pipelines, containerization, end-to-end testing, and zero-downtime deployments.",
@@ -447,10 +447,10 @@ export default function TechStackClient() {
     <main className="max-w-5xl w-full mx-auto px-4 sm:px-6 pt-6 sm:pt-10 pb-20 space-y-10 overflow-hidden">
       {/* Top Banner Header */}
       <div data-aos="fade-down" data-aos-delay="100" className="space-y-4">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-300 text-xs font-mono">
-          <Cpu className="w-3.5 h-3.5 text-emerald-400" />
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-white/20 bg-white/10 text-zinc-200 text-xs font-mono">
+          <Cpu className="w-3.5 h-3.5 text-whitesmoke" />
           <span>Full Stack & Mobile Senior Engineering Stack</span>
-          <span className="text-emerald-500/50">•</span>
+          <span className="text-zinc-500/50">•</span>
           <Sparkles className="w-3 h-3 text-amber-400" />
         </div>
 
@@ -481,10 +481,10 @@ export default function TechStackClient() {
 
         <div className="space-y-1 border-r border-zinc-900 pr-3">
           <div className="text-xs font-mono text-zinc-500 flex items-center gap-1.5">
-            <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+            <ShieldCheck className="w-3.5 h-3.5 text-whitesmoke" />
             <span>Type Safety</span>
           </div>
-          <div className="text-sm font-semibold text-emerald-400 font-mono">
+          <div className="text-sm font-semibold text-whitesmoke font-mono">
             100% TypeScript
           </div>
         </div>
@@ -574,7 +574,7 @@ export default function TechStackClient() {
               setSearchQuery("");
               setActiveCategory("all");
             }}
-            className="px-3.5 py-1.5 rounded-lg bg-zinc-900 border border-zinc-800 text-xs font-mono text-emerald-400 hover:text-emerald-300"
+            className="px-3.5 py-1.5 rounded-lg bg-zinc-900 border border-zinc-800 text-xs font-mono text-whitesmoke hover:text-white"
           >
             Reset Filters
           </button>
@@ -641,8 +641,8 @@ export default function TechStackClient() {
                             <span
                               className={`text-[10px] font-mono px-2 py-0.5 rounded border ${
                                 isExpert
-                                  ? "bg-emerald-500/10 border-emerald-500/30 text-emerald-300"
-                                  : "bg-sky-500/10 border-sky-500/30 text-sky-300"
+                                  ? "bg-white/10 border-white/30 text-zinc-200"
+                                  : "bg-zinc-800 border-zinc-700 text-zinc-300"
                               }`}
                             >
                               {skill.level}
@@ -685,8 +685,8 @@ export default function TechStackClient() {
         data-aos-delay="200"
         className="p-6 rounded-xl border border-zinc-800/80 bg-zinc-950/80 space-y-4 relative overflow-hidden"
       >
-        <div className="flex items-center gap-2.5 text-xs font-mono text-emerald-400 uppercase tracking-wider">
-          <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+        <div className="flex items-center gap-2.5 text-xs font-mono text-whitesmoke uppercase tracking-wider">
+          <CheckCircle2 className="w-4 h-4 text-whitesmoke" />
           <span>Architectural Philosophy & Quality Assurance</span>
         </div>
 
@@ -706,7 +706,7 @@ export default function TechStackClient() {
             href="https://github.com/Diyor-Khasanov-dev"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-400 hover:text-emerald-300 transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs font-mono text-whitesmoke hover:text-white transition-colors"
           >
             <span>Explore Repositories</span>
             <ArrowUpRight className="w-3.5 h-3.5" />

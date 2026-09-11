@@ -201,7 +201,7 @@ export default function AchievementsPage() {
             Production Apps
           </span>
           <div className="flex items-baseline gap-2">
-            <span className="text-2xl sm:text-3xl font-bold text-emerald-400 font-mono">2</span>
+            <span className="text-2xl sm:text-3xl font-bold text-whitesmoke font-mono">2</span>
             <span className="text-xs text-zinc-400">live platforms</span>
           </div>
         </div>
@@ -271,7 +271,7 @@ export default function AchievementsPage() {
                         )}
                         <span>{item.badgeText}</span>
                       </span>
-                      <span className="text-xs font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded-md">
+                      <span className="text-xs font-mono text-zinc-200 bg-white/10 border border-white/20 px-2.5 py-0.5 rounded-md">
                         {item.details}
                       </span>
                     </div>
@@ -362,7 +362,7 @@ export default function AchievementsPage() {
               <div className="space-y-1.5 pt-1">
                 {act.highlights.map((hl, hIdx) => (
                   <div key={hIdx} className="flex items-start gap-2 text-xs text-zinc-400">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-whitesmoke shrink-0 mt-0.5" />
                     <span>{hl}</span>
                   </div>
                 ))}

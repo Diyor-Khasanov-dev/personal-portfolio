@@ -140,8 +140,8 @@ export default function ProjectsPage() {
     <main className="max-w-4xl w-full mx-auto px-4 sm:px-6 pt-6 sm:pt-10 pb-20 space-y-16 overflow-hidden">
       {/* Page Header */}
       <div data-aos="fade-down" data-aos-delay="100" className="space-y-4">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/20 bg-emerald-500/10 text-emerald-300 text-xs font-mono">
-          <FolderGit2 className="w-3.5 h-3.5 text-emerald-400" />
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/20 bg-white/10 text-zinc-200 text-xs font-mono">
+          <FolderGit2 className="w-3.5 h-3.5 text-whitesmoke" />
           <span>Featured Projects & Open Source</span>
         </div>
         <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
@@ -160,7 +160,7 @@ export default function ProjectsPage() {
           className="flex items-center justify-between border-b border-zinc-800/80 pb-3"
         >
           <div className="flex items-center gap-2.5">
-            <Layers className="w-5 h-5 text-emerald-400" />
+            <Layers className="w-5 h-5 text-whitesmoke" />
             <h2 className="text-xl font-bold tracking-tight text-zinc-100">
               Featured Work
             </h2>
@@ -179,18 +179,18 @@ export default function ProjectsPage() {
               className="rounded-2xl border border-zinc-800/80 bg-zinc-950/80 hover:border-zinc-700 transition-all duration-300 overflow-hidden group shadow-xl relative"
             >
               {/* Subtle accent border gradient */}
-              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-emerald-500 via-teal-400 to-sky-500" />
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-whitesmoke via-zinc-300 to-zinc-500" />
 
               <div className="p-6 sm:p-8 space-y-8">
                 {/* Header info */}
                 <div className="space-y-3">
                   <div className="flex flex-wrap items-center justify-between gap-3">
-                    <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white group-hover:text-emerald-300 transition-colors flex items-center gap-2">
+                    <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white group-hover:text-whitesmoke transition-colors flex items-center gap-2">
                       <span>{project.name}</span>
-                      <Sparkles className="w-5 h-5 text-emerald-400 animate-pulse" />
+                      <Sparkles className="w-5 h-5 text-whitesmoke animate-pulse" />
                     </h3>
                     <div className="flex items-center gap-2">
-                      <span className="px-2.5 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-300 text-xs font-mono">
+                      <span className="px-2.5 py-1 rounded-full border border-white/30 bg-white/10 text-zinc-200 text-xs font-mono">
                         Fullstack Platform
                       </span>
                     </div>
@@ -210,7 +210,7 @@ export default function ProjectsPage() {
                       <span className="w-3 h-3 rounded-full bg-emerald-500/80 inline-block" />
                     </div>
                     <div className="px-4 py-1 rounded-md bg-zinc-950 border border-zinc-800/80 text-zinc-400 text-[11px] font-mono flex items-center gap-2 max-w-xs truncate">
-                      <Globe className="w-3 h-3 text-emerald-400 shrink-0" />
+                      <Globe className="w-3 h-3 text-whitesmoke shrink-0" />
                       <span className="truncate">{project.liveDemoLink}</span>
                     </div>
                     <div className="flex items-center gap-1.5 text-zinc-500 text-[11px]">
@@ -227,7 +227,7 @@ export default function ProjectsPage() {
                     {/* Linkly Mockup UI Card inside Canvas */}
                     <div className="relative z-10 max-w-sm mx-auto w-full p-4 rounded-xl border border-zinc-800 bg-zinc-900/90 backdrop-blur-md space-y-3 shadow-2xl group-hover/browser:scale-105 transition-transform duration-500">
                       <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-400 to-teal-600 text-zinc-950 font-bold font-mono text-sm flex items-center justify-center">
+                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-whitesmoke to-zinc-400 text-zinc-950 font-bold font-mono text-sm flex items-center justify-center">
                           LK
                         </div>
                         <div>
@@ -237,17 +237,17 @@ export default function ProjectsPage() {
                       </div>
 
                       <div className="space-y-1.5 pt-1">
-                        <div className="p-2 rounded-lg bg-zinc-950/80 border border-zinc-800/80 text-xs text-zinc-200 font-mono flex items-center justify-between hover:border-emerald-500/50 transition-colors">
+                        <div className="p-2 rounded-lg bg-zinc-950/80 border border-zinc-800/80 text-xs text-zinc-200 font-mono flex items-center justify-between hover:border-white/50 transition-colors">
                           <span className="flex items-center gap-2">
-                            <Globe className="w-3.5 h-3.5 text-emerald-400" />
+                            <Globe className="w-3.5 h-3.5 text-whitesmoke" />
                             <span>Portfolio Website</span>
                           </span>
                           <ExternalLink className="w-3 h-3 text-zinc-500" />
                         </div>
 
-                        <div className="p-2 rounded-lg bg-zinc-950/80 border border-zinc-800/80 text-xs text-zinc-200 font-mono flex items-center justify-between hover:border-emerald-500/50 transition-colors">
+                        <div className="p-2 rounded-lg bg-zinc-950/80 border border-zinc-800/80 text-xs text-zinc-200 font-mono flex items-center justify-between hover:border-white/50 transition-colors">
                           <span className="flex items-center gap-2">
-                            <GithubIcon className="w-3.5 h-3.5 text-emerald-400" />
+                            <GithubIcon className="w-3.5 h-3.5 text-whitesmoke" />
                             <span>GitHub Open Source Repos</span>
                           </span>
                           <ExternalLink className="w-3 h-3 text-zinc-500" />
@@ -257,7 +257,7 @@ export default function ProjectsPage() {
 
                     <div className="relative z-10 pt-4 flex items-center justify-between text-[11px] font-mono text-zinc-400 border-t border-zinc-900 mt-4">
                       <span className="flex items-center gap-1.5">
-                        <BarChart3 className="w-3.5 h-3.5 text-emerald-400" />
+                        <BarChart3 className="w-3.5 h-3.5 text-whitesmoke" />
                         <span>Live Analytics Active</span>
                       </span>
                       <span className="text-zinc-500">Sub-50ms Response</span>
@@ -268,7 +268,7 @@ export default function ProjectsPage() {
                 {/* Key Features Section */}
                 <div className="space-y-3">
                   <h4 className="text-xs font-mono uppercase tracking-wider text-zinc-400 font-semibold flex items-center gap-2">
-                    <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
+                    <Sparkles className="w-3.5 h-3.5 text-whitesmoke" />
                     Key Platform Capabilities
                   </h4>
                   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2.5">
@@ -279,7 +279,7 @@ export default function ProjectsPage() {
                           key={feature.label}
                           className="flex items-center gap-2.5 p-3 rounded-lg border border-zinc-800/80 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-zinc-700/80 transition-all duration-200"
                         >
-                          <IconComp className="w-4 h-4 text-emerald-400 shrink-0" />
+                          <IconComp className="w-4 h-4 text-whitesmoke shrink-0" />
                           <span className="text-xs text-zinc-200 font-medium leading-tight">
                             {feature.label}
                           </span>
@@ -312,7 +312,7 @@ export default function ProjectsPage() {
                     href={project.liveDemoLink}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-medium font-mono text-xs sm:text-sm transition-all duration-200 shadow-md hover:shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:-translate-y-0.5 cursor-pointer"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-whitesmoke hover:bg-white text-zinc-950 font-medium font-mono text-xs sm:text-sm transition-all duration-200 shadow-md hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:-translate-y-0.5 cursor-pointer"
                   >
                     <ExternalLink className="w-4 h-4" />
                     <span>Live Demo App</span>
@@ -342,7 +342,7 @@ export default function ProjectsPage() {
           className="flex items-center justify-between border-b border-zinc-800/80 pb-3"
         >
           <div className="flex items-center gap-2.5">
-            <GitPullRequest className="w-5 h-5 text-emerald-400" />
+            <GitPullRequest className="w-5 h-5 text-whitesmoke" />
             <h2 className="text-xl font-bold tracking-tight text-zinc-100">
               Open Source Contributions
             </h2>
@@ -361,14 +361,14 @@ export default function ProjectsPage() {
               className="rounded-xl border border-zinc-800/80 bg-zinc-950/60 hover:border-zinc-700/90 transition-all duration-300 p-6 space-y-5 relative overflow-hidden group shadow-sm hover:shadow-[0_8px_25px_rgba(0,0,0,0.5)]"
             >
               {/* Accent top bar */}
-              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-emerald-500/80 via-teal-400/50 to-transparent" />
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-whitesmoke via-zinc-300/50 to-transparent" />
 
               {/* Card Header */}
               <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3">
                 <div className="space-y-1.5">
                   <div className="flex items-center gap-2 flex-wrap">
-                    <span className="px-2.5 py-0.5 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-xs font-mono font-medium flex items-center gap-1.5">
-                      <Code2 className="w-3.5 h-3.5 text-emerald-400" />
+                    <span className="px-2.5 py-0.5 rounded-md bg-white/10 border border-white/20 text-zinc-200 text-xs font-mono font-medium flex items-center gap-1.5">
+                      <Code2 className="w-3.5 h-3.5 text-whitesmoke" />
                       {item.role}
                     </span>
                     <span className="text-xs font-mono text-zinc-500">•</span>
@@ -377,7 +377,7 @@ export default function ProjectsPage() {
                     </span>
                   </div>
 
-                  <h3 className="text-xl font-bold text-white group-hover:text-emerald-300 transition-colors">
+                  <h3 className="text-xl font-bold text-white group-hover:text-whitesmoke transition-colors">
                     {item.name}
                   </h3>
                 </div>
@@ -407,7 +407,7 @@ export default function ProjectsPage() {
               {/* Highlights */}
               <div className="space-y-2 pt-1 border-t border-zinc-900">
                 <p className="text-[11px] font-mono uppercase tracking-wider text-zinc-500 font-semibold flex items-center gap-1.5">
-                  <PackageCheck className="w-3.5 h-3.5 text-emerald-400" />
+                  <PackageCheck className="w-3.5 h-3.5 text-whitesmoke" />
                   Key Highlights & Contributions
                 </p>
                 <div className="space-y-1.5">
@@ -416,7 +416,7 @@ export default function ProjectsPage() {
                       key={hIdx}
                       className="flex items-start gap-2 text-xs sm:text-sm text-zinc-300 leading-normal"
                     >
-                      <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-4 h-4 text-whitesmoke shrink-0 mt-0.5" />
                       <span>{hl}</span>
                     </div>
                   ))}

@@ -45,8 +45,8 @@ export default function ContactPage() {
     <main className="max-w-4xl w-full mx-auto px-4 sm:px-6 pt-6 sm:pt-10 pb-20 space-y-12 overflow-hidden">
       {/* Header Banner */}
       <div data-aos="fade-down" data-aos-delay="100" className="space-y-4">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/20 bg-emerald-500/10 text-emerald-300 text-xs font-mono">
-          <Mail className="w-3.5 h-3.5 text-emerald-400" />
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/20 bg-white/10 text-zinc-200 text-xs font-mono">
+          <Mail className="w-3.5 h-3.5 text-whitesmoke" />
           <span>Get In Touch & Hire Me</span>
         </div>
         <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-white">
@@ -64,7 +64,7 @@ export default function ContactPage() {
           <div className="p-5 rounded-xl border border-zinc-800/80 bg-zinc-950/60 space-y-3 relative overflow-hidden group shadow-sm hover:border-zinc-700 transition-all">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2 text-xs font-mono text-zinc-400">
-                <Mail className="w-4 h-4 text-emerald-400" />
+                <Mail className="w-4 h-4 text-whitesmoke" />
                 <span>Direct Email</span>
               </div>
               <button
@@ -74,8 +74,8 @@ export default function ContactPage() {
               >
                 {copiedEmail ? (
                   <>
-                    <Check className="w-3 h-3 text-emerald-400" />
-                    <span className="text-emerald-400">Copied!</span>
+                    <Check className="w-3 h-3 text-zinc-100" />
+                    <span className="text-zinc-100">Copied!</span>
                   </>
                 ) : (
                   <>
@@ -146,7 +146,7 @@ export default function ContactPage() {
           <div className="p-6 rounded-xl border border-zinc-800/80 bg-zinc-950/60 space-y-6 shadow-sm">
             <div className="flex items-center justify-between border-b border-zinc-900 pb-3">
               <div className="flex items-center gap-2 text-sm font-bold text-white">
-                <MessageSquare className="w-4 h-4 text-emerald-400" />
+                <MessageSquare className="w-4 h-4 text-whitesmoke" />
                 <span>Send Direct Message</span>
               </div>
               <span className="text-[11px] font-mono text-zinc-500">Quick Response</span>
@@ -154,7 +154,7 @@ export default function ContactPage() {
 
             {formSubmitted ? (
               <div className="py-12 text-center space-y-3 animate-in fade-in duration-300">
-                <div className="w-12 h-12 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center mx-auto text-emerald-400">
+                <div className="w-12 h-12 rounded-full bg-white/10 border border-white/30 flex items-center justify-center mx-auto text-whitesmoke">
                   <Sparkles className="w-6 h-6" />
                 </div>
                 <h3 className="text-base font-bold text-white">Message Dispatched!</h3>
@@ -180,7 +180,7 @@ export default function ContactPage() {
                       placeholder="Jane Doe"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-900/80 border border-zinc-800 text-xs text-zinc-100 placeholder-zinc-600 focus:outline-none focus:border-emerald-500 transition-colors font-mono"
+                      className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-900/80 border border-zinc-800 text-xs text-zinc-100 placeholder-zinc-600 focus:outline-none focus:border-zinc-500 transition-colors font-mono"
                     />
                   </div>
 
@@ -192,7 +192,7 @@ export default function ContactPage() {
                       placeholder="jane@company.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-900/80 border border-zinc-800 text-xs text-zinc-100 placeholder-zinc-600 focus:outline-none focus:border-emerald-500 transition-colors font-mono"
+                      className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-900/80 border border-zinc-800 text-xs text-zinc-100 placeholder-zinc-600 focus:outline-none focus:border-zinc-500 transition-colors font-mono"
                     />
                   </div>
                 </div>
@@ -204,7 +204,7 @@ export default function ContactPage() {
                     placeholder="Project Inquiry / Hiring Opportunity"
                     value={formData.subject}
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                    className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-900/80 border border-zinc-800 text-xs text-zinc-100 placeholder-zinc-600 focus:outline-none focus:border-emerald-500 transition-colors font-mono"
+                    className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-900/80 border border-zinc-800 text-xs text-zinc-100 placeholder-zinc-600 focus:outline-none focus:border-zinc-500 transition-colors font-mono"
                   />
                 </div>
 
@@ -216,7 +216,7 @@ export default function ContactPage() {
                     placeholder="Tell me about your project, timeline, and goals..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-900/80 border border-zinc-800 text-xs text-zinc-100 placeholder-zinc-600 focus:outline-none focus:border-emerald-500 transition-colors font-mono resize-none"
+                    className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-900/80 border border-zinc-800 text-xs text-zinc-100 placeholder-zinc-600 focus:outline-none focus:border-zinc-500 transition-colors font-mono resize-none"
                   />
                 </div>
 
