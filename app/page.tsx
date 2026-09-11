@@ -95,10 +95,10 @@ export default function HomePage() {
     <main className="max-w-4xl w-full mx-auto px-4 sm:px-6 pt-6 sm:pt-10 pb-16 space-y-10 overflow-hidden">
       {/* Status / Availability Badge */}
       <div data-aos="fade-down" data-aos-delay="100" className="flex justify-start mt-6 sm:mt-10">
-        <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-zinc-800 bg-zinc-900/90 text-xs font-mono text-zinc-300 backdrop-blur-md shadow-sm hover:border-zinc-700 transition-all duration-300 hover:shadow-[0_0_15px_rgba(16,185,129,0.15)] group cursor-default">
+        <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-zinc-800 bg-zinc-900/90 text-xs font-mono text-zinc-300 backdrop-blur-md shadow-sm hover:border-zinc-700 transition-all duration-300 hover:shadow-[0_0_15px_rgba(255,255,255,0.15)] group cursor-default">
           <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-zinc-200 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-zinc-100"></span>
           </span>
           <span>Available for Fullstack & Mobile Engineering Roles</span>
           <span className="text-zinc-600">•</span>
@@ -121,8 +121,8 @@ export default function HomePage() {
 
         {/* Required Exact Short Description */}
         <div className="pt-2">
-          <p className="text-base sm:text-xl font-medium text-emerald-400 font-mono tracking-tight flex items-center gap-2">
-            <Building2 className="w-5 h-5 text-emerald-400 shrink-0" />
+          <p className="text-base sm:text-xl font-medium text-whitesmoke font-mono tracking-tight flex items-center gap-2">
+            <Building2 className="w-5 h-5 text-whitesmoke shrink-0" />
             <span>Software Engineer. Co-Founder @ A.L.I.A</span>
           </p>
         </div>
@@ -145,7 +145,7 @@ export default function HomePage() {
               data-aos-delay={300 + idx * 100}
               className="p-4 rounded-xl border border-zinc-800/80 bg-zinc-950/60 hover:bg-zinc-900/60 hover:border-zinc-700 hover:-translate-y-1 hover:shadow-[0_8px_20px_rgba(0,0,0,0.4)] transition-all duration-300 space-y-2 group relative overflow-hidden"
             >
-              <div className="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-300 group-hover:text-emerald-400 group-hover:border-emerald-500/30 transition-all duration-300">
+              <div className="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-300 group-hover:text-whitesmoke group-hover:border-white/30 transition-all duration-300">
                 <IconComponent className="w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
               </div>
               <div>
@@ -180,7 +180,7 @@ export default function HomePage() {
           rel="noreferrer"
           className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-zinc-800 bg-zinc-900/80 hover:bg-zinc-800/90 text-zinc-200 font-medium text-sm transition-all duration-200 font-mono group hover:border-zinc-700 hover:-translate-y-0.5 active:translate-y-0"
         >
-          <Code2 className="w-4 h-4 text-zinc-400 group-hover:text-emerald-400 transition-colors" />
+          <Code2 className="w-4 h-4 text-zinc-400 group-hover:text-whitesmoke transition-colors" />
           <span>Get In Touch</span>
           <ArrowUpRight className="w-4 h-4 text-zinc-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
         </a>
@@ -216,7 +216,7 @@ export default function HomePage() {
                 className="flex items-center justify-between p-3 rounded-lg border border-zinc-800/80 bg-zinc-950/40 hover:bg-zinc-900/80 hover:border-zinc-700 text-zinc-300 hover:text-white transition-all duration-200 hover:-translate-y-0.5 group shadow-sm hover:shadow-[0_4px_12px_rgba(0,0,0,0.3)]"
               >
                 <div className="flex items-center gap-2.5">
-                  <SocialIcon className="w-4 h-4 text-zinc-400 group-hover:text-emerald-400 transition-colors" />
+                  <SocialIcon className="w-4 h-4 text-zinc-400 group-hover:text-whitesmoke transition-colors" />
                   <span className="text-xs font-mono font-medium">{social.name}</span>
                 </div>
                 <ArrowUpRight className="w-3.5 h-3.5 text-zinc-600 group-hover:text-zinc-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />

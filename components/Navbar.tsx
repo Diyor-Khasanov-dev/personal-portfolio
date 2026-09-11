@@ -40,11 +40,11 @@ export default function Navbar() {
           {/* Status Badge - Resend style */}
           <Link
             href="/contact"
-            className="hidden xl:flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 hover:bg-emerald-500/15 hover:border-emerald-500/50 text-[11px] font-mono text-emerald-400 transition-all cursor-pointer group shadow-[0_0_12px_rgba(16,185,129,0.1)]"
+            className="hidden xl:flex items-center gap-2 px-3 py-1 rounded-full border border-white/20 bg-white/10 hover:bg-white/15 hover:border-white/40 text-[11px] font-mono text-zinc-200 transition-all cursor-pointer group shadow-[0_0_12px_rgba(255,255,255,0.1)]"
           >
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-zinc-200 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-zinc-100"></span>
             </span>
             <span className="leading-none text-[11px]">Available for hire</span>
           </Link>
@@ -66,7 +66,7 @@ export default function Navbar() {
               >
                 <span>{item.label}</span>
                 {isActive && (
-                  <span className="absolute bottom-0 left-2 right-2 h-[2.5px] bg-emerald-400 rounded-full shadow-[0_0_10px_rgba(52,211,153,0.9)]" />
+                  <span className="absolute bottom-0 left-2 right-2 h-[2.5px] bg-whitesmoke rounded-full shadow-[0_0_10px_rgba(255,255,255,0.8)]" />
                 )}
               </Link>
             );
@@ -102,15 +102,15 @@ export default function Navbar() {
         <div className="lg:hidden border-b border-zinc-800/80 bg-zinc-950/95 backdrop-blur-2xl px-4 py-4 space-y-3 animate-in slide-in-from-top-2 duration-200 shadow-2xl">
           <div className="flex items-center justify-between px-1 pb-2 border-b border-zinc-900">
             <span className="text-xs font-mono text-zinc-400 flex items-center gap-1.5">
-              <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
+              <Sparkles className="w-3.5 h-3.5 text-zinc-200" />
               <span>Navigation</span>
             </span>
             <Link
               href="/contact"
               onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-[10px] font-mono text-emerald-300"
+              className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full border border-white/20 bg-white/10 text-[10px] font-mono text-zinc-200"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              <span className="w-1.5 h-1.5 rounded-full bg-zinc-100 animate-pulse" />
               <span>Available for hire</span>
             </Link>
           </div>
@@ -125,12 +125,12 @@ export default function Navbar() {
                   onClick={() => setMobileMenuOpen(false)}
                   className={`px-3 py-2.5 text-xs font-mono rounded-xl transition-all flex items-center justify-between ${
                     isActive
-                      ? "bg-emerald-500/15 border border-emerald-500/40 text-emerald-300 font-semibold shadow-sm"
+                      ? "bg-white/15 border border-white/30 text-white font-semibold shadow-sm"
                       : "bg-zinc-900/80 border border-zinc-800/80 text-zinc-300 hover:bg-zinc-800 hover:text-white"
                   }`}
                 >
                   <span>{item.label}</span>
-                  {isActive && <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_6px_rgba(52,211,153,1)]" />}
+                  {isActive && <span className="w-1.5 h-1.5 rounded-full bg-whitesmoke shadow-[0_0_6px_rgba(255,255,255,1)]" />}
                 </Link>
               );
             })}

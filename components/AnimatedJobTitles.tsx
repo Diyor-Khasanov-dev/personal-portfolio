@@ -27,7 +27,7 @@ export default function AnimatedJobTitles() {
   }, []);
 
   return (
-    <span className="inline-block relative min-w-[260px] sm:min-w-[340px] text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-sky-300 to-indigo-400 font-semibold">
+    <span className="inline-block relative min-w-[260px] sm:min-w-[340px] text-transparent bg-clip-text bg-gradient-to-r from-whitesmoke via-zinc-200 to-zinc-400 font-semibold">
       <span
         className={`inline-block transition-all duration-350 transform ${
           fadeState === "in"

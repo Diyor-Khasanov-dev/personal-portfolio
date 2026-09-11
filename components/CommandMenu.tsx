@@ -79,7 +79,7 @@ export default function CommandMenu() {
       title: "Projects & Showcase",
       description: "Explore Linkly and open source contributions",
       category: "Navigation",
-      icon: <FolderGit2 className="w-4 h-4 text-emerald-400" />,
+      icon: <FolderGit2 className="w-4 h-4 text-zinc-200" />,
       href: "/projects",
       badge: "Pages",
     },
@@ -157,7 +157,7 @@ export default function CommandMenu() {
       title: "View My Resume (PDF)",
       description: "Open official engineering resume in new tab",
       category: "Actions",
-      icon: <FileText className="w-4 h-4 text-emerald-400" />,
+      icon: <FileText className="w-4 h-4 text-zinc-200" />,
       href: "https://example.com/resume.pdf",
       isExternal: true,
       badge: "Document",
@@ -287,7 +287,7 @@ export default function CommandMenu() {
         aria-label="Open command palette"
         className="flex items-center gap-2 px-2.5 py-1.5 text-xs font-mono rounded-lg border border-zinc-800 bg-zinc-900/70 hover:bg-zinc-800/90 text-zinc-400 hover:text-zinc-100 transition-all duration-200 shadow-sm hover:border-zinc-700/80 hover:shadow-[0_0_12px_rgba(255,255,255,0.05)] cursor-pointer group"
       >
-        <Command className="w-3.5 h-3.5 text-emerald-400 group-hover:scale-110 transition-transform duration-200" />
+        <Command className="w-3.5 h-3.5 text-zinc-200 group-hover:scale-110 transition-transform duration-200" />
         <span className="hidden sm:inline">Search commands...</span>
         <span className="sm:hidden">Search</span>
         <kbd className="ml-1 text-[10px] bg-zinc-950 px-1.5 py-0.5 rounded text-zinc-400 border border-zinc-800 font-mono shadow-inner group-hover:border-zinc-700 transition-colors">
@@ -309,11 +309,11 @@ export default function CommandMenu() {
             onClick={(e) => e.stopPropagation()}
           >
             {/* Top Ambient Glow Effect */}
-            <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-24 bg-gradient-to-r from-emerald-500/20 via-teal-500/20 to-cyan-500/10 blur-3xl pointer-events-none" />
+            <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-24 bg-gradient-to-r from-white/20 via-zinc-400/20 to-zinc-500/10 blur-3xl pointer-events-none" />
 
             {/* Header / Input Section */}
             <div className="relative flex items-center px-4 border-b border-zinc-800/80 bg-zinc-900/60">
-              <Search className="w-4 h-4 text-emerald-400 mr-2.5 shrink-0 animate-pulse" />
+              <Search className="w-4 h-4 text-zinc-200 mr-2.5 shrink-0 animate-pulse" />
               <input
                 ref={inputRef}
                 type="text"
@@ -406,7 +406,7 @@ export default function CommandMenu() {
                                     <span
                                       className={`text-[9px] px-1.5 py-0.2 rounded font-mono border ${
                                         isSelected
-                                          ? "bg-emerald-500/20 text-emerald-300 border-emerald-500/40"
+                                          ? "bg-white/20 text-zinc-100 border-white/40"
                                           : "bg-zinc-900 text-zinc-500 border-zinc-800"
                                       }`}
                                     >
@@ -429,7 +429,7 @@ export default function CommandMenu() {
                             {/* Right Action Hint / Indicator */}
                             <div className="flex items-center gap-2 shrink-0 ml-2">
                               {item.id === "copy-email" && copied && (
-                                <span className="text-[10px] text-emerald-400 font-bold flex items-center gap-1 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/30 animate-in fade-in">
+                                <span className="text-[10px] text-zinc-200 font-bold flex items-center gap-1 bg-white/10 px-2 py-0.5 rounded-full border border-white/30 animate-in fade-in">
                                   <Check className="w-3 h-3" /> Copied!
                                 </span>
                               )}
@@ -437,13 +437,13 @@ export default function CommandMenu() {
                               {item.isExternal ? (
                                 <ExternalLink
                                   className={`w-3.5 h-3.5 transition-colors ${
-                                    isSelected ? "text-emerald-400" : "text-zinc-600"
+                                    isSelected ? "text-zinc-200" : "text-zinc-600"
                                   }`}
                                 />
                               ) : (
                                 <CornerDownLeft
                                   className={`w-3.5 h-3.5 transition-all ${
-                                    isSelected ? "text-emerald-400 opacity-100 translate-x-0" : "text-zinc-600 opacity-0 -translate-x-1"
+                                    isSelected ? "text-zinc-200 opacity-100 translate-x-0" : "text-zinc-600 opacity-0 -translate-x-1"
                                   }`}
                                 />
                               )}
@@ -470,8 +470,8 @@ export default function CommandMenu() {
                 </span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="flex items-center gap-1 text-emerald-400/90">
-                  <Sparkles className="w-3 h-3 text-emerald-400" />
+                <span className="flex items-center gap-1 text-zinc-300">
+                  <Sparkles className="w-3 h-3 text-zinc-200" />
                   <span className="hidden sm:inline">Spotlight Palette</span>
                 </span>
                 <span className="text-zinc-700">•</span>
