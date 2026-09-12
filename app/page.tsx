@@ -3,7 +3,7 @@ import {
   Award,
   Briefcase,
   Smartphone,
-  FileText,
+  Download,
   BookOpen,
   ArrowUpRight,
   Calendar,
@@ -164,14 +164,12 @@ export default function HomePage() {
 
           <div className="pt-6 flex flex-wrap gap-2.5">
             <a
-              href="https://example.com/resume.pdf"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-zinc-100 hover:bg-white text-zinc-950 font-medium text-xs transition-all shadow-sm hover:-translate-y-0.5 font-mono group"
+              href="/resume.pdf"
+              download="Diyor_Khasanov_Resume.pdf"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-zinc-100 hover:bg-white text-zinc-950 font-semibold text-xs transition-all shadow-sm hover:-translate-y-0.5 font-mono group"
             >
-              <FileText className="w-3.5 h-3.5 text-zinc-800 group-hover:scale-110 transition-transform" />
-              <span>Resume</span>
-              <ArrowUpRight className="w-3.5 h-3.5 text-zinc-500" />
+              <Download className="w-3.5 h-3.5 text-zinc-800 group-hover:scale-110 transition-transform" />
+              <span>Download Resume</span>
             </a>
 
             <a
