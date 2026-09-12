@@ -20,6 +20,7 @@ import {
   Send,
   ExternalLink,
   CornerDownLeft,
+  Download,
 } from "lucide-react";
 
 interface CommandItem {
@@ -31,6 +32,7 @@ interface CommandItem {
   badge?: string;
   href?: string;
   isExternal?: boolean;
+  isDownload?: boolean;
   action?: () => void;
 }
 
@@ -152,13 +154,13 @@ export default function CommandMenu() {
       },
     },
     {
-      id: "view-resume",
-      title: "View My Resume (PDF)",
-      description: "Open official engineering resume in new tab",
+      id: "download-resume",
+      title: "Download My Resume (PDF)",
+      description: "Download official engineering resume directly",
       category: "Actions",
-      icon: <FileText className="w-4 h-4 text-zinc-200" />,
-      href: "https://example.com/resume.pdf",
-      isExternal: true,
+      icon: <Download className="w-4 h-4 text-zinc-200" />,
+      href: "/resume.pdf",
+      isDownload: true,
       badge: "Document",
     },
 
@@ -215,7 +217,15 @@ export default function CommandMenu() {
       if (item.action) {
         item.action();
       } else if (item.href) {
-        if (item.isExternal) {
+        if (item.isDownload) {
+          const a = document.createElement("a");
+          a.href = item.href;
+          a.download = "Diyor_Khasanov_Resume.pdf";
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          handleClose();
+        } else if (item.isExternal) {
           window.open(item.href, "_blank", "noopener,noreferrer");
         } else {
           handleClose();

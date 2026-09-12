@@ -11,7 +11,6 @@ import {
   Sparkles,
 } from "lucide-react";
 import Link from "next/link";
-import BentoCard from "@/components/ui/BentoCard";
 
 export const metadata: Metadata = {
   title: "Work Experience & Career History | Developer Portfolio",
@@ -32,8 +31,6 @@ interface WorkRole {
   current?: boolean;
   companyInitial: string;
   badgeBg: string;
-  span: string;
-  accent: string;
 }
 
 export default function ExperiencePage() {
@@ -49,8 +46,6 @@ export default function ExperiencePage() {
       current: true,
       companyInitial: "ALIA",
       badgeBg: "bg-blue-600/20 text-blue-400 border-blue-500/30",
-      span: "col-span-12 md:col-span-8",
-      accent: "from-blue-500/80 via-sky-400/50 to-transparent",
       highlights: [
         "Co-founded ALIA venture, driving core platform architecture, tech strategy, and engineering roadmap.",
         "Architected scalable web and mobile software solutions, integrating modern full-stack frameworks and responsive UI design systems.",
@@ -69,8 +64,6 @@ export default function ExperiencePage() {
       current: true,
       companyInitial: "FE",
       badgeBg: "bg-sky-600/20 text-sky-400 border-sky-500/30",
-      span: "col-span-12 md:col-span-4",
-      accent: "from-sky-500/80 via-teal-400/50 to-transparent",
       highlights: [
         "Teach frontend, backend, and full-stack web development to students, guiding them from foundational concepts to production-ready skills in a structured on-site program.",
         "Design and deliver curriculum covering the full web development stack, mentoring students through hands-on projects in an educational center environment.",
@@ -87,8 +80,6 @@ export default function ExperiencePage() {
       location: "Remote",
       companyInitial: "FLI",
       badgeBg: "bg-purple-600/20 text-purple-400 border-purple-500/30",
-      span: "col-span-12 md:col-span-4",
-      accent: "from-purple-500/80 via-indigo-400/50 to-transparent",
       highlights: [
         "Working within a venture studio and experiential learning ecosystem that co-builds startups across healthcare, AI, and robotics.",
         "Building software at a next-generation R&D organization that merges innovation, education, and entrepreneurship.",
@@ -105,8 +96,6 @@ export default function ExperiencePage() {
       location: "Remote",
       companyInitial: "G",
       badgeBg: "bg-emerald-600/20 text-emerald-400 border-emerald-500/30",
-      span: "col-span-12 md:col-span-8",
-      accent: "from-emerald-500/80 via-teal-400/50 to-transparent",
       highlights: [
         "Built end-to-end web and mobile products at a software consultancy with 200+ delivered projects, working in agile teams.",
         "Delivered full-stack features across web and mobile at a client-facing product studio, contributing to the full software lifecycle.",
@@ -123,8 +112,6 @@ export default function ExperiencePage() {
       location: "Samarkand, Uzbekistan · Hybrid",
       companyInitial: "UZIT",
       badgeBg: "bg-teal-600/20 text-teal-400 border-teal-500/30",
-      span: "col-span-12 md:col-span-7",
-      accent: "from-teal-500/80 via-cyan-400/50 to-transparent",
       highlights: [
         "Contributed to backend systems at a global Digital Marketing and IT company, building scalable server-side solutions.",
         "Developed and maintained backend infrastructure for a full-service IT company, collaborating on client projects.",
@@ -141,8 +128,6 @@ export default function ExperiencePage() {
       location: "Remote",
       companyInitial: "MABA",
       badgeBg: "bg-amber-600/20 text-amber-400 border-amber-500/30",
-      span: "col-span-12 md:col-span-5",
-      accent: "from-amber-500/80 via-orange-400/50 to-transparent",
       highlights: [
         "Produced client-facing websites and dashboards for an AI-powered business optimisation agency.",
         "Strengthened clients' online presence through pixel-perfect implementations and performance tuning.",
@@ -159,21 +144,17 @@ export default function ExperiencePage() {
           <Briefcase className="w-3.5 h-3.5 text-whitesmoke" />
           <span>Professional Career & Impact</span>
         </div>
-        <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-white">
+        <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
           Work Experience
         </h1>
         <p className="text-sm sm:text-base text-zinc-400 font-normal leading-relaxed max-w-2xl">
-          A Bento Grid layout of founding ventures, teaching web engineering, client consultancy engineering, and backend infrastructure.
+          A continuous timeline of founding ventures, teaching web engineering, client consultancy engineering, and backend infrastructure.
         </p>
       </div>
 
-      {/* Overview Stats Quick Bento Ribbon */}
-      <div className="grid grid-cols-12 gap-3">
-        <BentoCard
-          colSpan="col-span-6 sm:col-span-3"
-          accentGradient="from-whitesmoke/80 via-zinc-400/50 to-transparent"
-          aosDelay={150}
-        >
+      {/* Overview Stats Quick Ribbon */}
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        <div className="p-4 rounded-2xl border border-zinc-800/80 bg-zinc-950/80 backdrop-blur-xl space-y-1">
           <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-wider block">
             Total Roles
           </span>
@@ -181,13 +162,9 @@ export default function ExperiencePage() {
             <Layers className="w-4 h-4 text-whitesmoke" />
             6 Positions
           </span>
-        </BentoCard>
+        </div>
 
-        <BentoCard
-          colSpan="col-span-6 sm:col-span-3"
-          accentGradient="from-blue-500/80 via-sky-400/50 to-transparent"
-          aosDelay={200}
-        >
+        <div className="p-4 rounded-2xl border border-zinc-800/80 bg-zinc-950/80 backdrop-blur-xl space-y-1">
           <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-wider block">
             Active Roles
           </span>
@@ -195,13 +172,9 @@ export default function ExperiencePage() {
             <Briefcase className="w-4 h-4 text-whitesmoke" />
             2 Active
           </span>
-        </BentoCard>
+        </div>
 
-        <BentoCard
-          colSpan="col-span-6 sm:col-span-3"
-          accentGradient="from-sky-500/80 via-indigo-500/50 to-transparent"
-          aosDelay={250}
-        >
+        <div className="p-4 rounded-2xl border border-zinc-800/80 bg-zinc-950/80 backdrop-blur-xl space-y-1">
           <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-wider block">
             Teaching & R&D
           </span>
@@ -209,42 +182,37 @@ export default function ExperiencePage() {
             <GraduationCap className="w-4 h-4 text-sky-400" />
             Mentorship
           </span>
-        </BentoCard>
+        </div>
 
-        <BentoCard
-          colSpan="col-span-6 sm:col-span-3"
-          accentGradient="from-purple-500/80 via-pink-500/50 to-transparent"
-          aosDelay={300}
-        >
+        <div className="p-4 rounded-2xl border border-zinc-800/80 bg-zinc-950/80 backdrop-blur-xl space-y-1">
           <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-wider block">
             Core Domain
           </span>
           <span className="text-lg font-bold text-purple-400 pt-1 block">
             Fullstack / AI
           </span>
-        </BentoCard>
+        </div>
       </div>
 
-      {/* Experience Bento Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
-        {experiences.map((exp, idx) => (
-          <BentoCard
-            key={exp.id}
-            colSpan={exp.span}
-            accentGradient={exp.accent}
-            aosDelay={200 + idx * 80}
-            glow={exp.current}
-          >
-            <div className="space-y-4">
+      {/* Experience Vertical Timeline */}
+      <div className="relative border-l-2 border-zinc-800/80 ml-3 sm:ml-6 pl-4 sm:pl-8 space-y-8">
+        {experiences.map((exp) => (
+          <div key={exp.id} className="relative group">
+            {/* Timeline Node Icon */}
+            <div className="absolute -left-[25px] sm:-left-[41px] top-1.5 w-5 h-5 sm:w-6 sm:h-6 rounded-full border-2 border-zinc-800 bg-zinc-950 flex items-center justify-center group-hover:border-zinc-400 transition-colors">
+              <span className={`w-2 h-2 rounded-full ${exp.current ? "bg-white animate-pulse" : "bg-zinc-500"}`} />
+            </div>
+
+            <div className="p-6 rounded-2xl border border-zinc-800/80 bg-zinc-950/70 hover:bg-zinc-900/40 hover:border-zinc-700/80 transition-all duration-300 shadow-sm space-y-4">
               {/* Header */}
               <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3">
                 <div className="flex items-start gap-3">
-                  <div className={`w-10 h-10 rounded-lg border font-mono text-xs font-bold flex items-center justify-center shrink-0 ${exp.badgeBg}`}>
+                  <div className={`w-10 h-10 rounded-xl border font-mono text-xs font-bold flex items-center justify-center shrink-0 ${exp.badgeBg}`}>
                     {exp.companyInitial}
                   </div>
 
                   <div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 flex-wrap">
                       <h2 className="text-base sm:text-lg font-bold text-white">
                         {exp.role}
                       </h2>
@@ -274,8 +242,8 @@ export default function ExperiencePage() {
                   </div>
                 </div>
 
-                <div className="flex flex-col sm:items-end gap-1 shrink-0 self-start sm:self-auto font-mono text-xs">
-                  <div className="flex items-center gap-1.5 text-zinc-300 bg-zinc-900/90 px-2.5 py-1 rounded-lg border border-zinc-800">
+                <div className="flex flex-col sm:items-end gap-1 shrink-0 font-mono text-xs">
+                  <div className="flex items-center gap-1.5 text-zinc-300 bg-zinc-900 px-2.5 py-1 rounded-lg border border-zinc-800">
                     <Calendar className="w-3.5 h-3.5 text-zinc-400" />
                     <span>{exp.period}</span>
                   </div>
@@ -311,34 +279,28 @@ export default function ExperiencePage() {
                 ))}
               </div>
             </div>
-          </BentoCard>
+          </div>
         ))}
       </div>
 
-      {/* Footer Callout Bento Card */}
-      <BentoCard
-        colSpan="col-span-12"
-        accentGradient="from-whitesmoke via-zinc-400 to-transparent"
-        aosDelay={300}
-      >
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="space-y-1 text-center sm:text-left">
-            <h3 className="text-sm font-semibold text-white">
-              Looking for detailed technical discussions or project collaboration?
-            </h3>
-            <p className="text-xs text-zinc-400">
-              I am available for fullstack, backend, frontend, and technical leadership roles.
-            </p>
-          </div>
-          <Link
-            href="/contact"
-            className="px-4 py-2 rounded-lg bg-zinc-100 hover:bg-white text-zinc-950 font-medium font-mono text-xs transition-all inline-flex items-center gap-1.5 shrink-0 shadow-sm"
-          >
-            <span>Get In Touch</span>
-            <ArrowUpRight className="w-3.5 h-3.5 text-zinc-950" />
-          </Link>
+      {/* Footer Callout */}
+      <div className="p-6 rounded-2xl border border-zinc-800/80 bg-zinc-950/80 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="space-y-1 text-center sm:text-left">
+          <h3 className="text-sm font-semibold text-white">
+            Looking for detailed technical discussions or project collaboration?
+          </h3>
+          <p className="text-xs text-zinc-400">
+            I am available for fullstack, backend, frontend, and technical leadership roles.
+          </p>
         </div>
-      </BentoCard>
+        <Link
+          href="/contact"
+          className="px-4 py-2 rounded-lg bg-zinc-100 hover:bg-white text-zinc-950 font-medium font-mono text-xs transition-all inline-flex items-center gap-1.5 shrink-0 shadow-sm"
+        >
+          <span>Get In Touch</span>
+          <ArrowUpRight className="w-3.5 h-3.5 text-zinc-950" />
+        </Link>
+      </div>
     </main>
   );
 }

@@ -18,7 +18,6 @@ import {
   ShieldCheck,
   Flame,
 } from "lucide-react";
-import BentoCard from "@/components/ui/BentoCard";
 
 export interface SkillItem {
   name: string;
@@ -36,8 +35,6 @@ export interface SkillGroup {
   badge: string;
   description: string;
   skills: SkillItem[];
-  span: string;
-  accent: string;
 }
 
 export default function TechStackClient() {
@@ -52,8 +49,6 @@ export default function TechStackClient() {
       badge: "Core Expertise",
       description:
         "Building resilient, accessible, sub-50ms web applications with server components, hydration optimization, and micro-frontend architectures.",
-      span: "col-span-12 md:col-span-8",
-      accent: "from-whitesmoke via-zinc-400 to-transparent",
       skills: [
         {
           name: "React (v18 / v19)",
@@ -99,8 +94,6 @@ export default function TechStackClient() {
       badge: "Design Craft",
       description:
         "Crafting pixel-perfect, dark-mode first design systems with atomic CSS, accessible headless primitives, and responsive micro-interactions.",
-      span: "col-span-12 md:col-span-4",
-      accent: "from-pink-500/80 via-rose-400/50 to-transparent",
       skills: [
         {
           name: "Tailwind CSS (v3 / v4)",
@@ -137,8 +130,6 @@ export default function TechStackClient() {
       badge: "Data Flow",
       description:
         "Predictable global state, optimistic UI updates, zero-boilerplate client stores, and intelligent query caching.",
-      span: "col-span-12 md:col-span-4",
-      accent: "from-sky-500/80 via-blue-400/50 to-transparent",
       skills: [
         {
           name: "TanStack Query",
@@ -167,8 +158,6 @@ export default function TechStackClient() {
       badge: "Server Microservices",
       description:
         "Designing scalable REST & GraphQL APIs, real-time WebSockets engines, and enterprise backend microservices.",
-      span: "col-span-12 md:col-span-8",
-      accent: "from-indigo-500/80 via-purple-500/50 to-transparent",
       skills: [
         {
           name: "Node.js & Express.js",
@@ -205,8 +194,6 @@ export default function TechStackClient() {
       badge: "Persistence Layer",
       description:
         "High-performance data modeling, relational normalization, NoSQL document store tuning, and sub-millisecond Redis caching.",
-      span: "col-span-12 md:col-span-4",
-      accent: "from-amber-500/80 via-yellow-400/50 to-transparent",
       skills: [
         {
           name: "PostgreSQL & Prisma ORM",
@@ -235,8 +222,6 @@ export default function TechStackClient() {
       badge: "iOS & Android",
       description:
         "Crafting native-grade iOS & Android mobile apps with shared TypeScript codebases, smooth 60fps gestures, and native module bridges.",
-      span: "col-span-12 md:col-span-8",
-      accent: "from-cyan-500/80 via-teal-400/50 to-transparent",
       skills: [
         {
           name: "React Native & Expo",
@@ -264,8 +249,6 @@ export default function TechStackClient() {
       badge: "Dev Speed Multiplier",
       description:
         "Leveraging cutting-edge AI coding agents and autonomous LLM workflows to accelerate feature delivery, test generation, and code review.",
-      span: "col-span-12 md:col-span-12",
-      accent: "from-purple-500/80 via-indigo-500/50 to-transparent",
       skills: [
         {
           name: "Claude Code & Jules AI Agent",
@@ -331,17 +314,13 @@ export default function TechStackClient() {
         </h1>
 
         <p className="text-sm sm:text-base text-zinc-400 font-normal leading-relaxed max-w-3xl">
-          A deeply battle-tested ecosystem of frameworks, tools, databases, and AI accelerators in a Bento Grid layout engineered for production resilience and sub-50ms user interfaces.
+          A deeply battle-tested ecosystem of frameworks, tools, databases, and AI accelerators engineered for production resilience and sub-50ms user interfaces.
         </p>
       </div>
 
-      {/* Quick Metrics Bento Bar */}
-      <div className="grid grid-cols-12 gap-3">
-        <BentoCard
-          colSpan="col-span-6 sm:col-span-3"
-          accentGradient="from-amber-500/80 via-yellow-400/50 to-transparent"
-          aosDelay={150}
-        >
+      {/* Quick Metrics Horizontal Bar */}
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        <div className="p-4 rounded-2xl border border-zinc-800/80 bg-zinc-950/80 backdrop-blur-xl space-y-1">
           <div className="text-xs font-mono text-zinc-500 flex items-center gap-1.5">
             <Flame className="w-3.5 h-3.5 text-amber-400" />
             <span>Primary Focus</span>
@@ -349,13 +328,9 @@ export default function TechStackClient() {
           <div className="text-sm font-semibold text-zinc-100 font-mono pt-1">
             React / Next / RN
           </div>
-        </BentoCard>
+        </div>
 
-        <BentoCard
-          colSpan="col-span-6 sm:col-span-3"
-          accentGradient="from-whitesmoke/80 via-zinc-400/50 to-transparent"
-          aosDelay={200}
-        >
+        <div className="p-4 rounded-2xl border border-zinc-800/80 bg-zinc-950/80 backdrop-blur-xl space-y-1">
           <div className="text-xs font-mono text-zinc-500 flex items-center gap-1.5">
             <ShieldCheck className="w-3.5 h-3.5 text-whitesmoke" />
             <span>Type Safety</span>
@@ -363,13 +338,9 @@ export default function TechStackClient() {
           <div className="text-sm font-semibold text-whitesmoke font-mono pt-1">
             100% TypeScript
           </div>
-        </BentoCard>
+        </div>
 
-        <BentoCard
-          colSpan="col-span-6 sm:col-span-3"
-          accentGradient="from-sky-500/80 via-blue-400/50 to-transparent"
-          aosDelay={250}
-        >
+        <div className="p-4 rounded-2xl border border-zinc-800/80 bg-zinc-950/80 backdrop-blur-xl space-y-1">
           <div className="text-xs font-mono text-zinc-500 flex items-center gap-1.5">
             <Zap className="w-3.5 h-3.5 text-sky-400" />
             <span>Target Speed</span>
@@ -377,13 +348,9 @@ export default function TechStackClient() {
           <div className="text-sm font-semibold text-sky-300 font-mono pt-1">
             Sub-50ms UI
           </div>
-        </BentoCard>
+        </div>
 
-        <BentoCard
-          colSpan="col-span-6 sm:col-span-3"
-          accentGradient="from-purple-500/80 via-indigo-400/50 to-transparent"
-          aosDelay={300}
-        >
+        <div className="p-4 rounded-2xl border border-zinc-800/80 bg-zinc-950/80 backdrop-blur-xl space-y-1">
           <div className="text-xs font-mono text-zinc-500 flex items-center gap-1.5">
             <Bot className="w-3.5 h-3.5 text-purple-400" />
             <span>AI Accelerated</span>
@@ -391,11 +358,11 @@ export default function TechStackClient() {
           <div className="text-sm font-semibold text-purple-300 font-mono pt-1">
             Claude Code & Jules
           </div>
-        </BentoCard>
+        </div>
       </div>
 
       {/* Search & Category Filter Controls */}
-      <div data-aos="fade-up" data-aos-delay="200" className="space-y-4">
+      <div className="space-y-4">
         <div className="relative">
           <Search className="w-4 h-4 text-zinc-500 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
           <input
@@ -444,9 +411,9 @@ export default function TechStackClient() {
         </div>
       </div>
 
-      {/* Filtered Groups Display in Bento Grid */}
+      {/* Filtered Groups Display in Clean Non-Bento Layout */}
       {filteredGroups.length === 0 ? (
-        <div className="py-16 text-center space-y-3 rounded-xl border border-zinc-800/80 bg-zinc-950/40">
+        <div className="py-16 text-center space-y-3 rounded-2xl border border-zinc-800/80 bg-zinc-950/40">
           <Terminal className="w-8 h-8 text-zinc-600 mx-auto" />
           <p className="text-sm font-mono text-zinc-400">
             No technologies found matching &quot;{searchQuery}&quot;.
@@ -462,126 +429,116 @@ export default function TechStackClient() {
           </button>
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
-          {filteredGroups.map((group, groupIdx) => (
-            <BentoCard
+        <div className="space-y-6">
+          {filteredGroups.map((group) => (
+            <div
               key={group.id}
-              colSpan={group.span}
-              accentGradient={group.accent}
-              aosDelay={100 + groupIdx * 80}
+              className="p-6 rounded-2xl border border-zinc-800/80 bg-zinc-950/70 hover:bg-zinc-900/40 hover:border-zinc-700/80 transition-all duration-300 shadow-sm space-y-4"
             >
-              <div className="space-y-4">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-zinc-900 pb-3">
-                  <div className="flex items-center gap-2.5">
-                    <div className="p-2 rounded-lg bg-zinc-900 border border-zinc-800">
-                      {group.icon}
-                    </div>
-                    <div>
-                      <h2 className="text-base font-bold text-white tracking-tight">
-                        {group.title}
-                      </h2>
-                      <span className="text-[10px] font-mono text-zinc-400">
-                        {group.badge}
-                      </span>
-                    </div>
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-zinc-900 pb-3">
+                <div className="flex items-center gap-2.5">
+                  <div className="p-2 rounded-lg bg-zinc-900 border border-zinc-800">
+                    {group.icon}
                   </div>
-
-                  <span className="text-[11px] font-mono text-zinc-500 shrink-0">
-                    {group.skills.length} Items
-                  </span>
+                  <div>
+                    <h2 className="text-base font-bold text-white tracking-tight">
+                      {group.title}
+                    </h2>
+                    <span className="text-[10px] font-mono text-zinc-400">
+                      {group.badge}
+                    </span>
+                  </div>
                 </div>
 
-                <p className="text-xs text-zinc-400 font-sans">
-                  {group.description}
-                </p>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
-                  {group.skills.map((skill, sIdx) => {
-                    const isExpert = skill.level === "Expert";
-                    return (
-                      <div
-                        key={sIdx}
-                        className={`p-3 rounded-lg border transition-all space-y-2 ${
-                          skill.featured
-                            ? "border-zinc-800 bg-zinc-900/60"
-                            : "border-zinc-900 bg-zinc-950/80"
-                        }`}
-                      >
-                        <div className="flex items-center justify-between gap-1">
-                          <h3 className="text-xs font-bold text-zinc-100 font-mono">
-                            {skill.name}
-                          </h3>
-                          <span
-                            className={`text-[9px] font-mono px-1.5 py-0.2 rounded border ${
-                              isExpert
-                                ? "bg-white/10 border-white/30 text-zinc-200"
-                                : "bg-zinc-800 border-zinc-700 text-zinc-400"
-                            }`}
-                          >
-                            {skill.level}
-                          </span>
-                        </div>
-
-                        <p className="text-[11px] text-zinc-300 leading-relaxed font-sans">
-                          {skill.description}
-                        </p>
-
-                        <div className="flex flex-wrap gap-1 pt-1">
-                          {skill.tags.map((tag) => (
-                            <span
-                              key={tag}
-                              className="px-1.5 py-0.2 rounded bg-zinc-900 border border-zinc-800/80 text-[9px] font-mono text-zinc-400"
-                            >
-                              #{tag}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
+                <span className="text-[11px] font-mono text-zinc-500 shrink-0">
+                  {group.skills.length} Items
+                </span>
               </div>
-            </BentoCard>
+
+              <p className="text-xs text-zinc-400 font-sans">
+                {group.description}
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 pt-1">
+                {group.skills.map((skill, sIdx) => {
+                  const isExpert = skill.level === "Expert";
+                  return (
+                    <div
+                      key={sIdx}
+                      className={`p-4 rounded-xl border transition-all space-y-2 ${
+                        skill.featured
+                          ? "border-zinc-800 bg-zinc-900/60"
+                          : "border-zinc-900 bg-zinc-950/80"
+                      }`}
+                    >
+                      <div className="flex items-center justify-between gap-1">
+                        <h3 className="text-xs font-bold text-zinc-100 font-mono">
+                          {skill.name}
+                        </h3>
+                        <span
+                          className={`text-[9px] font-mono px-1.5 py-0.2 rounded border ${
+                            isExpert
+                              ? "bg-white/10 border-white/30 text-zinc-200"
+                              : "bg-zinc-800 border-zinc-700 text-zinc-400"
+                          }`}
+                        >
+                          {skill.level}
+                        </span>
+                      </div>
+
+                      <p className="text-[11px] text-zinc-300 leading-relaxed font-sans">
+                        {skill.description}
+                      </p>
+
+                      <div className="flex flex-wrap gap-1 pt-1">
+                        {skill.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="px-1.5 py-0.2 rounded bg-zinc-900 border border-zinc-800/80 text-[9px] font-mono text-zinc-400"
+                          >
+                            #{tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
           ))}
         </div>
       )}
 
-      {/* Senior Architectural Engineering Manifesto Callout Bento Card */}
-      <BentoCard
-        colSpan="col-span-12"
-        accentGradient="from-whitesmoke via-zinc-400 to-transparent"
-        aosDelay={200}
-      >
-        <div className="space-y-3">
-          <div className="flex items-center gap-2 text-xs font-mono text-whitesmoke uppercase tracking-wider">
-            <CheckCircle2 className="w-4 h-4 text-whitesmoke" />
-            <span>Architectural Philosophy & Quality Assurance</span>
-          </div>
-
-          <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-sans">
-            Technology frameworks change rapidly, but foundational computer science principles, clean component design, strict static typing, and performance profiling remain timeless. I advocate for minimal bundle overhead, zero-delay micro-interactions, robust CI/CD, and strategic AI agent integration to supercharge engineering output.
-          </p>
-
-          <div className="flex flex-wrap items-center justify-between gap-4 pt-2 border-t border-zinc-900">
-            <div className="flex items-center gap-3 text-xs font-mono text-zinc-400">
-              <span>• Next.js App Router</span>
-              <span>• React Native Expo</span>
-              <span>• NestJS & Node</span>
-              <span>• Tailwind v4</span>
-            </div>
-
-            <a
-              href="https://github.com/Diyor-Khasanov-dev"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-1.5 text-xs font-mono text-whitesmoke hover:text-white transition-colors"
-            >
-              <span>Explore Repositories</span>
-              <ArrowUpRight className="w-3.5 h-3.5" />
-            </a>
-          </div>
+      {/* Senior Architectural Engineering Manifesto Callout */}
+      <div className="p-6 rounded-2xl border border-zinc-800/80 bg-zinc-950/80 space-y-3">
+        <div className="flex items-center gap-2 text-xs font-mono text-whitesmoke uppercase tracking-wider">
+          <CheckCircle2 className="w-4 h-4 text-whitesmoke" />
+          <span>Architectural Philosophy & Quality Assurance</span>
         </div>
-      </BentoCard>
+
+        <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-sans">
+          Technology frameworks change rapidly, but foundational computer science principles, clean component design, strict static typing, and performance profiling remain timeless. I advocate for minimal bundle overhead, zero-delay micro-interactions, robust CI/CD, and strategic AI agent integration to supercharge engineering output.
+        </p>
+
+        <div className="flex flex-wrap items-center justify-between gap-4 pt-2 border-t border-zinc-900">
+          <div className="flex items-center gap-3 text-xs font-mono text-zinc-400">
+            <span>• Next.js App Router</span>
+            <span>• React Native Expo</span>
+            <span>• NestJS & Node</span>
+            <span>• Tailwind v4</span>
+          </div>
+
+          <a
+            href="https://github.com/Diyor-Khasanov-dev"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1.5 text-xs font-mono text-whitesmoke hover:text-white transition-colors"
+          >
+            <span>Explore Repositories</span>
+            <ArrowUpRight className="w-3.5 h-3.5" />
+          </a>
+        </div>
+      </div>
     </main>
   );
 }

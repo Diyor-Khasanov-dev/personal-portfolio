@@ -27,12 +27,12 @@ export default function AnimatedJobTitles() {
   }, []);
 
   return (
-    <span className="inline-block relative min-w-[260px] sm:min-w-[340px] text-transparent bg-clip-text bg-gradient-to-r from-whitesmoke via-zinc-200 to-zinc-400 font-semibold">
+    <span className="inline-flex items-center text-white font-bold tracking-tight">
       <span
-        className={`inline-block transition-all duration-350 transform ${
+        className={`inline-block transition-all duration-300 transform text-white bg-zinc-800/90 border border-zinc-700/80 px-3 py-1 rounded-lg shadow-sm ${
           fadeState === "in"
-            ? "opacity-100 translate-y-0 filter blur-0 scale-100"
-            : "opacity-0 -translate-y-3 filter blur-sm scale-95"
+            ? "opacity-100 translate-y-0 scale-100"
+            : "opacity-0 -translate-y-2 scale-95"
         }`}
       >
         {titles[index]}
