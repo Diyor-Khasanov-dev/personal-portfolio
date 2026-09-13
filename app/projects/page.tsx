@@ -63,16 +63,20 @@ interface FeatureItem {
 }
 
 interface Project {
+  id?: string | number;
   name: string;
   oneLineDescription: string;
   heroImagePlaceholder: string;
+  img?: string;
   keyFeatures: FeatureItem[];
   techStack: string[];
   liveDemoLink: string;
   githubLink: string;
+  isOpenSource?: boolean;
 }
 
 interface OpenSourceContribution {
+  id?: string | number;
   name: string;
   role: string;
   category: string;
@@ -80,6 +84,7 @@ interface OpenSourceContribution {
   highlights: string[];
   techStack: string[];
   githubLink: string;
+  demoLink?: string;
   stars?: number;
   forks?: number;
   span: string;
@@ -169,9 +174,24 @@ export default async function ProjectsPage() {
       .select("*");
 
     if (!pError && dbProjects && dbProjects.length > 0) {
-      projects = dbProjects.map((p: Record<string, unknown>) => {
+      const fetchedProjects: Project[] = [];
+      const fetchedOS: OpenSourceContribution[] = [];
+
+      dbProjects.forEach((p: Record<string, unknown>) => {
         const rawFeatures = (p.features || p.key_features || p.keyFeatures) as unknown;
-        const featuresArray = Array.isArray(rawFeatures) ? rawFeatures : [];
+        let featuresArray: unknown[] = [];
+
+        if (Array.isArray(rawFeatures)) {
+          featuresArray = rawFeatures;
+        } else if (typeof rawFeatures === "string") {
+          try {
+            const parsed = JSON.parse(rawFeatures);
+            if (Array.isArray(parsed)) featuresArray = parsed;
+            else featuresArray = [rawFeatures];
+          } catch {
+            featuresArray = rawFeatures.split(",").map((s) => s.trim());
+          }
+        }
 
         const keyFeatures: FeatureItem[] = featuresArray.map((f: unknown) => {
           if (typeof f === "string") {
@@ -179,7 +199,7 @@ export default async function ProjectsPage() {
           }
           if (f && typeof f === "object") {
             const featureObj = f as Record<string, unknown>;
-            const labelStr = String(featureObj.label || featureObj.name || "Feature");
+            const labelStr = String(featureObj.label || featureObj.name || featureObj.title || "Feature");
             const iconVal = featureObj.icon;
             const iconComp =
               typeof iconVal === "string" && featureIconMap[iconVal]
@@ -192,16 +212,75 @@ export default async function ProjectsPage() {
           return { label: String(f), icon: Link2 };
         });
 
-        return {
-          name: String(p.title || p.name || "Untitled Project"),
-          oneLineDescription: String(p.description || p.one_line_description || p.oneLineDescription || ""),
-          heroImagePlaceholder: String(p.image || p.hero_image_placeholder || p.heroImagePlaceholder || "/projects/linkly-hero.png"),
-          keyFeatures: keyFeatures.length > 0 ? keyFeatures : fallbackProjects[0].keyFeatures,
-          techStack: Array.isArray(p.tech_stack || p.techStack) ? (p.tech_stack || p.techStack) as string[] : [],
-          liveDemoLink: String(p.demo_link || p.live_demo_link || p.liveDemoLink || "#"),
-          githubLink: String(p.github_link || p.githubLink || "#"),
-        };
+        const rawTechStack = p.tech_stack || p.techStack;
+        let techStackArray: string[] = [];
+        if (Array.isArray(rawTechStack)) {
+          techStackArray = rawTechStack.map(String);
+        } else if (typeof rawTechStack === "string") {
+          try {
+            const parsed = JSON.parse(rawTechStack);
+            if (Array.isArray(parsed)) techStackArray = parsed.map(String);
+            else techStackArray = rawTechStack.split(",").map((s) => s.trim());
+          } catch {
+            techStackArray = rawTechStack.split(",").map((s) => s.trim());
+          }
+        }
+
+        const titleStr = String(p.title || p.name || "Untitled Project");
+        const descStr = String(p.description || p.one_line_description || p.oneLineDescription || "");
+        const imgStr = String(p.img || p.image || p.hero_image_placeholder || p.heroImagePlaceholder || "");
+        const demoLinkStr = String(p.demo_link || p.live_demo_link || p.liveDemoLink || "#");
+        const githubLinkStr = String(p.github_link || p.githubLink || "#");
+        const categoryStr = String(p.category || p.type || "").toLowerCase();
+        const isOS = categoryStr.includes("open") || categoryStr.includes("oss") || Boolean(p.is_open_source);
+
+        if (isOS) {
+          const accents = [
+            "from-sky-500/80 via-blue-500/40 to-transparent",
+            "from-blue-600/80 via-cyan-500/40 to-transparent",
+            "from-purple-500/80 via-indigo-500/40 to-transparent",
+          ];
+          const spans = [
+            "col-span-12 md:col-span-7",
+            "col-span-12 md:col-span-5",
+            "col-span-12",
+          ];
+          fetchedOS.push({
+            id: p.id as string | number,
+            name: titleStr,
+            role: String(p.role || "Contributor / Author"),
+            category: String(p.category || "Open Source"),
+            description: descStr,
+            highlights: keyFeatures.map((f) => f.label),
+            techStack: techStackArray,
+            githubLink: githubLinkStr,
+            demoLink: demoLinkStr !== "#" ? demoLinkStr : undefined,
+            stars: typeof p.stars === "number" ? p.stars : undefined,
+            forks: typeof p.forks === "number" ? p.forks : undefined,
+            span: String(p.span || spans[fetchedOS.length % spans.length]),
+            accent: String(p.accent || accents[fetchedOS.length % accents.length]),
+          });
+        } else {
+          fetchedProjects.push({
+            id: p.id as string | number,
+            name: titleStr,
+            oneLineDescription: descStr,
+            heroImagePlaceholder: imgStr || "/projects/linkly-hero.png",
+            img: imgStr || undefined,
+            keyFeatures: keyFeatures.length > 0 ? keyFeatures : fallbackProjects[0].keyFeatures,
+            techStack: techStackArray,
+            liveDemoLink: demoLinkStr,
+            githubLink: githubLinkStr,
+          });
+        }
       });
+
+      if (fetchedProjects.length > 0) {
+        projects = fetchedProjects;
+      }
+      if (fetchedOS.length > 0) {
+        openSourceContributions = fetchedOS;
+      }
     }
   } catch (err) {
     console.error("Error fetching projects from Supabase:", err);
@@ -213,26 +292,47 @@ export default async function ProjectsPage() {
       .select("*");
 
     if (!osError && dbOS && dbOS.length > 0) {
-      openSourceContributions = dbOS.map((os: Record<string, unknown>, idx: number) => {
+      const fetchedOSFromTable = dbOS.map((os: Record<string, unknown>, idx: number) => {
         const rawHighlights = (os.highlights || os.features) as unknown;
-        const highlights: string[] = Array.isArray(rawHighlights)
-          ? rawHighlights.map((h: unknown) => (typeof h === "string" ? h : String((h as Record<string, unknown>)?.label || h)))
-          : [];
+        let highlights: string[] = [];
+        if (Array.isArray(rawHighlights)) {
+          highlights = rawHighlights.map((h: unknown) => (typeof h === "string" ? h : String((h as Record<string, unknown>)?.label || h)));
+        }
+
+        const rawTechStack = os.tech_stack || os.techStack;
+        let techStackArray: string[] = [];
+        if (Array.isArray(rawTechStack)) {
+          techStackArray = rawTechStack.map(String);
+        }
+
+        const accents = [
+          "from-sky-500/80 via-blue-500/40 to-transparent",
+          "from-blue-600/80 via-cyan-500/40 to-transparent",
+          "from-purple-500/80 via-indigo-500/40 to-transparent",
+        ];
+        const spans = [
+          "col-span-12 md:col-span-7",
+          "col-span-12 md:col-span-5",
+          "col-span-12",
+        ];
 
         return {
+          id: os.id as string | number,
           name: String(os.name || os.title || "Open Source Project"),
           role: String(os.role || "Contributor"),
           category: String(os.category || "Open Source"),
           description: String(os.description || ""),
           highlights,
-          techStack: Array.isArray(os.tech_stack || os.techStack) ? (os.tech_stack || os.techStack) as string[] : [],
+          techStack: techStackArray,
           githubLink: String(os.github_link || os.githubLink || "#"),
           stars: typeof os.stars === "number" ? os.stars : undefined,
           forks: typeof os.forks === "number" ? os.forks : undefined,
-          span: String(os.span || (idx % 2 === 0 ? "col-span-12 md:col-span-7" : "col-span-12 md:col-span-5")),
-          accent: String(os.accent || "from-sky-500/80 via-blue-500/40 to-transparent"),
+          span: String(os.span || spans[idx % spans.length]),
+          accent: String(os.accent || accents[idx % accents.length]),
         };
       });
+
+      openSourceContributions = fetchedOSFromTable;
     }
   } catch (err) {
     console.error("Error fetching open source from Supabase:", err);
