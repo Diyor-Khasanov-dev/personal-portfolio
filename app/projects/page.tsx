@@ -20,6 +20,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import BentoCard from "@/components/ui/BentoCard";
+import { supabase } from "@/lib/supabase";
 
 export const metadata: Metadata = {
   title: "Projects & Open Source | Diyor Khasanov - Software Engineer",
@@ -41,6 +42,20 @@ const GithubIcon = ({ className }: { className?: string }) => (
     />
   </svg>
 );
+
+const featureIconMap: Record<string, React.ElementType> = {
+  Link2,
+  Sliders,
+  Share2,
+  Palette,
+  BarChart3,
+  Smartphone,
+  QrCode,
+  Search,
+  Globe,
+  Code2,
+  CheckCircle2,
+};
 
 interface FeatureItem {
   label: string;
@@ -71,7 +86,7 @@ interface OpenSourceContribution {
   accent: string;
 }
 
-const projects: Project[] = [
+const fallbackProjects: Project[] = [
   {
     name: "Linkly",
     oneLineDescription:
@@ -93,7 +108,7 @@ const projects: Project[] = [
   },
 ];
 
-const openSourceContributions: OpenSourceContribution[] = [
+const fallbackOpenSourceContributions: OpenSourceContribution[] = [
   {
     name: "google-gemini-cli",
     role: "Fullstack Contributor",
@@ -144,7 +159,85 @@ const openSourceContributions: OpenSourceContribution[] = [
   },
 ];
 
-export default function ProjectsPage() {
+export default async function ProjectsPage() {
+  let projects: Project[] = fallbackProjects;
+  let openSourceContributions: OpenSourceContribution[] = fallbackOpenSourceContributions;
+
+  try {
+    const { data: dbProjects, error: pError } = await supabase
+      .from("projects")
+      .select("*");
+
+    if (!pError && dbProjects && dbProjects.length > 0) {
+      projects = dbProjects.map((p: Record<string, unknown>) => {
+        const rawFeatures = (p.features || p.key_features || p.keyFeatures) as unknown;
+        const featuresArray = Array.isArray(rawFeatures) ? rawFeatures : [];
+
+        const keyFeatures: FeatureItem[] = featuresArray.map((f: unknown) => {
+          if (typeof f === "string") {
+            return { label: f, icon: Link2 };
+          }
+          if (f && typeof f === "object") {
+            const featureObj = f as Record<string, unknown>;
+            const labelStr = String(featureObj.label || featureObj.name || "Feature");
+            const iconVal = featureObj.icon;
+            const iconComp =
+              typeof iconVal === "string" && featureIconMap[iconVal]
+                ? featureIconMap[iconVal]
+                : typeof iconVal === "function"
+                ? (iconVal as React.ElementType)
+                : Link2;
+            return { label: labelStr, icon: iconComp };
+          }
+          return { label: String(f), icon: Link2 };
+        });
+
+        return {
+          name: String(p.title || p.name || "Untitled Project"),
+          oneLineDescription: String(p.description || p.one_line_description || p.oneLineDescription || ""),
+          heroImagePlaceholder: String(p.image || p.hero_image_placeholder || p.heroImagePlaceholder || "/projects/linkly-hero.png"),
+          keyFeatures: keyFeatures.length > 0 ? keyFeatures : fallbackProjects[0].keyFeatures,
+          techStack: Array.isArray(p.tech_stack || p.techStack) ? (p.tech_stack || p.techStack) as string[] : [],
+          liveDemoLink: String(p.demo_link || p.live_demo_link || p.liveDemoLink || "#"),
+          githubLink: String(p.github_link || p.githubLink || "#"),
+        };
+      });
+    }
+  } catch (err) {
+    console.error("Error fetching projects from Supabase:", err);
+  }
+
+  try {
+    const { data: dbOS, error: osError } = await supabase
+      .from("open_source")
+      .select("*");
+
+    if (!osError && dbOS && dbOS.length > 0) {
+      openSourceContributions = dbOS.map((os: Record<string, unknown>, idx: number) => {
+        const rawHighlights = (os.highlights || os.features) as unknown;
+        const highlights: string[] = Array.isArray(rawHighlights)
+          ? rawHighlights.map((h: unknown) => (typeof h === "string" ? h : String((h as Record<string, unknown>)?.label || h)))
+          : [];
+
+        return {
+          name: String(os.name || os.title || "Open Source Project"),
+          role: String(os.role || "Contributor"),
+          category: String(os.category || "Open Source"),
+          description: String(os.description || ""),
+          highlights,
+          techStack: Array.isArray(os.tech_stack || os.techStack) ? (os.tech_stack || os.techStack) as string[] : [],
+          githubLink: String(os.github_link || os.githubLink || "#"),
+          stars: typeof os.stars === "number" ? os.stars : undefined,
+          forks: typeof os.forks === "number" ? os.forks : undefined,
+          span: String(os.span || (idx % 2 === 0 ? "col-span-12 md:col-span-7" : "col-span-12 md:col-span-5")),
+          accent: String(os.accent || "from-sky-500/80 via-blue-500/40 to-transparent"),
+        };
+      });
+    }
+  } catch (err) {
+    console.error("Error fetching open source from Supabase:", err);
+  }
+
   return (
     <main className="max-w-5xl w-full mx-auto px-4 sm:px-6 pt-6 sm:pt-10 pb-20 space-y-12 overflow-hidden">
       {/* Page Header */}
