@@ -164,7 +164,7 @@ export default function HomePage() {
 
           <div className="pt-6 flex flex-wrap gap-2.5">
             <a
-              href="/resume.pdf"
+              href="/Diyor-Khasanov-dev.pdf"
               download="Diyor_Khasanov_Resume.pdf"
               className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-zinc-100 hover:bg-white text-zinc-950 font-semibold text-xs transition-all shadow-sm hover:-translate-y-0.5 font-mono group"
             >
