@@ -18,6 +18,11 @@ import {
   CheckCircle2,
   PackageCheck,
   Sparkles,
+  Upload,
+  Image as ImageIcon,
+  Copy,
+  Zap,
+  ShieldCheck,
 } from "lucide-react";
 import BentoCard from "@/components/ui/BentoCard";
 import { supabase } from "@/lib/supabase";
@@ -25,7 +30,7 @@ import { supabase } from "@/lib/supabase";
 export const metadata: Metadata = {
   title: "Projects & Open Source | Diyor Khasanov - Software Engineer",
   description:
-    "Explore Linkly and open source contributions built with Vue.js, React, TypeScript, NestJS, and TailwindCSS by Diyor Khasanov.",
+    "Explore img2url, Linkly, and open source contributions built with Nuxt, Vue.js, React, TypeScript, NestJS, and TailwindCSS by Diyor Khasanov.",
 };
 
 const GithubIcon = ({ className }: { className?: string }) => (
@@ -55,6 +60,12 @@ const featureIconMap: Record<string, React.ElementType> = {
   Globe,
   Code2,
   CheckCircle2,
+  Upload,
+  Image: ImageIcon,
+  ImageIcon,
+  Copy,
+  Zap,
+  ShieldCheck,
 };
 
 interface FeatureItem {
@@ -92,6 +103,25 @@ interface OpenSourceContribution {
 }
 
 const fallbackProjects: Project[] = [
+  {
+    name: "img2url",
+    oneLineDescription:
+      "img2url is a fast image hosting and CDN deployment platform that converts uploaded images into production-ready direct URLs, HTML snippets, and Markdown embeds.",
+    heroImagePlaceholder: "/projects/img2url-hero.png",
+    keyFeatures: [
+      { label: "Instant drag-and-drop upload", icon: Upload },
+      { label: "PNG, JPG, WEBP, SVG & GIF hosting", icon: ImageIcon },
+      { label: "Production direct URL generation", icon: Link2 },
+      { label: "HTML & Markdown embed snippets", icon: Code2 },
+      { label: "One-click copy-to-clipboard", icon: Copy },
+      { label: "CDN deployment with edge caching", icon: Zap },
+      { label: "User auth & profile management", icon: ShieldCheck },
+      { label: "Responsive dark-mode interface", icon: Smartphone },
+    ],
+    techStack: ["Nuxt", "TypeScript", "NestJS", "MongoDB", "TailwindCSS"],
+    liveDemoLink: "https://img2url-delta.vercel.app/",
+    githubLink: "https://github.com/Diyor-Khasanov-dev/img2url",
+  },
   {
     name: "Linkly",
     oneLineDescription:
@@ -414,9 +444,9 @@ export default async function ProjectsPage() {
                       <span className="truncate">{project.liveDemoLink}</span>
                     </div>
                     <div className="flex items-center gap-1.5 text-zinc-500 text-[11px]">
-                      <span>Vue 3</span>
+                      <span>{project.techStack[0] || "Nuxt"}</span>
                       <span>•</span>
-                      <span>NestJS</span>
+                      <span>{project.techStack[2] || "NestJS"}</span>
                     </div>
                   </div>
 
@@ -424,40 +454,81 @@ export default async function ProjectsPage() {
                   <div className="p-6 sm:p-8 bg-gradient-to-br from-zinc-900 via-zinc-950 to-black relative min-h-[220px] flex flex-col justify-between overflow-hidden">
                     <div className="absolute inset-0 bg-grid-pattern opacity-25 pointer-events-none" />
 
-                    <div className="relative z-10 max-w-sm mx-auto w-full p-4 rounded-xl border border-zinc-800 bg-zinc-900/90 backdrop-blur-md space-y-3 shadow-2xl group-hover/browser:scale-105 transition-transform duration-500">
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-whitesmoke to-zinc-400 text-zinc-950 font-bold font-mono text-sm flex items-center justify-center">
-                          LK
-                        </div>
-                        <div>
-                          <p className="text-xs font-bold text-white font-mono">@diyor_khasanov</p>
-                          <p className="text-[10px] text-zinc-400 font-sans">Software Engineer & Founder</p>
-                        </div>
-                      </div>
-
-                      <div className="space-y-1.5 pt-1">
-                        <div className="p-2 rounded-lg bg-zinc-950/80 border border-zinc-800/80 text-xs text-zinc-200 font-mono flex items-center justify-between">
-                          <span className="flex items-center gap-2">
-                            <Globe className="w-3.5 h-3.5 text-whitesmoke" />
-                            <span>Portfolio Website</span>
+                    {project.name.toLowerCase().includes("img2url") ? (
+                      <div className="relative z-10 max-w-md mx-auto w-full p-4 rounded-xl border border-zinc-800 bg-zinc-900/90 backdrop-blur-md space-y-3 shadow-2xl group-hover/browser:scale-105 transition-transform duration-500 font-mono">
+                        <div className="flex items-center justify-between border-b border-zinc-800 pb-2">
+                          <div className="flex items-center gap-2">
+                            <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-emerald-500 to-teal-600 text-zinc-950 font-bold text-xs flex items-center justify-center">
+                              IU
+                            </div>
+                            <div>
+                              <p className="text-xs font-bold text-white">img2url CDN Platform</p>
+                              <p className="text-[10px] text-zinc-400">Direct URL & Embed Generator</p>
+                            </div>
+                          </div>
+                          <span className="text-[10px] px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
+                            CDN Active
                           </span>
-                          <ExternalLink className="w-3 h-3 text-zinc-500" />
                         </div>
 
-                        <div className="p-2 rounded-lg bg-zinc-950/80 border border-zinc-800/80 text-xs text-zinc-200 font-mono flex items-center justify-between">
-                          <span className="flex items-center gap-2">
-                            <GithubIcon className="w-3.5 h-3.5 text-whitesmoke" />
-                            <span>GitHub Open Source Repos</span>
+                        <div className="p-3 rounded-lg bg-zinc-950/90 border border-dashed border-zinc-700 text-center space-y-1">
+                          <Upload className="w-5 h-5 text-zinc-400 mx-auto" />
+                          <p className="text-[11px] text-zinc-300 font-medium">Drag & Drop Image or Click to Upload</p>
+                          <p className="text-[9px] text-zinc-500">PNG, JPG, WEBP, SVG, GIF</p>
+                        </div>
+
+                        <div className="p-2 rounded-lg bg-zinc-950/80 border border-zinc-800/80 text-[11px] text-zinc-300 flex items-center justify-between gap-2">
+                          <span className="truncate text-zinc-400">https://img2url-delta.vercel.app/i/sample.webp</span>
+                          <span className="px-2 py-1 rounded bg-white text-zinc-950 font-bold text-[10px] shrink-0 flex items-center gap-1">
+                            <Copy className="w-3 h-3" /> Copy URL
                           </span>
-                          <ExternalLink className="w-3 h-3 text-zinc-500" />
                         </div>
                       </div>
-                    </div>
+                    ) : (
+                      <div className="relative z-10 max-w-sm mx-auto w-full p-4 rounded-xl border border-zinc-800 bg-zinc-900/90 backdrop-blur-md space-y-3 shadow-2xl group-hover/browser:scale-105 transition-transform duration-500">
+                        <div className="flex items-center gap-3">
+                          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-whitesmoke to-zinc-400 text-zinc-950 font-bold font-mono text-sm flex items-center justify-center">
+                            LK
+                          </div>
+                          <div>
+                            <p className="text-xs font-bold text-white font-mono">@diyor_khasanov</p>
+                            <p className="text-[10px] text-zinc-400 font-sans">Software Engineer & Founder</p>
+                          </div>
+                        </div>
+
+                        <div className="space-y-1.5 pt-1">
+                          <div className="p-2 rounded-lg bg-zinc-950/80 border border-zinc-800/80 text-xs text-zinc-200 font-mono flex items-center justify-between">
+                            <span className="flex items-center gap-2">
+                              <Globe className="w-3.5 h-3.5 text-whitesmoke" />
+                              <span>Portfolio Website</span>
+                            </span>
+                            <ExternalLink className="w-3 h-3 text-zinc-500" />
+                          </div>
+
+                          <div className="p-2 rounded-lg bg-zinc-950/80 border border-zinc-800/80 text-xs text-zinc-200 font-mono flex items-center justify-between">
+                            <span className="flex items-center gap-2">
+                              <GithubIcon className="w-3.5 h-3.5 text-whitesmoke" />
+                              <span>GitHub Open Source Repos</span>
+                            </span>
+                            <ExternalLink className="w-3 h-3 text-zinc-500" />
+                          </div>
+                        </div>
+                      </div>
+                    )}
 
                     <div className="relative z-10 pt-4 flex items-center justify-between text-[11px] font-mono text-zinc-400 border-t border-zinc-900 mt-4">
                       <span className="flex items-center gap-1.5">
-                        <BarChart3 className="w-3.5 h-3.5 text-whitesmoke" />
-                        <span>Live Analytics Active</span>
+                        {project.name.toLowerCase().includes("img2url") ? (
+                          <>
+                            <Zap className="w-3.5 h-3.5 text-amber-400" />
+                            <span>Edge CDN Deployed</span>
+                          </>
+                        ) : (
+                          <>
+                            <BarChart3 className="w-3.5 h-3.5 text-whitesmoke" />
+                            <span>Live Analytics Active</span>
+                          </>
+                        )}
                       </span>
                       <span className="text-zinc-500">Sub-50ms Response</span>
                     </div>
